@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
+<title type="text">Academic Website</title>
+<generator uri="https://github.com/jekyll/jekyll">Jekyll</generator>
+<link rel="self" type="application/atom+xml" href="/feed.xml" />
+<link rel="alternate" type="text/html" href="" />
+<updated>2015-06-22T10:54:59+02:00</updated>
+<id>/</id>
+<author>
+  <name>Lukas F. Stoetzer</name>
+  <uri>/</uri>
+  <email>lstoetzer@mail.uni-mannheim.de</email>
+</author>
+
+
+  
+
+<entry>
+  <title type="html"><![CDATA[Cultural War or the Economy? A new perspective on ideology in the American electorate.]]></title>
+  <link rel="alternate" type="text/html" href="/posts/Cultural-War/" />
+  <id>/posts/Cultural-War</id>
+  <published>2015-06-19T00:00:00+02:00</published>
+  <updated>2015-06-19T00:00:00+02:00</updated>
+  <author>
+    <name></name>
+    <uri></uri>
+    
+  </author>
+  <content type="html">
+    &lt;p&gt;Political science research comes to different conclusions about which policy dimension primarily drives voting behavior in the United States. Some emphasize economic preferences as central in explaining voting decisions , others stress socio-cultural attitudes. In this paper, we propose a new perspective on the ideological structure of US voter preferences that reconciles these diverging finding. We make the case that the two dimensions are ideologically connected and are, at least partially, functional equivalents. Although voters may have well defined economic and cultural preferences, the two do not work additive in the vote choice mechanism: Voter preferences on the two dimensions are non-separable. We formally derive how non-separability of preferences can originate from one underlying ideological dimension that drives voting behavior.&lt;/p&gt;
+
+&lt;p&gt;Analyzing survey data on US presidential elections from 1996 to 2012, we estimate to which extent economic and socio-cultural preferences are non-separable.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/Pred_Prop2008.png&quot; alt=&quot;ideology&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Evidence from an original experiment underlines that non-separability is due to one-dimensional ideological considerations of voters. These findings inform us how voters and candidate campaigns use non-separability as an effective heuristic device to reduce the dimensional complexity of political choice and communication. You can download our paper &lt;a href=&quot;/assets/CulturalWar.pdf&quot;&gt;here&lt;/a&gt;. All comments are welcome.&lt;/p&gt;
+
+    &lt;p&gt;&lt;a href=&quot;/posts/Cultural-War/&quot;&gt;Cultural War or the Economy? A new perspective on ideology in the American electorate.&lt;/a&gt; was originally published by Lukas F. Stoetzer at &lt;a href=&quot;&quot;&gt;Academic Website&lt;/a&gt; on June 19, 2015.&lt;/p&gt;
+  </content>
+</entry>
+
+
+  
+
+<entry>
+  <title type="html"><![CDATA[Party competition with endogenous policy-preferences]]></title>
+  <link rel="alternate" type="text/html" href="/posts/Party-competition/" />
+  <id>/posts/Party-competition</id>
+  <published>2015-04-11T00:00:00+02:00</published>
+  <updated>2015-04-11T00:00:00+02:00</updated>
+  <author>
+    <name></name>
+    <uri></uri>
+    
+  </author>
+  <content type="html">
+    &lt;p&gt;Formal models of party competition typically assume that voters’ policy preferences are exogenously given. However, many political scientists find this assumption implausible. Parties and political elites can have a substantial influence on citizens political preferences. Two particular mechanisms stand out. First, some voters might be persuaded by a party’s position-taking and adjust their policy preferences accordingly. Second, some voters might project a party’s position closer to their own policy preference than other voters. In this paper we study a party competition in the presence of persuasion and projection effects. We conceptualize the two mechanisms, and derive conditions under which we expect a different outcomes compared to the standard model. Or results indicate that modeling persuasion and projection is crucial in understanding the platform locations in electoral democracies.&lt;/p&gt;
+
+&lt;p&gt;Parties’ strategies differ if they approach an electorate in which a share of the voters has endogenous policy-preferences.&lt;/p&gt;
+
+
+    &lt;p&gt;&lt;a href=&quot;/posts/Party-competition/&quot;&gt;Party competition with endogenous policy-preferences&lt;/a&gt; was originally published by Lukas F. Stoetzer at &lt;a href=&quot;&quot;&gt;Academic Website&lt;/a&gt; on April 11, 2015.&lt;/p&gt;
+  </content>
+</entry>
+
+
+  
+
+<entry>
+  <title type="html"><![CDATA[The effect of immigration on support for redistribution re-examined: survey experiments in three European countries]]></title>
+  <link rel="alternate" type="text/html" href="/posts/Redistribution/" />
+  <id>/posts/Redistribution</id>
+  <published>2014-09-10T00:00:00+02:00</published>
+  <updated>2014-09-10T00:00:00+02:00</updated>
+  <author>
+    <name></name>
+    <uri></uri>
+    
+  </author>
+  <content type="html">
+    &lt;p&gt;In times of increased globalization and ’europeanization’ scholars put considerable effort
+into understanding the consequences of immigration for the welfare state. We argue that
+groups within a society react quite differently to increasing immigration. Citizens with high
+income are especially likely to withdraw their support for redistribution because they want to
+prevent higher redistribution to the “out group” of new immigrants. Other parts of the society
+ask for stronger compensation due to the increased (labour market) risks of immigration. Based
+on a new survey experiment in three countries, we show that both income as well as labour
+competition moderate the overall negative effect of increasing migration. While respondents
+with high income withdraw their support, respondents who face strong labour competition
+increase their support.&lt;/p&gt;
+
+    &lt;p&gt;&lt;a href=&quot;/posts/Redistribution/&quot;&gt;The effect of immigration on support for redistribution re-examined: survey experiments in three European countries&lt;/a&gt; was originally published by Lukas F. Stoetzer at &lt;a href=&quot;&quot;&gt;Academic Website&lt;/a&gt; on September 10, 2014.&lt;/p&gt;
+  </content>
+</entry>
+
+
+  
+
+<entry>
+  <title type="html"><![CDATA[Why don’t you talk about policy? Valence campaigning in the 2008 US Congressional elections]]></title>
+  <link rel="alternate" type="text/html" href="/posts/Mobalization/" />
+  <id>/posts/Mobalization</id>
+  <published>2014-08-21T00:00:00+02:00</published>
+  <updated>2014-08-21T00:00:00+02:00</updated>
+  <author>
+    <name></name>
+    <uri></uri>
+    
+  </author>
+  <content type="html">
+    &lt;p&gt;Liberal democratic theory conceptualizes electoral competition as competition over policy. Yet we observe
+that many campaigns in modern democracies are not only about policy. Instead, many candidates spent
+notable time and effort to advertise so called valence aspects, such as their personal traits, characteristics
+and abilities. This paper presents a model of campaigns herethetics that explains why and under which
+circumstances candidates have incentives to run valence campaigns. Our model produces predictions
+in line with Riker’s dominance principle: candidates whose valence advantage is larger than their
+policy advantage should focus more on valence than on policy aspects. These expectations are tested
+with individual and campaign level data on the 2008 US Congressional Elections, introducing a novel
+way to quantify electoral advantages. We find that candidates tend to broadcast more valence-related
+TV ads if their valence advantage is larger than their policy advantage.&lt;/p&gt;
+
+    &lt;p&gt;&lt;a href=&quot;/posts/Mobalization/&quot;&gt;Why don’t you talk about policy? Valence campaigning in the 2008 US Congressional elections&lt;/a&gt; was originally published by Lukas F. Stoetzer at &lt;a href=&quot;&quot;&gt;Academic Website&lt;/a&gt; on August 21, 2014.&lt;/p&gt;
+  </content>
+</entry>
+
+
+  
+
+<entry>
+  <title type="html"><![CDATA[Weighting Parties and Coalitions: How Coalition Signals Influence Voting Behavior]]></title>
+  <link rel="alternate" type="text/html" href="/posts/Weighting-Parties/" />
+  <id>/posts/Weighting-Parties</id>
+  <published>2014-08-20T00:00:00+02:00</published>
+  <updated>2014-08-20T00:00:00+02:00</updated>
+  <author>
+    <name></name>
+    <uri></uri>
+    
+  </author>
+  <content type="html">
+    &lt;p&gt;Democratic accountability is characterized as weak in political systems
+where voters do not get to choose their government directly. We argue
+that coalition signals about desirable and undesirable coalitions that
+might be formed after the election help to provide this essential aspect of
+democratic government. We propose a simple model that identifies the
+effect of coalition signals on individual vote decisions. Based on survey
+experiments in two different countries we show how coalition signals
+change the relative weight of voters’ party and coalition considerations.
+Coalition signals increase the importance of coalition considerations
+and, at the same time, decrease the importance of party considerations
+in voters’ decision calculus, leading some voters to change their vote
+intention.&lt;/p&gt;
+
+    &lt;p&gt;&lt;a href=&quot;/posts/Weighting-Parties/&quot;&gt;Weighting Parties and Coalitions: How Coalition Signals Influence Voting Behavior&lt;/a&gt; was originally published by Lukas F. Stoetzer at &lt;a href=&quot;&quot;&gt;Academic Website&lt;/a&gt; on August 20, 2014.&lt;/p&gt;
+  </content>
+</entry>
+
+</feed>
