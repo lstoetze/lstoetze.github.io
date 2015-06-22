@@ -15,7 +15,7 @@ image:
 <dl>
 {% for publication in site.data.publication %}
 	{% if publication.type == "peer-reviewed" %}
-  	<dt>  <strong>{{publication.name}}</strong> <i>{{ publication.journal }}</i> 
+  	<dt>  <strong>{{publication.name}}</strong>. <i>{{ publication.journal }}</i> 
   	{% if publication.coauthors != "none" %} (with {{ publication.coauthors }})
 	{% endif %}
 	{% endif %}
@@ -23,13 +23,13 @@ image:
 </dl>
 
 
-<h3>Book-reviews & Other</h3>
+<h3>Book-reviews</h3>
 
 
 <dl>
 {% for publication in site.data.publication %}
 	{% if publication.type == "other" %}
-  	<dt>  {{publication.name}} <i>{{ publication.journal }}</i>
+  	<dt>  {{publication.name}}. <i>{{ publication.journal }}</i>
   	{% if publication.coauthors != "none" %} (with {{ publication.coauthors }})
 	{% endif %}
 	{% endif %}
