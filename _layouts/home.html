@@ -35,10 +35,9 @@
     <article>
         <h2><a href="{{ site.url }}{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a></h2>  
         <p> {{ post.date | date: "%-d %B %Y" }} {{ post.type }} </p>
-        <img src="{{ site.url }}/{{ post.image }}" align="left" hspace=10 >
+        <a href="{{ site.url }}{{ post.image }}"><img src="{{ site.url }}/{{ post.image }}" align="left" hspace=10"></a> 
         <p>{{ post.excerpt | strip_html | truncate: 500 }}  <a href="{{ site.url }}{{ post.url }}">Read more</A>  </p>
         <br clear="all">
-
     </article>
     {% endfor %}
   </div><!-- /#index -->

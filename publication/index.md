@@ -15,7 +15,7 @@ image:
 <dl>
 {% for publication in site.data.publication %}
 	{% if publication.type == "peer-reviewed" %}
-  	<dt>  <strong>{{publication.name}}</strong>. <i>{{ publication.journal }}</i> 
+  	<dt>  {{publication.name}}. <strong>{{ publication.journal }}</strong> 
   	{% if publication.coauthors != "none" %} (with {{ publication.coauthors }})
 	{% endif %}
 	{% endif %}
