@@ -4,13 +4,37 @@
 <generator uri="https://github.com/jekyll/jekyll">Jekyll</generator>
 <link rel="self" type="application/atom+xml" href="/feed.xml" />
 <link rel="alternate" type="text/html" href="" />
-<updated>2015-06-22T16:04:49+02:00</updated>
+<updated>2015-06-23T16:23:48+02:00</updated>
 <id>/</id>
 <author>
   <name>Lukas F. Stoetzer</name>
   <uri>/</uri>
   <email>lstoetze@mail.uni-mannheim.de</email>
 </author>
+
+
+  
+
+<entry>
+  <title type="html"><![CDATA[Multidimensional Spatial Voting with Non-separable Preferences]]></title>
+  <link rel="alternate" type="text/html" href="/posts/Non-Sep/" />
+  <id>/posts/Non-Sep</id>
+  <published>2015-06-23T00:00:00+02:00</published>
+  <updated>2015-06-23T00:00:00+02:00</updated>
+  <author>
+    <name></name>
+    <uri></uri>
+    
+  </author>
+  <content type="html">
+    &lt;p&gt;In most multidimensional spatial models, the systematic component of agent utility functions is specified as additive separable. We argue that this assumption is too restrictive, at least in the context of spatial voting in mass elections. Here, assuming separability would stipulate that voters do not care about how policy platforms combine positions on multiple policy dimensions. We present a statistical implementation of Davis, Hinich, and Ordeshook’s (1970) Weighted Euclidean Distance model that allows for the estimation of the direction and magnitude of non-separability from vote choice data. We demonstrate in a Monte-Carlo experiment that conventional separable model specifications yield biased and/or unreliable estimates of the effect of policy distances on vote choice probabilities in the presence of non-separable preferences. In three empirical applications, we find voter preferences on economic and socio-cultural issues to be non-separable. If non-separability is unaccounted for, researchers run the risk of missing crucial parts of the story. The implications of our findings carry over to other fields of research: checking for non-separability is an essential part of robustness testing in empirical applications of multidimensional spatial models.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://pan.oxfordjournals.org/content/early/2015/06/17/pan.mpv013.short?rss=1&quot;&gt;Publisher Link&lt;/a&gt;&lt;/p&gt;
+
+
+    &lt;p&gt;&lt;a href=&quot;/posts/Non-Sep/&quot;&gt;Multidimensional Spatial Voting with Non-separable Preferences&lt;/a&gt; was originally published by Lukas F. Stoetzer at &lt;a href=&quot;&quot;&gt;Academic Website&lt;/a&gt; on June 23, 2015.&lt;/p&gt;
+  </content>
+</entry>
 
 
   

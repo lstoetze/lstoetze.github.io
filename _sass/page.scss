@@ -267,7 +267,7 @@ $button-size: 1.5rem;
 	}
 	article {
 		h2 {
-			margin-bottom: 4px;
+			margin-bottom: 10px;
 			@include font-rem(20);
 			&.link-post {
 				margin-bottom: 0px + $doc-line-height;
@@ -275,11 +275,18 @@ $button-size: 1.5rem;
 			}
 		}
 		p {
-			@include font-rem(14);
+			@include font-rem(15);
+			margin-bottom: 10px;
 		}
-		p+p {
+		img {
+			width: 150px; 
+			height: 150px;
+		}
+		p {
+			@include font-rem(15);
 			text-indent: 0;
 		}
+
 	}
 }
 

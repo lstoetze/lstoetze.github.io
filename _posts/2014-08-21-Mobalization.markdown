@@ -3,8 +3,9 @@ layout: post
 title:  "Why don’t you talk about policy? Valence campaigning in the 2008 US Congressional elections"
 categories: posts
 author: Lukas
+image: assets/2014-08-21-Mobalization.jpg
+type: Conference Presentation EPSA, Edinburgh
 ---
-
 Liberal democratic theory conceptualizes electoral competition as competition over policy. Yet we observe
 that many campaigns in modern democracies are not only about policy. Instead, many candidates spent
 notable time and effort to advertise so called valence aspects, such as their personal traits, characteristics

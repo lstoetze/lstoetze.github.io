@@ -3,6 +3,8 @@ layout: post
 title:  "The effect of immigration on support for redistribution re-examined: survey experiments in three European countries"
 categories: posts
 author: Lukas
+image: assets/2014-09-10-Redistribution.jpg
+type: Conference Presentation ESPAnet, Oslo
 ---
 
 In times of increased globalization and ’europeanization’ scholars put considerable effort

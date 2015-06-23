@@ -3,6 +3,8 @@ layout: post
 title:  "Party competition with endogenous policy-preferences"
 categories: posts
 author: Lukas
+image: assets/2015-04-11-Party-competition.png
+type: Conference Presentation MPSA, Chicago
 ---
 
 
