@@ -4,7 +4,7 @@
 <generator uri="https://github.com/jekyll/jekyll">Jekyll</generator>
 <link rel="self" type="application/atom+xml" href="/feed.xml" />
 <link rel="alternate" type="text/html" href="" />
-<updated>2015-06-23T16:36:38+02:00</updated>
+<updated>2015-06-23T16:52:56+02:00</updated>
 <id>/</id>
 <author>
   <name>Lukas F. Stoetzer</name>
@@ -51,13 +51,7 @@
     
   </author>
   <content type="html">
-    &lt;p&gt;Political science research comes to different conclusions about which policy dimension primarily drives voting behavior in the United States. Some emphasize economic preferences as central in explaining voting decisions , others stress socio-cultural attitudes. In this paper, we propose a new perspective on the ideological structure of US voter preferences that reconciles these diverging finding. We make the case that the two dimensions are ideologically connected and are, at least partially, functional equivalents. Although voters may have well defined economic and cultural preferences, the two do not work additive in the vote choice mechanism: Voter preferences on the two dimensions are non-separable. We formally derive how non-separability of preferences can originate from one underlying ideological dimension that drives voting behavior.&lt;/p&gt;
-
-&lt;p&gt;Analyzing survey data on US presidential elections from 1996 to 2012, we estimate to which extent economic and socio-cultural preferences are non-separable.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/Pred_Prop2008.png&quot; alt=&quot;ideology&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;Evidence from an original experiment underlines that non-separability is due to one-dimensional ideological considerations of voters. These findings inform us how voters and candidate campaigns use non-separability as an effective heuristic device to reduce the dimensional complexity of political choice and communication. You can download our paper &lt;a href=&quot;/assets/CulturalWar.pdf&quot;&gt;here&lt;/a&gt;. All comments are welcome.&lt;/p&gt;
+    &lt;p&gt;Political science research comes to different conclusions about which policy dimension primarily drives voting behavior in the United States. Some emphasize economic preferences as central in explaining voting decisions , others stress socio-cultural attitudes. In this paper, we propose a new perspective on the ideological structure of US voter preferences that reconciles these diverging finding. We make the case that the two dimensions are ideologically connected and are, at least partially, functional equivalents. Although voters may have well defined economic and cultural preferences, the two do not work additive in the vote choice mechanism: Voter preferences on the two dimensions are non-separable. We formally derive how non-separability of preferences can originate from one underlying ideological dimension that drives voting behavior. Analyzing survey data on US presidential elections from 1996 to 2012, we estimate to which extent economic and socio-cultural preferences are non-separable. Evidence from an original experiment underlines that non-separability is due to one-dimensional ideological considerations of voters. These findings inform us how voters and candidate campaigns use non-separability as an effective heuristic device to reduce the dimensional complexity of political choice and communication. You can download our paper &lt;a href=&quot;/assets/CulturalWar.pdf&quot;&gt;here&lt;/a&gt;. All comments are welcome.&lt;/p&gt;
 
     &lt;p&gt;&lt;a href=&quot;/posts/Cultural-War/&quot;&gt;Cultural War or the Economy? A new perspective on ideology in the American electorate.&lt;/a&gt; was originally published by Lukas F. Stoetzer at &lt;a href=&quot;&quot;&gt;Academic Website&lt;/a&gt; on June 19, 2015.&lt;/p&gt;
   </content>
@@ -84,6 +78,35 @@
 
 
     &lt;p&gt;&lt;a href=&quot;/posts/Party-competition/&quot;&gt;Party competition with endogenous policy-preferences&lt;/a&gt; was originally published by Lukas F. Stoetzer at &lt;a href=&quot;&quot;&gt;Academic Website&lt;/a&gt; on April 11, 2015.&lt;/p&gt;
+  </content>
+</entry>
+
+
+  
+
+<entry>
+  <title type="html"><![CDATA[Spatial model of voting: Citizens with inconsistent, persuadable and endogenous policy preferences]]></title>
+  <link rel="alternate" type="text/html" href="/posts/Dissertation/" />
+  <id>/posts/Dissertation</id>
+  <published>2015-03-24T00:00:00+01:00</published>
+  <updated>2015-03-24T00:00:00+01:00</updated>
+  <author>
+    <name></name>
+    <uri></uri>
+    
+  </author>
+  <content type="html">
+    &lt;p&gt;Electoral democracies are built on the idea of representation. The electorate selects politicians to represent their interests in the law-making process. Given that citizens hold meaningful preferences about political outcomes, this electoral linkage is supposed to ensure that implemented policies are in line with the public’s will. In political science, spatial voting theories model this connection between citizens’ opinions about policies and their electoral decisions. But what if ordinary voters are not equipped with policy views that easily permit them to select matching candidates: does this distort the simple model of representative democracy?&lt;/p&gt;
+
+&lt;p&gt;I argue that the electoral linkage between voters and candidates is affected if voters do not reflect the assumptions made about their policy preferences in spatial voting theories. Spatial voting theory builds on a rational choice framework in which policy preferences are assumed to be well-defined, fixed and exogenous. For decades, behavioral theorists have questioned the usefulness of this oversimplified depiction in attempting to understand and explain the democratic process. Consequently, theoretical conceptualizations and argumentations have been developed that are built on a wider notion of citizens’ policy preferences. In the latter case, opinions are represented as being: inconsistent with underlying political platforms; endogenous to the positions taken by candidates, and ‘persuadable’ by political arguments. These differing approaches led to quite some debate between the two political schools of thought regarding the empirical adequacy of the contrasting depictions of public opinion. This dissertation brings the two perspectives closer together on theoretical grounds. The origin of the argumentation put forward is the view that the central link between citizens and their representatives can only be established if voters with policy preferences that deviate from the restrictive suppositions of standard models, do not behave differently at the ballot box.&lt;/p&gt;
+
+&lt;p&gt;I study how citizens’ electoral decisions are influenced when a wider notion of policy preference is assumed. Specifically, I offer an extension to the spatial voting model that allows citizens’ policy views to be inconsistent, persuadable and endogenous. I find that voting decisions are affected when this wider definition is employed. First, voters put considerably less weight on policy when they presume that their political opinions are inconsistent with underlying ideological dimensions. Second, citizens directly change their voting decision if they are exposed to persuasive political arguments. And finally, voters can alter their preferences and decisions in response to individual candidates’ position-taking. The major theoretical contribution of this dissertation is the introduction of a modeling approach that allows researchers to analyze these mechanisms, building on the idea that citizens possess policy beliefs regarding which policy platform is in their own best interest. This conceptualization greatly amplifies our ability to assess how the electoral mode of democratic representation is affected, in the case of a general public that lacks rigorous policy preferences.&lt;/p&gt;
+
+&lt;p&gt;Empirical evidence presented also emphasizes that the theoretical extension does indeed help to generate a more accurate picture of how voters make up their minds. The results indicate that for survey respondents who show inconsistent policy views, the distance to a candidate on a general liberal-conservative dimension has a smaller effect on voting probabilities. In addition, relying on a survey experiment, I show that political arguments have a direct effect on voting decisions, by persuading respondents to change their policy views. Finally, building on latent class models, I highlight that partisans are considerably more likely to alter their positions in the direction of their party’s candidate over the course of the campaign - making their policy views endogenous to the relevant candidate’s campaign platform.&lt;/p&gt;
+
+&lt;p&gt;I conclude this dissertation by discussing the crucial implications these findings have for democratic theory. If political systems adhere to the goal of political representation, they must provide an environment that enables the public to converge towards the homogeneous picture painted in the usual simple model of representation, in which all citizens gain perfect knowledge regarding which political outcome promises to be most beneficial for them personally, and for society in general.&lt;/p&gt;
+
+    &lt;p&gt;&lt;a href=&quot;/posts/Dissertation/&quot;&gt;Spatial model of voting: Citizens with inconsistent, persuadable and endogenous policy preferences&lt;/a&gt; was originally published by Lukas F. Stoetzer at &lt;a href=&quot;&quot;&gt;Academic Website&lt;/a&gt; on March 24, 2015.&lt;/p&gt;
   </content>
 </entry>
 

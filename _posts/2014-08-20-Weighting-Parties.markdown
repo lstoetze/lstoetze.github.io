@@ -3,6 +3,8 @@ layout: post
 title:  "Weighting Parties and Coalitions: How Coalition Signals Influence Voting Behavior"
 categories: posts
 author: Lukas
+image: assets/2014-08-20-Weighting-Parties.jpg
+type: Conference Presentation APSA, Washington DC
 ---
 
 Democratic accountability is characterized as weak in political systems
