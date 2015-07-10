@@ -2,7 +2,7 @@
 
 title:            Lukas Stoetzer Website
 locale:           en_US
-url:              
+url:              www.lukas-stoetzer.org
 
 
 # Jekyll configuration
@@ -28,7 +28,7 @@ kramdown:
 owner:
   name: Lukas F. Stoetzer
   avatar: bio-photo.jpg
-  bio: "Post-doc Political Science"
+  bio: "Post-doc Political Science. Research on Political Behaviour and  Political Methodology"
   email: lstoetze@mail.uni-mannheim.de
   disqus-shortname: 
   twitter: lstoetze
