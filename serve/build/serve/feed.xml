@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
+<title type="text">Lukas Stoetzer's Website</title>
+<generator uri="https://github.com/jekyll/jekyll">Jekyll</generator>
+<link rel="self" type="application/atom+xml" href="/feed.xml" />
+<link rel="alternate" type="text/html" href="" />
+<updated>2016-06-07T16:44:25-04:00</updated>
+<id>/</id>
+<author>
+  <name>Lukas F. Stoetzer</name>
+  <uri>/</uri>
+  <email>lstoetze@mit.edu</email>
+</author>
+
+
+  
+
+<entry>
+  <title type="html"><![CDATA[When do Voters Take into Account Post-Election Bargaining Processes?]]></title>
+  <link rel="alternate" type="text/html" href="/posts/Compensational/" />
+  <id>/posts/Compensational</id>
+  <published>2015-09-09T00:00:00-04:00</published>
+  <updated>2015-09-09T00:00:00-04:00</updated>
+  <author>
+    <name></name>
+    <uri></uri>
+    
+  </author>
+  <content type="html">
+    &lt;p&gt;Under what conditions are citizens able and willing to take into account post- election bargaining processes? In this article, we show that the ability of voters to cast rational decisions in multi-party contexts is conditional on distinct aspects of political sophistication and engagement. In our experimental design, we ask subjects to participate in several mock elections. Participants are asked to vote in such a way, that the final electoral outcome is as close as possible to their own ideal position. In a control group, less than 10% of the individual vote decisions lead to
+outcomes that were as close as possible to the voters’ individual preferences. The share of optimal decisions increases drastically if we increase the available information and abolish time constraints to solve the task. Interestingly, monetary incentives do not have a direct effect on the accuracy of voting decisions, but rather moderate the beneficial effects of available information and reduced time constraints. These results indicate that three aspects of political sophistication and engagement – information, capabilities and motivation – have differential effects on the ability of citizens to cast strategic voting decisions in multi-party systems.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;/assets/posterAPSA.pdf&quot;&gt;[Poster]&lt;/a&gt; &lt;/p&gt;
+
+    &lt;p&gt;&lt;a href=&quot;/posts/Compensational/&quot;&gt;When do Voters Take into Account Post-Election Bargaining Processes?&lt;/a&gt; was originally published by Lukas F. Stoetzer at &lt;a href=&quot;&quot;&gt;Lukas Stoetzer's Website&lt;/a&gt; on September 09, 2015.&lt;/p&gt;
+  </content>
+</entry>
+
+
+  
+
+<entry>
+  <title type="html"><![CDATA[Multidimensional Spatial Voting with Non-separable Preferences]]></title>
+  <link rel="alternate" type="text/html" href="/posts/Non-Sep/" />
+  <id>/posts/Non-Sep</id>
+  <published>2015-06-23T00:00:00-04:00</published>
+  <updated>2015-06-23T00:00:00-04:00</updated>
+  <author>
+    <name></name>
+    <uri></uri>
+    
+  </author>
+  <content type="html">
+    &lt;p&gt;In most multidimensional spatial models, the systematic component of agent utility functions is specified as additive separable. We argue that this assumption is too restrictive, at least in the context of spatial voting in mass elections. Here, assuming separability would stipulate that voters do not care about how policy platforms combine positions on multiple policy dimensions. We present a statistical implementation of Davis, Hinich, and Ordeshook’s (1970) Weighted Euclidean Distance model that allows for the estimation of the direction and magnitude of non-separability from vote choice data. We demonstrate in a Monte-Carlo experiment that conventional separable model specifications yield biased and/or unreliable estimates of the effect of policy distances on vote choice probabilities in the presence of non-separable preferences. In three empirical applications, we find voter preferences on economic and socio-cultural issues to be non-separable. If non-separability is unaccounted for, researchers run the risk of missing crucial parts of the story. The implications of our findings carry over to other fields of research: checking for non-separability is an essential part of robustness testing in empirical applications of multidimensional spatial models. &lt;/p&gt;
+
+&lt;p&gt;Stoetzer, Lukas F., and Steffen Zittlau. 2015. “Multidimensional Spatial Voting with Non-separable Preferences.” Political Analysis. 3(3):415-428&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://pan.oxfordjournals.org/content/early/2015/06/17/pan.mpv013.short?rss=1&quot;&gt;[Publisher Link]&lt;/a&gt; &lt;a href=&quot;http://pan.oxfordjournals.org/content/suppl/2015/05/15/mpv013.DC1/Supplementary_Material_PA.pdf&quot;&gt;[Supplementary Material]&lt;/a&gt; &lt;a href=&quot;https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/VCSRMX&quot;&gt;[Replication Material Dataverse]&lt;/a&gt;&lt;/p&gt;
+
+
+    &lt;p&gt;&lt;a href=&quot;/posts/Non-Sep/&quot;&gt;Multidimensional Spatial Voting with Non-separable Preferences&lt;/a&gt; was originally published by Lukas F. Stoetzer at &lt;a href=&quot;&quot;&gt;Lukas Stoetzer's Website&lt;/a&gt; on June 23, 2015.&lt;/p&gt;
+  </content>
+</entry>
+
+
+  
+
+<entry>
+  <title type="html"><![CDATA[Cultural War or the Economy? A new perspective on ideology in the American electorate.]]></title>
+  <link rel="alternate" type="text/html" href="/posts/Cultural-War/" />
+  <id>/posts/Cultural-War</id>
+  <published>2015-06-19T00:00:00-04:00</published>
+  <updated>2015-06-19T00:00:00-04:00</updated>
+  <author>
+    <name></name>
+    <uri></uri>
+    
+  </author>
+  <content type="html">
+    &lt;p&gt;Political science research comes to different conclusions about which policy dimension primarily drives voting behavior in the United States. Some emphasize economic preferences as central in explaining voting decisions , others stress socio-cultural attitudes. In this paper, we propose a new perspective on the ideological structure of US voter preferences that reconciles these diverging finding. We make the case that the two dimensions are ideologically connected and are, at least partially, functional equivalents. Although voters may have well defined economic and cultural preferences, the two do not work additive in the vote choice mechanism: Voter preferences on the two dimensions are non-separable. We formally derive how non-separability of preferences can originate from one underlying ideological dimension that drives voting behavior. Analyzing survey data on US presidential elections from 1996 to 2012, we estimate to which extent economic and socio-cultural preferences are non-separable. Evidence from an original experiment underlines that non-separability is due to one-dimensional ideological considerations of voters. These findings inform us how voters and candidate campaigns use non-separability as an effective heuristic device to reduce the dimensional complexity of political choice and communication. &lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;/assets/CulturalWar.pdf&quot;&gt;[Working Paper]&lt;/a&gt; &lt;/p&gt;
+
+    &lt;p&gt;&lt;a href=&quot;/posts/Cultural-War/&quot;&gt;Cultural War or the Economy? A new perspective on ideology in the American electorate.&lt;/a&gt; was originally published by Lukas F. Stoetzer at &lt;a href=&quot;&quot;&gt;Lukas Stoetzer's Website&lt;/a&gt; on June 19, 2015.&lt;/p&gt;
+  </content>
+</entry>
+
+
+  
+
+<entry>
+  <title type="html"><![CDATA[Party competition with endogenous policy-preferences]]></title>
+  <link rel="alternate" type="text/html" href="/posts/Party-competition/" />
+  <id>/posts/Party-competition</id>
+  <published>2015-04-11T00:00:00-04:00</published>
+  <updated>2015-04-11T00:00:00-04:00</updated>
+  <author>
+    <name></name>
+    <uri></uri>
+    
+  </author>
+  <content type="html">
+    &lt;p&gt;Formal models of party competition typically assume that voters’ policy preferences are exogenously given. However, many political scientists find this assumption implausible. Parties and political elites can have a substantial influence on citizens political preferences. Two particular mechanisms stand out. First, some voters might be persuaded by a party’s position-taking and adjust their policy preferences accordingly. Second, some voters might project a party’s position closer to their own policy preference than other voters. In this paper we study a party competition in the presence of persuasion and projection effects. We conceptualize the two mechanisms, and derive conditions under which we expect a different outcomes compared to the standard model. Or results indicate that modeling persuasion and projection is crucial in understanding the platform locations in electoral democracies. &lt;/p&gt;
+
+&lt;p&gt;Parties’ strategies differ if they approach an electorate in which a share of the voters has endogenous policy-preferences.&lt;/p&gt;
+
+
+    &lt;p&gt;&lt;a href=&quot;/posts/Party-competition/&quot;&gt;Party competition with endogenous policy-preferences&lt;/a&gt; was originally published by Lukas F. Stoetzer at &lt;a href=&quot;&quot;&gt;Lukas Stoetzer's Website&lt;/a&gt; on April 11, 2015.&lt;/p&gt;
+  </content>
+</entry>
+
+
+  
+
+<entry>
+  <title type="html"><![CDATA[Spatial model of voting: Citizens with inconsistent, persuadable and endogenous policy preferences]]></title>
+  <link rel="alternate" type="text/html" href="/posts/Dissertation/" />
+  <id>/posts/Dissertation</id>
+  <published>2015-03-24T00:00:00-04:00</published>
+  <updated>2015-03-24T00:00:00-04:00</updated>
+  <author>
+    <name></name>
+    <uri></uri>
+    
+  </author>
+  <content type="html">
+    &lt;p&gt;Electoral democracies are built on the idea of representation. The electorate selects politicians to represent their interests in the law-making process. Given that citizens hold meaningful preferences about political outcomes, this electoral linkage is supposed to ensure that implemented policies are in line with the public’s will. In political science, spatial voting theories model this connection between citizens’ opinions about policies and their electoral decisions. But what if ordinary voters are not equipped with policy views that easily permit them to select matching candidates: does this distort the simple model of representative democracy?&lt;/p&gt;
+
+&lt;p&gt;I argue that the electoral linkage between voters and candidates is affected if voters do not reflect the assumptions made about their policy preferences in spatial voting theories. Spatial voting theory builds on a rational choice framework in which policy preferences are assumed to be well-defined, fixed and exogenous. For decades, behavioral theorists have questioned the usefulness of this oversimplified depiction in attempting to understand and explain the democratic process. Consequently, theoretical conceptualizations and argumentations have been developed that are built on a wider notion of citizens’ policy preferences. In the latter case, opinions are represented as being: inconsistent with underlying political platforms; endogenous to the positions taken by candidates, and ‘persuadable’ by political arguments. These differing approaches led to quite some debate between the two political schools of thought regarding the empirical adequacy of the contrasting depictions of public opinion. This dissertation brings the two perspectives closer together on theoretical grounds. The origin of the argumentation put forward is the view that the central link between citizens and their representatives can only be established if voters with policy preferences that deviate from the restrictive suppositions of standard models, do not behave differently at the ballot box.&lt;/p&gt;
+
+&lt;p&gt;I study how citizens’ electoral decisions are influenced when a wider notion of policy preference is assumed. Specifically, I offer an extension to the spatial voting model that allows citizens’ policy views to be inconsistent, persuadable and endogenous. I find that voting decisions are affected when this wider definition is employed. First, voters put considerably less weight on policy when they presume that their political opinions are inconsistent with underlying ideological dimensions. Second, citizens directly change their voting decision if they are exposed to persuasive political arguments. And finally, voters can alter their preferences and decisions in response to individual candidates’ position-taking. The major theoretical contribution of this dissertation is the introduction of a modeling approach that allows researchers to analyze these mechanisms, building on the idea that citizens possess policy beliefs regarding which policy platform is in their own best interest. This conceptualization greatly amplifies our ability to assess how the electoral mode of democratic representation is affected, in the case of a general public that lacks rigorous policy preferences.&lt;/p&gt;
+
+&lt;p&gt;Empirical evidence presented also emphasizes that the theoretical extension does indeed help to generate a more accurate picture of how voters make up their minds. The results indicate that for survey respondents who show inconsistent policy views, the distance to a candidate on a general liberal-conservative dimension has a smaller effect on voting probabilities. In addition, relying on a survey experiment, I show that political arguments have a direct effect on voting decisions, by persuading respondents to change their policy views. Finally, building on latent class models, I highlight that partisans are considerably more likely to alter their positions in the direction of their party’s candidate over the course of the campaign - making their policy views endogenous to the relevant candidate’s campaign platform.&lt;/p&gt;
+
+&lt;p&gt;I conclude this dissertation by discussing the crucial implications these findings have for democratic theory. If political systems adhere to the goal of political representation, they must provide an environment that enables the public to converge towards the homogeneous picture painted in the usual simple model of representation, in which all citizens gain perfect knowledge regarding which political outcome promises to be most beneficial for them personally, and for society in general.&lt;/p&gt;
+
+    &lt;p&gt;&lt;a href=&quot;/posts/Dissertation/&quot;&gt;Spatial model of voting: Citizens with inconsistent, persuadable and endogenous policy preferences&lt;/a&gt; was originally published by Lukas F. Stoetzer at &lt;a href=&quot;&quot;&gt;Lukas Stoetzer's Website&lt;/a&gt; on March 24, 2015.&lt;/p&gt;
+  </content>
+</entry>
+
+
+  
+
+<entry>
+  <title type="html"><![CDATA[The effect of immigration on support for redistribution re-examined: survey experiments in three European countries]]></title>
+  <link rel="alternate" type="text/html" href="/posts/Redistribution/" />
+  <id>/posts/Redistribution</id>
+  <published>2014-09-10T00:00:00-04:00</published>
+  <updated>2014-09-10T00:00:00-04:00</updated>
+  <author>
+    <name></name>
+    <uri></uri>
+    
+  </author>
+  <content type="html">
+    &lt;p&gt;In times of increased globalization and ’europeanization’ scholars put considerable effort
+into understanding the consequences of immigration for the welfare state. We argue that
+groups within a society react quite differently to increasing immigration. Citizens with high
+income are especially likely to withdraw their support for redistribution because they want to
+prevent higher redistribution to the “out group” of new immigrants. Other parts of the society
+ask for stronger compensation due to the increased (labour market) risks of immigration. Based
+on a new survey experiment in three countries, we show that both income as well as labour
+competition moderate the overall negative effect of increasing migration. While respondents
+with high income withdraw their support, respondents who face strong labour competition
+increase their support.&lt;/p&gt;
+
+    &lt;p&gt;&lt;a href=&quot;/posts/Redistribution/&quot;&gt;The effect of immigration on support for redistribution re-examined: survey experiments in three European countries&lt;/a&gt; was originally published by Lukas F. Stoetzer at &lt;a href=&quot;&quot;&gt;Lukas Stoetzer's Website&lt;/a&gt; on September 10, 2014.&lt;/p&gt;
+  </content>
+</entry>
+
+
+  
+
+<entry>
+  <title type="html"><![CDATA[Why don’t you talk about policy? Valence campaigning in the 2008 US Congressional elections]]></title>
+  <link rel="alternate" type="text/html" href="/posts/Mobalization/" />
+  <id>/posts/Mobalization</id>
+  <published>2014-08-21T00:00:00-04:00</published>
+  <updated>2014-08-21T00:00:00-04:00</updated>
+  <author>
+    <name></name>
+    <uri></uri>
+    
+  </author>
+  <content type="html">
+    &lt;p&gt;Liberal democratic theory conceptualizes electoral competition as competition over policy. Yet we observe
+that many campaigns in modern democracies are not only about policy. Instead, many candidates spent
+notable time and effort to advertise so called valence aspects, such as their personal traits, characteristics
+and abilities. This paper presents a model of campaigns herethetics that explains why and under which
+circumstances candidates have incentives to run valence campaigns. Our model produces predictions
+in line with Riker’s dominance principle: candidates whose valence advantage is larger than their
+policy advantage should focus more on valence than on policy aspects. These expectations are tested
+with individual and campaign level data on the 2008 US Congressional Elections, introducing a novel
+way to quantify electoral advantages. We find that candidates tend to broadcast more valence-related
+TV ads if their valence advantage is larger than their policy advantage.&lt;/p&gt;
+
+    &lt;p&gt;&lt;a href=&quot;/posts/Mobalization/&quot;&gt;Why don’t you talk about policy? Valence campaigning in the 2008 US Congressional elections&lt;/a&gt; was originally published by Lukas F. Stoetzer at &lt;a href=&quot;&quot;&gt;Lukas Stoetzer's Website&lt;/a&gt; on August 21, 2014.&lt;/p&gt;
+  </content>
+</entry>
+
+
+  
+
+<entry>
+  <title type="html"><![CDATA[Weighting Parties and Coalitions: How Coalition Signals Influence Voting Behavior]]></title>
+  <link rel="alternate" type="text/html" href="/posts/Weighting-Parties/" />
+  <id>/posts/Weighting-Parties</id>
+  <published>2014-08-20T00:00:00-04:00</published>
+  <updated>2014-08-20T00:00:00-04:00</updated>
+  <author>
+    <name></name>
+    <uri></uri>
+    
+  </author>
+  <content type="html">
+    &lt;p&gt;Democratic accountability is characterized as weak in political systems
+where voters do not get to choose their government directly. We argue
+that coalition signals about desirable and undesirable coalitions that
+might be formed after the election help to provide this essential aspect of
+democratic government. We propose a simple model that identifies the
+effect of coalition signals on individual vote decisions. Based on survey
+experiments in two different countries we show how coalition signals
+change the relative weight of voters’ party and coalition considerations.
+Coalition signals increase the importance of coalition considerations
+and, at the same time, decrease the importance of party considerations
+in voters’ decision calculus, leading some voters to change their vote
+intention.&lt;/p&gt;
+
+    &lt;p&gt;&lt;a href=&quot;/posts/Weighting-Parties/&quot;&gt;Weighting Parties and Coalitions: How Coalition Signals Influence Voting Behavior&lt;/a&gt; was originally published by Lukas F. Stoetzer at &lt;a href=&quot;&quot;&gt;Lukas Stoetzer's Website&lt;/a&gt; on August 20, 2014.&lt;/p&gt;
+  </content>
+</entry>
+
+</feed>
