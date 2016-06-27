@@ -1,0 +1,26 @@
+---
+layout: post
+title:  "Dynamic linear models for trial heat polls in multi-party elections"
+categories: posts
+author: Lukas
+image: assets/daily_polls.jpg
+type: Conference Presentation EPSA 2016, Brussels
+---
+
+In this paper, we assess the predictive quality of different dynamic Bayesian forecasting models suited for modeling the compositional data that results from trial heat polls in multi-party systems. In particular, we compare different spec-
+ifications of dynamic linear models (DLM) fitted on log-ratio transformed
+data. In addition to existing random walk models [Jackman, 2005, Linzer,
+2013, Walther, 2015], the DLM framework allows for model specifications
+with local trends and covariance structures that reflect the correlated evolu-
+tion of party support over time. We assess the point predictions of different
+DLM specifications and the coverage of the corresponding predictive inter-
+vals in the run-ups to the German Federal Election of 2013. Comparing polls
+the DLM based forecasts, we find that the latter generate predictive inter-
+vals that more accurately represent the uncertainty about the final outcome
+far ahead of election day. Only within the last month prior to election day,
+polls offer reliable information about the expected election outcome. With
+these findings, we provide guidance for model selection when modeling dy-
+namic compositional data within or beyond the specific context of elections
+forecasting.
+
+[[Working Paper]](/assets/Orlowski_Stoetzer_DLM_EPSA16.pdf) 
