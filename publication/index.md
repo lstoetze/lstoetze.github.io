@@ -12,7 +12,7 @@ image:
 
 <h3>Peer-reviewed</h3>
 
-
+<dl>
 {% for publication in site.data.publication %}
 	{% if publication.type == "peer-reviewed" %}
   	<dt>  {{publication.name}}. {{ publication.journal }}
@@ -20,12 +20,13 @@ image:
 	{% endif %}
 	{% endif %}
 {% endfor %}
+</dl>
 
 
 
 <h3>Book-reviews</h3>
 
-
+<dl>
 {% for publication in site.data.publication %}
 	{% if publication.type == "other" %}
   	<dt>  {{publication.name}}. <i>{{ publication.journal }}</i>
@@ -33,4 +34,4 @@ image:
 	{% endif %}
 	{% endif %}
 {% endfor %}
-
+</dl>
