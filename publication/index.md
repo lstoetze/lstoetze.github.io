@@ -63,7 +63,7 @@ Lukas&nbsp;F Stoetzer and Steffen Zittlau.
 
 </td>
 </tr>
-</table>
+
 
 <tr valign="top">
 <td align="right" class="bibtexnumber">
@@ -76,6 +76,8 @@ Lukas&nbsp;F. Stoetzer, Steffen Zittlau, Thomas Gschwend, and Tobias Witt.
 
 </td>
 </tr>
+
+</table>
 
 <hr>
 
