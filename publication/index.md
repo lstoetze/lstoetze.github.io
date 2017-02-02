@@ -16,7 +16,6 @@ image:
 
 <tr valign="top">
 <td align="right" class="bibtexnumber">
-[<a name="Stoetzer"></a>]
 </td>
 <td class="bibtexitem">
 Lukas&nbsp;F. Stoetzer.
@@ -30,7 +29,6 @@ Lukas&nbsp;F. Stoetzer.
 
 <tr valign="top">
 <td align="right" class="bibtexnumber">
-[<a name="Gschwend"></a>]
 </td>
 <td class="bibtexitem">
 Thomas Gschwend, Michael&nbsp;F. Meffert, and Lukas&nbsp;F. Stoetzer.
@@ -44,7 +42,6 @@ Thomas Gschwend, Michael&nbsp;F. Meffert, and Lukas&nbsp;F. Stoetzer.
 
 <tr valign="top">
 <td align="right" class="bibtexnumber">
-[<a name="Gschwend2016"></a>]
 </td>
 <td class="bibtexitem">
 Thomas Gschwend, Lukas Stoetzer, and Steffen Zittlau.
@@ -58,7 +55,6 @@ Thomas Gschwend, Lukas Stoetzer, and Steffen Zittlau.
 
 <tr valign="top">
 <td align="right" class="bibtexnumber">
-[<a name="Stoetzer2015"></a>]
 </td>
 <td class="bibtexitem">
 Lukas&nbsp;F Stoetzer and Steffen Zittlau.
@@ -67,11 +63,10 @@ Lukas&nbsp;F Stoetzer and Steffen Zittlau.
 
 </td>
 </tr>
-</table><hr>
+</table>
 
 <tr valign="top">
 <td align="right" class="bibtexnumber">
-[<a name="Stoetzer2015a"></a>]
 </td>
 <td class="bibtexitem">
 Lukas&nbsp;F. Stoetzer, Steffen Zittlau, Thomas Gschwend, and Tobias Witt.
@@ -82,7 +77,7 @@ Lukas&nbsp;F. Stoetzer, Steffen Zittlau, Thomas Gschwend, and Tobias Witt.
 </td>
 </tr>
 
-
+<hr>
 
 <h3>Book-reviews</h3>
 
