@@ -1,12 +1,11 @@
 ---
 layout: post
-title:  "Spatial voting with inconsistent policy preferences"
+title:  "A matter of representation: Spatial voting with inconsistent policy preferences"
 categories: posts
 author: Lukas
 image: assets/Ch4_sim-1.jpg
-type: Poster Presentation Behavioral Models of Politics Conference, Pittsburgh
+type: Publication, British Journal of Political Science
 ---
 
 The application of spatial voting theories to popular elections presupposes an electorate that chooses political representatives on the basis of their well- structured policy preferences. Behavioral researchers have long contended that parts of the electorate rather hold unstructured and inconsistent policy beliefs. In this article, I propose an extension to spatial voting theories to analyze the effect of varying consistency in policy preferences on electoral behavior. The model results in the expectation that voters with less consistent policy preferences will put less weight on policy distance, when learning about candidates that should represent their political positions. I test this expectation for the U.S. presidential election of 2008, and find that for respondents with less consistent  self-placements on the liberal-conservative scale, policy distance less strongly affects their voting decision. The results have implications for the quality of political representation, as certain parts of the electorate are expected to be less closely represented.
 
-[[Poster]](/assets/Incon_poster.pdf) 
