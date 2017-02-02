@@ -16,7 +16,7 @@ image:
 
 <tr valign="top">
 <td align="right" class="bibtexnumber">
-[<a name="Stoetzer">1</a>]
+[<a name="Stoetzer"></a>]
 </td>
 <td class="bibtexitem">
 Lukas&nbsp;F. Stoetzer.
@@ -30,7 +30,7 @@ Lukas&nbsp;F. Stoetzer.
 
 <tr valign="top">
 <td align="right" class="bibtexnumber">
-[<a name="Gschwend">2</a>]
+[<a name="Gschwend"></a>]
 </td>
 <td class="bibtexitem">
 Thomas Gschwend, Michael&nbsp;F. Meffert, and Lukas&nbsp;F. Stoetzer.
@@ -44,7 +44,7 @@ Thomas Gschwend, Michael&nbsp;F. Meffert, and Lukas&nbsp;F. Stoetzer.
 
 <tr valign="top">
 <td align="right" class="bibtexnumber">
-[<a name="Gschwend2016">3</a>]
+[<a name="Gschwend2016"></a>]
 </td>
 <td class="bibtexitem">
 Thomas Gschwend, Lukas Stoetzer, and Steffen Zittlau.
@@ -58,7 +58,20 @@ Thomas Gschwend, Lukas Stoetzer, and Steffen Zittlau.
 
 <tr valign="top">
 <td align="right" class="bibtexnumber">
-[<a name="Stoetzer2015a">4</a>]
+[<a name="Stoetzer2015"></a>]
+</td>
+<td class="bibtexitem">
+Lukas&nbsp;F Stoetzer and Steffen Zittlau.
+ Multidimensional Spatial Voting with Non-separable Preferences.
+ <em>Political Analysis</em>, 23:415-428, 2015.
+
+</td>
+</tr>
+</table><hr>
+
+<tr valign="top">
+<td align="right" class="bibtexnumber">
+[<a name="Stoetzer2015a"></a>]
 </td>
 <td class="bibtexitem">
 Lukas&nbsp;F. Stoetzer, Steffen Zittlau, Thomas Gschwend, and Tobias Witt.
@@ -69,19 +82,6 @@ Lukas&nbsp;F. Stoetzer, Steffen Zittlau, Thomas Gschwend, and Tobias Witt.
 </td>
 </tr>
 
-
-<tr valign="top">
-<td align="right" class="bibtexnumber">
-[<a name="Stoetzer2015">5</a>]
-</td>
-<td class="bibtexitem">
-Lukas&nbsp;F Stoetzer and Steffen Zittlau.
- Multidimensional Spatial Voting with Non-separable Preferences.
- <em>Political Analysis</em>, 23:415-428, 2015.
-
-</td>
-</tr>
-</table><hr>
 
 
 <h3>Book-reviews</h3>
