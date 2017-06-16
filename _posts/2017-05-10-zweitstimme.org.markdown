@@ -3,7 +3,7 @@ layout: post
 title:  "A Dynamic Forecasting Model for the 2017 German Federal Election"
 categories: posts
 author: Lukas
-image: assets/zweitstimme.png
+image: assets/zweitsimme.png
 type: Website, zweitstimme.org
 ---
 
