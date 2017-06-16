@@ -16,6 +16,19 @@ image:
 
 <tr valign="top">
 <td align="right" class="bibtexnumber">
+[<a name="Naumann2017">1</a>]
+</td>
+<td class="bibtexitem">
+Elias Naumann and Lukas&nbsp;F. Stoetzer.
+ Immigration and support for redistribution: survey experiments in
+  three European countries.
+ <em>West European Politics</em>, 2017.
+
+</td>
+</tr>
+
+<tr valign="top">
+<td align="right" class="bibtexnumber">
 [<a name="Stoetzer">2</a>]
 </td>
 <td class="bibtexitem">
