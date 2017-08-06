@@ -7,6 +7,8 @@ image: assets/bivn.jpg
 type: Workshop Simulation in R
 ---
 
+In this workshop we will learn how to use simulation to results from regression models.
+
 # Lecture
 [[Slides]](/assets/Lecture.pdf) 
 
