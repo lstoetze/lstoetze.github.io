@@ -3,7 +3,7 @@ layout: post
 title:  "Attitudes towards highly skilled and low-skilled immigration in Europe: A survey experiment in 15 European countries"
 categories: posts
 author: Lukas
-image: assets/2018-01-31-LowHighSkilled.png
+image: assets/2018-01-31_LowHighSkilled.png
 type: Publication, European Journal of Political Research
 ---
 
