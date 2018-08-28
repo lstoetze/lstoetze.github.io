@@ -3,7 +3,7 @@ layout: post
 title:  "Forecasting Elections in Multi-Party Systems: A Bayesian Approach Combining Polls and Fundamentals"
 categories: posts
 author: Lukas
-image: assets/2018-08-31-zweistimme.png
+image: assets/2018-08-31-zweitstimme.png
 type: Accepted Publication, Political Analysis 
 ---
 
