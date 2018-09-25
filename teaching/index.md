@@ -12,9 +12,14 @@ image:
 I taught statistics and research design courses at all levels of the undergraduate and postgraduate curriculum. I have trained postgraduate Master and fellow PhD students extensively in quantitative methods and modeling.
 
 ## Postgraduate
-
+- Lecture: Statistical models in political analysis. University of Zurich.
+2017,2018
+- Lecture: Applied Bayesian statistics for social scientists. University of Zurich with
+Marco Steenbergen. 2018
+Lecture: Advanced statistical models in political analysis. University of Zurich 2017
 - Lecture: Multivariate Analysis (English), University of Mannheim, 2011, 2013.
 - Lecture: Multivariate Analysis using R, University of Göttingen, 2012, 2013.
+- Seminar: The spatial logic of political behavior. University of Zurich 2017, 2018
 - Tutorial: Modeling Heterogeneity(English), Daniel Stegmüller, Essex Summer School, 2012.
 - Tutorial: Advanced Multivariate Analysis (English), Thomas Gschwend, University of Mannheim, 2012, 2013, 2014, 2015.
 - Tutorial: Multivariate Analysis (English), University of Mannheim, 2011, 2014.
