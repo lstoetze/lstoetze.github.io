@@ -3,7 +3,7 @@ layout: post
 title:  "Election fraud, digit tests and how humans fabricate vote counts - An experimental approach"
 categories: posts
 author: Lukas
-image: assets/2018-12-20-Fraud.png
+image: assets/2018-12-20-Fraud.jpg
 type: Accepted Publication, Electoral Studies 
 ---
 
