@@ -27,6 +27,7 @@ Verena Mack and Lukas&nbsp;F. Stoetzer.
 </td>
 </tr>
 
+<tr class="spacer"><td></td></tr>
 
 <tr valign="top">
 <td align="right" class="bibtexnumber">
@@ -41,6 +42,7 @@ Lukas&nbsp;F. Stoetzer, Thomas Gschwend, Marcel Neunhoeffer, Simon Munzert, and
 </td>
 </tr>
 
+<tr class="spacer"><td></td></tr>
 
 <tr valign="top">
 <td align="right" class="bibtexnumber">
@@ -55,6 +57,7 @@ Elias Naumann, Lukas F. Stoetzer, and Giuseppe Pietrantuono.
 </td>
 </tr>
 
+<tr class="spacer"><td></td></tr>
 
 <tr valign="top">
 <td align="right" class="bibtexnumber">
@@ -67,7 +70,7 @@ Elias Naumann and Lukas&nbsp;F. Stoetzer.
 
 </td>
 </tr>
-
+<tr class="spacer"><td></td></tr>
 
 <tr valign="top">
 <td align="right" class="bibtexnumber">
@@ -81,7 +84,7 @@ Lukas&nbsp;F. Stoetzer.
 
 </td>
 </tr>
-
+<tr class="spacer"><td></td></tr>
 
 <tr valign="top">
 <td align="right" class="bibtexnumber">
@@ -94,7 +97,7 @@ Thomas Gschwend, Michael&nbsp;F. Meffert, and Lukas&nbsp;F. Stoetzer.
 
 </td>
 </tr>
-
+<tr class="spacer"><td></td></tr>
 
 <tr valign="top">
 <td align="right" class="bibtexnumber">
@@ -108,7 +111,7 @@ Simon Munzert, Lukas&nbsp;F. Stoetzer, Thomas Gschwend, Marcel Neunhoeffer,
 
 </td>
 </tr>
-
+<tr class="spacer"><td></td></tr>
 
 <tr valign="top">
 <td align="right" class="bibtexnumber">
@@ -121,7 +124,7 @@ Thomas Gschwend, Lukas Stoetzer, and Steffen Zittlau.
 
 </td>
 </tr>
-
+<tr class="spacer"><td></td></tr>
 
 <tr valign="top">
 <td align="right" class="bibtexnumber">
@@ -133,7 +136,7 @@ Lukas&nbsp;F. Stoetzer and Steffen Zittlau.
 
 </td>
 </tr>
-
+<tr class="spacer"><td></td></tr>
 
 <tr valign="top">
 <td align="right" class="bibtexnumber">
