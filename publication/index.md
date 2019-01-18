@@ -17,6 +17,35 @@ image:
 
 <tr valign="top">
 <td align="right" class="bibtexnumber">
+[<a name="Risk2018">1</a>]
+</td>
+<td class="bibtexitem">
+Verena Mack and Lukas&nbsp;F. Stoetzer.
+ Election fraud, digit tests and how humans fabricate vote counts -
+  An experimental approach.
+ <em>Electoral Studies</em>, First View, 2018.
+
+</td>
+</tr>
+
+
+<tr valign="top">
+<td align="right" class="bibtexnumber">
+[<a name="Stoetzer2019">2</a>]
+</td>
+<td class="bibtexitem">
+Lukas&nbsp;F. Stoetzer, Thomas Gschwend, Marcel Neunhoeffer, Simon Munzert, and
+  Sebastian Sternberg.
+ Forecasting Elections in Multi-Party Systems: A Bayesian Approach
+  Combining Polls and Fundamentals.
+ <em>Political Analysis</em>, First View, 2018.
+
+</td>
+</tr>
+
+
+<tr valign="top">
+<td align="right" class="bibtexnumber">
 [<a name="NAUMANN2018">1</a>]
 </td>
 <td class="bibtexitem">
