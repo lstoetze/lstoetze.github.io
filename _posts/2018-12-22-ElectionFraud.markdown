@@ -4,7 +4,7 @@ title:  "Election fraud, digit tests and how humans fabricate vote counts - An e
 categories: posts
 author: Lukas
 image: assets/2018-12-20-Fraud.png
-type: Accepted Publication, Political Analysis 
+type: Accepted Publication, Electoral Studies 
 ---
 
 
