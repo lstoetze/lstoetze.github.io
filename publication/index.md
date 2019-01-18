@@ -17,7 +17,6 @@ image:
 
 <tr valign="top">
 <td align="right" class="bibtexnumber">
-[<a name="Risk2018">1</a>]
 </td>
 <td class="bibtexitem">
 Verena Mack and Lukas&nbsp;F. Stoetzer.
@@ -31,7 +30,6 @@ Verena Mack and Lukas&nbsp;F. Stoetzer.
 
 <tr valign="top">
 <td align="right" class="bibtexnumber">
-[<a name="Stoetzer2019">2</a>]
 </td>
 <td class="bibtexitem">
 Lukas&nbsp;F. Stoetzer, Thomas Gschwend, Marcel Neunhoeffer, Simon Munzert, and
@@ -46,7 +44,6 @@ Lukas&nbsp;F. Stoetzer, Thomas Gschwend, Marcel Neunhoeffer, Simon Munzert, and
 
 <tr valign="top">
 <td align="right" class="bibtexnumber">
-[<a name="NAUMANN2018">1</a>]
 </td>
 <td class="bibtexitem">
 Elias Naumann, Lukas F. Stoetzer, and Giuseppe Pietrantuono.
@@ -61,7 +58,6 @@ Elias Naumann, Lukas F. Stoetzer, and Giuseppe Pietrantuono.
 
 <tr valign="top">
 <td align="right" class="bibtexnumber">
-[<a name="Naumann2017">2</a>]
 </td>
 <td class="bibtexitem">
 Elias Naumann and Lukas&nbsp;F. Stoetzer.
@@ -75,7 +71,6 @@ Elias Naumann and Lukas&nbsp;F. Stoetzer.
 
 <tr valign="top">
 <td align="right" class="bibtexnumber">
-[<a name="Stoetzer">3</a>]
 </td>
 <td class="bibtexitem">
 Lukas&nbsp;F. Stoetzer.
@@ -90,7 +85,6 @@ Lukas&nbsp;F. Stoetzer.
 
 <tr valign="top">
 <td align="right" class="bibtexnumber">
-[<a name="Gschwend">4</a>]
 </td>
 <td class="bibtexitem">
 Thomas Gschwend, Michael&nbsp;F. Meffert, and Lukas&nbsp;F. Stoetzer.
@@ -104,7 +98,6 @@ Thomas Gschwend, Michael&nbsp;F. Meffert, and Lukas&nbsp;F. Stoetzer.
 
 <tr valign="top">
 <td align="right" class="bibtexnumber">
-[<a name="Munzert2017">5</a>]
 </td>
 <td class="bibtexitem">
 Simon Munzert, Lukas&nbsp;F. Stoetzer, Thomas Gschwend, Marcel Neunhoeffer,
@@ -119,7 +112,6 @@ Simon Munzert, Lukas&nbsp;F. Stoetzer, Thomas Gschwend, Marcel Neunhoeffer,
 
 <tr valign="top">
 <td align="right" class="bibtexnumber">
-[<a name="Gschwend2016">6</a>]
 </td>
 <td class="bibtexitem">
 Thomas Gschwend, Lukas Stoetzer, and Steffen Zittlau.
@@ -133,7 +125,6 @@ Thomas Gschwend, Lukas Stoetzer, and Steffen Zittlau.
 
 <tr valign="top">
 <td align="right" class="bibtexnumber">
-[<a name="Stoetzer2015">7</a>]
 </td>
 <td class="bibtexitem">
 Lukas&nbsp;F. Stoetzer and Steffen Zittlau.
@@ -146,7 +137,6 @@ Lukas&nbsp;F. Stoetzer and Steffen Zittlau.
 
 <tr valign="top">
 <td align="right" class="bibtexnumber">
-[<a name="Stoetzer2015a">8</a>]
 </td>
 <td class="bibtexitem">
 Lukas&nbsp;F. Stoetzer, Steffen Zittlau, Thomas Gschwend, and Tobias Witt.
