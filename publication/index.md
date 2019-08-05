@@ -12,9 +12,6 @@ image:
 
 <h3>Peer-reviewed</h3>
 
-
-<table cellspacing=”10″ cellpadding=”10″>
-
 <tr valign="top">
 <td align="right" class="bibtexnumber">
 </td>
@@ -48,9 +45,6 @@ Lukas&nbsp;F. Stoetzer, Thomas Gschwend, Marcel Neunhoeffer, Simon Munzert, and
   Sebastian Sternberg.
  Forecasting Elections in Multi-Party Systems: A Bayesian Approach
   Combining Polls and Fundamentals, 27(2): 255--262 2019.
-
-</td>
-</tr>
 
 </td>
 </tr>
