@@ -13,7 +13,18 @@ image:
 <h3>Peer-reviewed</h3>
 
 
-<table>
+<table cellspacing=”10″ cellpadding=”10″>
+
+<tr valign="top">
+<td align="right" class="bibtexnumber">
+</td>
+<td class="bibtexitem">
+Lukas&nbsp;F. Stoetzer and  Matthias Orlowski .
+Estimating coalition majorities during political campaigns based on pre-election polls
+ <em>Journal of Elections, Public Opinion and Parties</em>, First View, 2019.
+
+</td>
+</tr>
 
 <tr valign="top">
 <td align="right" class="bibtexnumber">
@@ -36,8 +47,25 @@ Verena Mack and Lukas&nbsp;F. Stoetzer.
 Lukas&nbsp;F. Stoetzer, Thomas Gschwend, Marcel Neunhoeffer, Simon Munzert, and
   Sebastian Sternberg.
  Forecasting Elections in Multi-Party Systems: A Bayesian Approach
-  Combining Polls and Fundamentals.
- <em>Political Analysis</em>, First View, 2018.
+  Combining Polls and Fundamentals, 27(2): 255--262 2019.
+
+</td>
+</tr>
+
+</td>
+</tr>
+
+<tr class="spacer"><td></td></tr>
+
+<tr valign="top">
+<td align="right" class="bibtexnumber">
+</td>
+<td class="bibtexitem">
+Lukas&nbsp;F. Stoetzer.
+ A matter of representation: spatial voting and inconsistent policy
+  preferences.
+ <em>British Journal of Political Science</em>, 49(3): 1--16, 2019. First
+  View.
 
 </td>
 </tr>
@@ -51,7 +79,7 @@ Lukas&nbsp;F. Stoetzer, Thomas Gschwend, Marcel Neunhoeffer, Simon Munzert, and
 Elias Naumann, Lukas F. Stoetzer, and Giuseppe Pietrantuono.
  Attitudes towards highly skilled and low-skilled immigration in
   Europe: A survey experiment in 15 European countries.
- <em>European Journal of Political Research</em>, pages 1--22, 2018.
+ <em>European Journal of Political Research</em>, 57(4):1--22, 2018.
   First View.
 
 </td>
@@ -68,22 +96,7 @@ Elias Naumann and Lukas&nbsp;F. Stoetzer.
   three European countries.
  <em>West European Politics</em>, 41(1):80--101, 2018.
 
-</td>
-</tr>
-<tr class="spacer"><td></td></tr>
 
-<tr valign="top">
-<td align="right" class="bibtexnumber">
-</td>
-<td class="bibtexitem">
-Lukas&nbsp;F. Stoetzer.
- A matter of representation: spatial voting and inconsistent policy
-  preferences.
- <em>British Journal of Political Science</em>, pages 1--16, 2017. First
-  View.
-
-</td>
-</tr>
 <tr class="spacer"><td></td></tr>
 
 <tr valign="top">
