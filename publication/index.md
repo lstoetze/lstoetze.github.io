@@ -13,6 +13,31 @@ image:
 <h3>Peer-reviewed</h3>
 
 <table>
+
+  <tr valign="top">
+<td class="bibtexitem">
+Marcel Neunhoeffer, Thomas Gschwend, Simon Munzert, and Lukas F. Stoetzer, 
+Eine Vor-hersage  von  Erststimmenergebnissen  bei  Bundestagswahlen
+ <em>Politische Vierteljahresschrift</em>, Accepted for Publication, 2019.
+</td>
+</tr>
+
+  <tr valign="top">
+<td class="bibtexitem">
+Dominic Nyhuis and  Lukas F. Stoetzer 
+The two faces of party ambiguity: A com-prehensive  model  of  ambiguous  party  position  perceptions.
+ <em>British Journal of Political Science</em>, Accepted for Publication, 2019.
+</td>
+</tr>
+
+<tr valign="top">
+<td class="bibtexitem">
+Lukas F. Stoetzer and  Steffen Zittlau.
+Vote Choice and the (Non)-Separability ofEconomic and Social Issues.
+ <em>Public Opinion Quarterly</em>, Accepted for Publication, 2019.
+</td>
+</tr>
+
 <tr valign="top">
 <td class="bibtexitem">
 Lukas&nbsp;F. Stoetzer and  Matthias Orlowski .
