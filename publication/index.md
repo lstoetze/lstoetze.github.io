@@ -29,14 +29,6 @@ Marcel Neunhoeffer, Thomas Gschwend, Simon Munzert, and Lukas F. Stoetzer, Eine 
 </td>
 </tr>
 
-<tr class="spacer"><td></td></tr>
-<tr class="spacer"><td></td></tr>
-
-  <tr valign="top">
-<td class="bibtexitem">
-Marcel Neunhoeffer, Thomas Gschwend, Simon Munzert, and Lukas F. Stoetzer. Eine Vorhersage  von  Erststimmenergebnissen  bei  Bundestagswahlen  <em>Politische Vierteljahresschrift</em>, Accepted for Publication, 2019.
-</td>
-</tr>
 
 <tr class="spacer"><td></td></tr>
 <tr class="spacer"><td></td></tr>

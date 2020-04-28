@@ -12,8 +12,6 @@ ual parties. However, parties do not only know if they won or lost in an electio
 
 Authors: Tarik Abou-Chadi and Lukas F. Stoetzer 
 
-
-
 Keywords: Electoral competition, party competition, voter transitions
 
 [[Open Access Version]](https://doi.org/10.1017/S0003055420000155) 
