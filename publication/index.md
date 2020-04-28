@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Publications
-modified: 2014-08-08T20:53:07.573882-04:00
+modified: 2020-04-08T20:53:07.573882-04:00
 comments: true
 share: false
 bio : true
@@ -20,23 +20,13 @@ Tarik Abou-Chadi and Lukas F. Stoetzer. How Parties React to Voter Transitions  
 </td>
 </tr>
 
-<tr class="spacer"><td></td></tr>
-<tr class="spacer"><td></td></tr>
-
-  <tr valign="top">
-<td class="bibtexitem">
-Marcel Neunhoeffer, Thomas Gschwend, Simon Munzert, and Lukas F. Stoetzer, Eine Vorhersage  von  Erststimmenergebnissen  bei  Bundestagswahlen  <em>Politische Vierteljahresschrift</em>, Accepted for Publication, 2019.
-</td>
-</tr>
-
 
 <tr class="spacer"><td></td></tr>
 <tr class="spacer"><td></td></tr>
 
   <tr valign="top">
 <td class="bibtexitem">
-Dominic Nyhuis and  Lukas F. Stoetzer. The two faces of party ambiguity: A com-prehensive  model  of  ambiguous  party  position  perceptions.
- <em>British Journal of Political Science</em>, Accepted for Publication, 2019.
+Dominic Nyhuis and  Lukas F. Stoetzer. The two faces of party ambiguity: A com-prehensive  model  of  ambiguous  party  position  perceptions. <em>British Journal of Political Science</em>, Accepted for Publication, 2019.
 </td>
 </tr>
 
@@ -56,9 +46,19 @@ Vote Choice and the (Non)-Separability ofEconomic and Social Issues.
 
 <tr valign="top">
 <td class="bibtexitem">
+Marcel Neunhoeffer, Thomas Gschwend, Simon Munzert, and Lukas F. Stoetzer, Eine Vorhersage  von  Erststimmenergebnissen  bei  Bundestagswahlen  <em>Politische Vierteljahresschrift</em>, Accepted for Publication, 2019.
+</td>
+</tr>
+
+
+<tr class="spacer"><td></td></tr>
+<tr class="spacer"><td></td></tr>
+
+<tr valign="top">
+<td class="bibtexitem">
 Lukas F. Stoetzer and  Matthias Orlowski .
 Estimating coalition majorities during political campaigns based on pre-election polls
- <em>Journal of Elections, Public Opinion and Parties</em>, First View, 2019.
+ <em>Journal of Elections, Public Opinion and Parties</em>, 30(1): 126--137, 2019.
 </td>
 </tr>
 
@@ -70,7 +70,7 @@ Estimating coalition majorities during political campaigns based on pre-election
 Verena Mack and Lukas&nbsp;F. Stoetzer.
  Election fraud, digit tests and how humans fabricate vote counts -
   An experimental approach.
- <em>Electoral Studies</em>, First View, 2018.
+ <em>Electoral Studies</em>, 58: 31--47, 2019.
 </td>
 </tr>
 
@@ -79,10 +79,9 @@ Verena Mack and Lukas&nbsp;F. Stoetzer.
 
 <tr valign="top">
 <td class="bibtexitem">
-Lukas&nbsp;F. Stoetzer, Thomas Gschwend, Marcel Neunhoeffer, Simon Munzert, and
-  Sebastian Sternberg.
+Lukas&nbsp;F. Stoetzer, Thomas Gschwend, Marcel Neunhoeffer, Simon Munzert, and  Sebastian Sternberg.
  Forecasting Elections in Multi-Party Systems: A Bayesian Approach
-  Combining Polls and Fundamentals, 27(2): 255--262 2019.
+  Combining Polls and Fundamentals, 27(2): 255--262, 2019.
 </td>
 </tr>
 
@@ -92,10 +91,7 @@ Lukas&nbsp;F. Stoetzer, Thomas Gschwend, Marcel Neunhoeffer, Simon Munzert, and
 <tr valign="top">
 <td class="bibtexitem">
 Lukas&nbsp;F. Stoetzer.
- A matter of representation: spatial voting and inconsistent policy
-  preferences.
- <em>British Journal of Political Science</em>, 49(3): 1--16, 2019. First
-  View.
+ A matter of representation: spatial voting and inconsistent policy preferences. <em>British Journal of Political Science</em>, 49(3): 1--16, 2019. 
 </td>
 </tr>
 
@@ -107,8 +103,7 @@ Lukas&nbsp;F. Stoetzer.
 Elias Naumann, Lukas F. Stoetzer, and Giuseppe Pietrantuono.
  Attitudes towards highly skilled and low-skilled immigration in
   Europe: A survey experiment in 15 European countries.
- <em>European Journal of Political Research</em>, 57(4):1--22, 2018.
-  First View.
+ <em>European Journal of Political Research</em>, 57(4):1009--1030, 2018.
 </td>
 </tr>
 
@@ -180,7 +175,7 @@ Lukas&nbsp;F. Stoetzer and Steffen Zittlau.
 <td class="bibtexitem">
 Lukas&nbsp;F. Stoetzer, Steffen Zittlau, Thomas Gschwend, and Tobias Witt.
  Leihstimmen in Bundestagswahljahr 2013.
- <em>Zeitschrift f&uuml;r Politische Psychologie</em>, (1):88--107,
+ <em>Zeitschrift f&uuml;r Politische Psychologie</em>, 1:88--107,
   2015.
 </td>
 </tr>
