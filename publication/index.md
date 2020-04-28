@@ -36,7 +36,7 @@ Dominic Nyhuis and  Lukas F. Stoetzer. The two faces of party ambiguity: A com-p
 <tr valign="top">
 <td class="bibtexitem">
 Lukas F. Stoetzer and  Steffen Zittlau.
-Vote Choice and the (Non)-Separability ofEconomic and Social Issues.
+Vote Choice and the (Non)-Separability of Economic and Social Issues.
  <em>Public Opinion Quarterly</em>, Accepted for Publication, 2019.
 </td>
 </tr>
@@ -81,7 +81,8 @@ Verena Mack and Lukas&nbsp;F. Stoetzer.
 <td class="bibtexitem">
 Lukas&nbsp;F. Stoetzer, Thomas Gschwend, Marcel Neunhoeffer, Simon Munzert, and  Sebastian Sternberg.
  Forecasting Elections in Multi-Party Systems: A Bayesian Approach
-  Combining Polls and Fundamentals, 27(2): 255--262, 2019.
+  Combining Polls and Fundamentals.
+ <em>Political Analysis</em>, 27(2): 255--262, 2019.
 </td>
 </tr>
 
