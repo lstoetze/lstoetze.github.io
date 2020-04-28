@@ -16,19 +16,40 @@ image:
 
   <tr valign="top">
 <td class="bibtexitem">
-Marcel Neunhoeffer, Thomas Gschwend, Simon Munzert, and Lukas F. Stoetzer, 
-Eine Vor-hersage  von  Erststimmenergebnissen  bei  Bundestagswahlen
- <em>Politische Vierteljahresschrift</em>, Accepted for Publication, 2019.
+Tarik Abou-Chadi and Lukas F. Stoetzer. How Parties React to Voter Transitions  <em>American Political Science Review</em>, Accepted for Publication, 2020.
 </td>
 </tr>
 
+<tr class="spacer"><td></td></tr>
+<tr class="spacer"><td></td></tr>
+
   <tr valign="top">
 <td class="bibtexitem">
-Dominic Nyhuis and  Lukas F. Stoetzer 
-The two faces of party ambiguity: A com-prehensive  model  of  ambiguous  party  position  perceptions.
+Marcel Neunhoeffer, Thomas Gschwend, Simon Munzert, and Lukas F. Stoetzer, Eine Vorhersage  von  Erststimmenergebnissen  bei  Bundestagswahlen  <em>Politische Vierteljahresschrift</em>, Accepted for Publication, 2019.
+</td>
+</tr>
+
+<tr class="spacer"><td></td></tr>
+<tr class="spacer"><td></td></tr>
+
+  <tr valign="top">
+<td class="bibtexitem">
+Marcel Neunhoeffer, Thomas Gschwend, Simon Munzert, and Lukas F. Stoetzer. Eine Vorhersage  von  Erststimmenergebnissen  bei  Bundestagswahlen  <em>Politische Vierteljahresschrift</em>, Accepted for Publication, 2019.
+</td>
+</tr>
+
+<tr class="spacer"><td></td></tr>
+<tr class="spacer"><td></td></tr>
+
+  <tr valign="top">
+<td class="bibtexitem">
+Dominic Nyhuis and  Lukas F. Stoetzer. The two faces of party ambiguity: A com-prehensive  model  of  ambiguous  party  position  perceptions.
  <em>British Journal of Political Science</em>, Accepted for Publication, 2019.
 </td>
 </tr>
+
+<tr class="spacer"><td></td></tr>
+<tr class="spacer"><td></td></tr>
 
 <tr valign="top">
 <td class="bibtexitem">
@@ -38,9 +59,12 @@ Vote Choice and the (Non)-Separability ofEconomic and Social Issues.
 </td>
 </tr>
 
+<tr class="spacer"><td></td></tr>
+<tr class="spacer"><td></td></tr>
+
 <tr valign="top">
 <td class="bibtexitem">
-Lukas&nbsp;F. Stoetzer and  Matthias Orlowski .
+Lukas F. Stoetzer and  Matthias Orlowski .
 Estimating coalition majorities during political campaigns based on pre-election polls
  <em>Journal of Elections, Public Opinion and Parties</em>, First View, 2019.
 </td>
