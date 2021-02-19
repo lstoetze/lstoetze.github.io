@@ -16,7 +16,7 @@ image:
 
   <tr valign="top">
 <td class="bibtexitem">
-Tarik Abou-Chadi and Lukas F. Stoetzer. How Parties React to Voter Transitions  <em>American Political Science Review</em>, Accepted for Publication, 2020.
+Lucas Leemann, Lukas F. Stoetzer, and Richard Traumüller. Eliciting Beliefs as Distributions in Online Surveys. <em>Political Analysis</em>, First View, 247–255, 2021.
 </td>
 </tr>
 
@@ -26,9 +26,49 @@ Tarik Abou-Chadi and Lukas F. Stoetzer. How Parties React to Voter Transitions  
 
   <tr valign="top">
 <td class="bibtexitem">
-Dominic Nyhuis and  Lukas F. Stoetzer. The two faces of party ambiguity: A com-prehensive  model  of  ambiguous  party  position  perceptions. <em>British Journal of Political Science</em>, Accepted for Publication, 2019.
+Simon Munzert, Peter Selb, Anita Gohdes, Lukas F. Stoetzer, and Will Lowe. Tracking and promoting the usage of a COVID-19 contact tracing app. <em>Nature Human Behaviour</em>,5, 247–255, 2021.
 </td>
 </tr>
+
+
+<tr class="spacer"><td></td></tr>
+<tr class="spacer"><td></td></tr>
+
+  <tr valign="top">
+<td class="bibtexitem">
+Korrina Lindemann and Lukas F. Stoetzer. The effect of televised candidate debates on the support for political parties. <em>Electoral Studies</em>, 9, 102243, 2021.
+</td>
+</tr>
+
+
+
+<tr class="spacer"><td></td></tr>
+<tr class="spacer"><td></td></tr>
+
+  <tr valign="top">
+<td class="bibtexitem">
+Dominic Nyhuis and  Lukas F. Stoetzer. The two faces of party ambiguity: A com-prehensive  model  of  ambiguous  party  position  perceptions. <em>British Journal of Political Science</em>, First View, 1 -18, 2020.
+</td>
+</tr>
+
+<tr class="spacer"><td></td></tr>
+<tr class="spacer"><td></td></tr>
+
+  <tr valign="top">
+<td class="bibtexitem">
+Tarik Abou-Chadi and Lukas F. Stoetzer. How Parties React to Voter Transitions  <em>American Political Science Review</em>, 114(3), 940-945, 2020.
+</td>
+</tr>
+
+<tr class="spacer"><td></td></tr>
+<tr class="spacer"><td></td></tr>
+
+  <tr valign="top">
+<td class="bibtexitem">
+Oke Bahnsen, Thomas Gschwend, and  Lukas F. Stoetzer. How do Coalition Signals Shape Voting Behavior? Testing Different Mechanisms Linking Coalition Signals and Voters' Electoral Behavior. <em>Electoral Studies</em>, 66, 102-166, 2020.
+</td>
+</tr>
+
 
 <tr class="spacer"><td></td></tr>
 <tr class="spacer"><td></td></tr>
@@ -37,7 +77,7 @@ Dominic Nyhuis and  Lukas F. Stoetzer. The two faces of party ambiguity: A com-p
 <td class="bibtexitem">
 Lukas F. Stoetzer and  Steffen Zittlau.
 Vote Choice and the (Non)-Separability of Economic and Social Issues.
- <em>Public Opinion Quarterly</em>, Accepted for Publication, 2019.
+ <em>Public Opinion Quarterly</em>, 84(1), 158-170, 2020.
 </td>
 </tr>
 
@@ -46,7 +86,7 @@ Vote Choice and the (Non)-Separability of Economic and Social Issues.
 
 <tr valign="top">
 <td class="bibtexitem">
-Marcel Neunhoeffer, Thomas Gschwend, Simon Munzert, and Lukas F. Stoetzer, Eine Vorhersage  von  Erststimmenergebnissen  bei  Bundestagswahlen  <em>Politische Vierteljahresschrift</em>, Accepted for Publication, 2019.
+Marcel Neunhoeffer, Thomas Gschwend, Simon Munzert, and Lukas F. Stoetzer, Eine Vorhersage  von  Erststimmenergebnissen  bei  Bundestagswahlen  <em>Politische Vierteljahresschrift</em>, 61, 111-130. 2020.
 </td>
 </tr>
 
