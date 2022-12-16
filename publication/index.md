@@ -10,7 +10,9 @@ image:
 ---
 
 
-Please find a (more) up-to-date Publication Overview on my !(Google Scholar Profil)[https://scholar.google.com/citations?user=y1V_dy0AAAAJ&hl=de]
+Please find a (more) up-to-date Publication Overview on my 
+<a href="https://scholar.google.com/citations?user=y1V_dy0AAAAJ&hl=de">Google Scholar Profil</a>
+
 
 
 <h3>Peer-reviewed</h3>
