@@ -10,9 +10,76 @@ image:
 ---
 
 
+Please find a (more) up-to-date Publication Overview on my !(Google Scholar Profil)[https://scholar.google.com/citations?user=y1V_dy0AAAAJ&hl=de]
+
+
 <h3>Peer-reviewed</h3>
 
 <table>
+
+<tr valign="top">
+<td class="bibtexitem">
+Garret Binding and Lukas F. Stoetzer. Non-separable Preferences in the Statistical
+Analysis of Roll Call Votes. Political Analysis, First-View, 1-14, 2022.
+</td>
+</tr>
+
+<tr class="spacer"><td></td></tr>
+<tr class="spacer"><td></td></tr>
+
+<tr valign="top">
+<td class="bibtexitem">
+Lukas F. Stoetzer, Simon Munzert, Will Lowe, Anita Gohdes, Basak Cali, Marc Helbling, Rahsaan
+Maxwell, Richard Traunmueller. Affective Partisan Polarization and
+Moral Dilemmas during the COVID-19 Pandemic. Political Science Research
+and Methods, First-View, 1 - 8, 2022.
+</td>
+</tr>
+
+<tr class="spacer"><td></td></tr>
+<tr class="spacer"><td></td></tr>
+
+<tr valign="top">
+<td class="bibtexitem">
+Lukas F. Stoetzer, Lucas Leemann, and Richard Traunmüller. Learning from Polls
+during Electoral Campaigns. Political Behaviour. First View, 2022
+</td>
+</tr>
+
+<tr class="spacer"><td></td></tr>
+<tr class="spacer"><td></td></tr>
+
+
+<tr valign="top">
+<td class="bibtexitem">
+Simon Munzert, Sebastian Ramirez-Ruiz , Basak Çalı, Lukas F. Stoetzer, Anita Gohdes, and Will Lowe. Prioritization preferences for COVID-19 vaccination are consistent across five
+countries. Humanities and Social Sciences Communications 9, 439, 2022
+</td>
+</tr>
+
+<tr class="spacer"><td></td></tr>
+<tr class="spacer"><td></td></tr>
+
+<tr valign="top">
+<td class="bibtexitem">
+Denise Traber, Lukas F. Stoetzer,and Tanja Burri. Group-based Public Opinion
+Polarization in Multi-Party Systems. West European Politics, First View, 1-26, 2022
+</td>
+</tr>
+
+<tr class="spacer"><td></td></tr>
+<tr class="spacer"><td></td></tr>
+
+
+  <tr valign="top">
+<td class="bibtexitem">
+Gschwend, Thomas, Klara Mueller, Simon Munzert, Marcel Neunhoeffer, and Lukas F. Stoetzer. The Zweitstimme Model: A Dynamic Forecast of the 2021 German
+Federal Election PS: Political Science & Politics, 55(1), 85-90, 2022
+</td>
+</tr>
+
+<tr class="spacer"><td></td></tr>
+<tr class="spacer"><td></td></tr>
 
   <tr valign="top">
 <td class="bibtexitem">
