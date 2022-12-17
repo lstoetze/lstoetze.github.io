@@ -6,7 +6,7 @@ subtitle: <a href='#'>Professor of Quantative Methods, Research in Political Beh
 
 profile:
   align: left
-  image: 04640001.JPG
+  image: prof_pic.jpg
   image_circular: false # crops the image to make it circular
 
 
