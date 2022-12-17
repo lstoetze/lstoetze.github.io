@@ -242,9 +242,8 @@ display_tags: ['formatting', 'images', 'links', 'math', 'code'] # this tags will
 # -----------------------------------------------------------------------------
 
 scholar:
-
-  last_name: [Stoetzer]
-  first_name: [Lukas, F.]
+  last_name: ["Stoetzer","Stötzer"]
+  first_name: ["Lukas, F", "Lukas","Lukas F."]
 
   style: apa
   locale: en
