@@ -1,5 +1,5 @@
 "Gohdes":
-  - firstname: ["Anita", "Anita R.", "Anita Rosmary"]
+  - firstname: ["Anita", "Anita R.","Anita R","Anita Rosmary"]
     url: https://www.anitagohdes.net/
 
 "Munzert":
@@ -13,3 +13,83 @@
 "Lowe":
   - firstname: ["Will"]
     url: https://conjugateprior.org/
+
+"Abou-Chadi":
+  - firstname: ["Tarik"]
+    url: https://www.tarikabouchadi.net/
+
+"Selb":
+  - firstname: ["Peter"]
+    url: https://www.polver.uni-konstanz.de/cdm/people/faculty/selb/
+
+"Traunmüller":
+  - firstname: ["Richard"]
+    url: https://www.richardtraunmueller.com/
+
+"Traunmueller":
+  - firstname: ["Richard"]
+    url: https://www.richardtraunmueller.com/
+
+"Gschwend":
+  - firstname: ["Thomas"]
+    url: https://www.sowi.uni-mannheim.de/gschwend/
+
+"Neunhoeffer":
+  - firstname: ["Marcel"]
+    url: https://www.marcel-neunhoeffer.com/
+
+"Binding":
+  - firstname: ["Garret"]
+    url: https://www.ipz.uzh.ch/de/institut/mitarbeitende/staff/binding.html
+
+"Traber":
+  - firstname: ["Denise"]
+    url: https://denisetraber.net/
+
+"Ramirez-Ruiz":
+  - firstname: ["Sebastian"]
+    url: https://seramirezruiz.github.io/
+
+"Nyhuis":
+  - firstname: ["Dominic"]
+    url: https://dominicnyhuis.com/
+
+"Lindemann":
+  - firstname: ["Korinna"]
+    url: https://korinnalindemann.github.io/
+
+"Giesecke":
+  - firstname: ["Johannes"]
+    url: https://www.sowi.hu-berlin.de/de/lehrbereiche/empisoz/a-z/giesecke
+
+"Zittlau":
+  - firstname: ["Steffen"]
+    url: http://www.statistikr.net/about/
+
+"Bahnsen":
+  - firstname: ["Oke"]
+    url: https://obahnsen.com/
+
+"Adendorf":
+  - firstname: ["Anna"]
+    url: https://www.mzes.uni-mannheim.de/d7/de/profiles/anna-adendorf
+
+"Naumann":
+  - firstname: ["Elias"]
+    url: http://www.eliasnaumann.de/
+
+"Pietrantuono":
+  - firstname: ["Giuseppe"]
+    url: https://www.pietrantuono.net/
+
+"Meffert":
+  - firstname: ["Michael F", "Michael", "Michael F."]
+    url: http://www.michaelmeffert.net/
+
+"Sterberg":
+  - firstname: ["Sebastian"]
+    url: https://sebastiansternberg.github.io/
+
+"Orlowski":
+  - firstname: ["Matthias"]
+    url: https://de.linkedin.com/in/orlowsma?original_referer=
