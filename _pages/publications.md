@@ -13,7 +13,7 @@ Peer-reviewed Journal Articles
 
 {%- for y in page.years %}
   <h2 class="year">{{y}}</h2>
-  {% bibliography -f papers -q @*[year={{y}}]* %}
+  {% bibliography -f papers -q @*[year={{y}}]* @*[status=published] %}
 {% endfor %}
 
 </div>
