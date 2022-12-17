@@ -86,7 +86,7 @@
   - firstname: ["Michael F", "Michael", "Michael F."]
     url: http://www.michaelmeffert.net/
 
-"Sterberg":
+"Sternberg":
   - firstname: ["Sebastian"]
     url: https://sebastiansternberg.github.io/
 
@@ -109,3 +109,7 @@
 "Klüver":
   - firstname: ["Heike"]
     url: http://www.heike-kluever.com/
+
+"Mack":
+  - firstname: ["Verena"]
+    url: https://ch.linkedin.com/in/verena-mack-2b8866211
