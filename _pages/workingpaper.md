@@ -10,6 +10,9 @@ nav_order: 1
 <!-- _pages/publications.md -->
 <div class="publications">
 
+<h2> revise and resubmit </h2>
+{% bibliography -f papers -q @*[status=rar] %}
+
 <h2> under review </h2>
 {% bibliography -f papers -q @*[status=review] %}
 
