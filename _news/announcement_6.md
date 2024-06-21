@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2023-10-24 07:59:00-0400
-title: Two Publications in Electoral Stduies
+title: Two Publications in Electoral Studies
 inline: false
 redirect: https://doi.org/10.1177/20531680231183512
 ---
