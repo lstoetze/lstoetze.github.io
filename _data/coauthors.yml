@@ -197,3 +197,32 @@
 "Huber":
   - firstname: ["Lena"]
     url: https://lenamariahuber.eu/
+
+"Bogatyrev":
+  - firstname: ["Konstantin"]  
+    url:  https://sites.google.com/view/konstantin-bogatyrev/
+
+"Blossey":
+  - firstname: ["Nils"]
+    url: https://cccp.uni-koeln.de/de/team/doctoral-researchers/nils-blossey
+
+"Haffert":
+  - firstname: ["Lukas"]
+    url: https://lukashaffert.com/
+
+"Hartmann":
+  - firstname: ["Felix"]
+    url: https://hartmannfelix.github.io/
+
+"Bischof":
+  - firstname: ["Daniel"]
+    url: https://www.danbischof.com/
+
+"Geißler":
+  - firstname: ["Ferdinand"]
+    url: https://www.sowi.hu-berlin.de/de/lehrbereiche/empisoz/a-z/geisslerferdinand
+
+"Humphreys":
+  - firstname: ["Macartan"]
+    url: https://macartan.github.io/
+
