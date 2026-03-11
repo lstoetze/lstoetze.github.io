@@ -4,9 +4,9 @@
 % RaR
 
 @techreport{bogatyrev2024,
-  title        = {Synthetic Control Methods for Proportions},
+  title        = {Estimating Treatment Effects on Proportions with Synthetic Controls},
   author       = {Bogatyrev, Konstantin and Stoetzer, Lukas F.},
-  year         = {2024},
+  year         = {2026},
   institution  = {OSF Preprints, Center for Open Science},
   type         = {Preprint},
   status={rar},
@@ -14,10 +14,10 @@
   doi          = {10.31219/osf.io/brhd3},
   url          = {https://osf.io/preprints/osf/brhd3},
   preview = {wp_psdid.png},
-  abstract = {Synthetic control methods are widely used for causal inference in case studies and panel data settings, often applied to model counterfactuals for proportional outcomes. However, conventional synthetic control methods are designed for univariate outcomes, leading researchers to model counterfactuals for each proportion separately.  We propose an extension to synthetic control methods to simultaneously handle multivariate outcomes in compositional data.  Our approach establishes constant control comparisons by using the same weights for each proportion,  improving comparability while adhering to treatment constraints.  We illustrate the benefits of our method through a simulation and an empirical application to a recent study on climate policy effects in the 2019 Spanish general election.  This advancement extends the validity and reliability of synthetic control estimates to common outcomes in political science}
+  abstract = {Synthetic control methods are widely used for causal inference in case studies and panel data settings, often applied to model counterfactuals for proportional outcomes. However, conventional synthetic control methods are designed for univariate outcomes, leading researchers to model counterfactuals for each proportion separately. We make the case for jointly estimating synthetic controls across multiple compositional outcomes. Using the same weights for each proportion establishes a constant control comparison, improving comparability while adhering to important treatment constraints. We illustrate the benefits of the method through a simulation and two applications to recent empirical studies. This ForestGreen implementation integrates naturally with a wide range of synthetic control approaches, providing interpretable estimates for compositional panel data common in political science.}
 }
 
-
+ 
 @techreport{blossey_haffert_stoetzer_2025_coal_rush,
   bibtex_show={true},
   status={review},
@@ -123,7 +123,7 @@ bibtex_show={true},
   author = {Anna Adendorf and  Oke Bahnsen and   Thomas Gschwend and  Lena Huber and   Simone Paolo Ponzetto and   Ines Rehbein and   Lukas F. Stoetzer
   },
   status={published},
-  preview={psrm2.png},
+  preview={psrm2.jpg},
   doi={https://doi.org/10.1017/psrm.2026.10094}, journal={Political Science Research and Methods},
   title={Measuring Inter-party Communication: A transformer-based approach},
   abstract={Inter-party communication is crucial in representative democracies, enabling information exchange and dialogue among political parties. Despite its importance, research on this topic remains limited due to a lack of comprehensive conceptualization and challenges in large-scale measurement. This article proposes a holistic definition of inter-party communication as public communication by parties about others with a positive, neutral, or negative stance, focusing on collaboration, policy, or personal issues. To effectively measure inter-party communication, we introduce a novel transfer learning approach capable of automatically classifying large volumes of textual data. Two case studies on coalition signals in Germany and negative campaigning in Austria demonstrate its effectiveness. The study contributes to our understanding of political discourse and the dynamics of party competition. Our approach advances automatic text classification methodologies and opens new avenues for studying political communication.},
