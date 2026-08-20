@@ -1,26 +1,12 @@
 ---
 ---
 
-% RaR
+% Conditionally Accepted
 
-@techreport{bogatyrev2024,
-  title        = {Estimating Treatment Effects on Proportions with Synthetic Controls},
-  author       = {Bogatyrev, Konstantin and Stoetzer, Lukas F.},
-  year         = {2026},
-  institution  = {OSF Preprints, Center for Open Science},
-  type         = {Preprint},
-  status={rar},
-  impact={1},
-  doi          = {10.31219/osf.io/brhd3},
-  url          = {https://osf.io/preprints/osf/brhd3},
-  preview = {wp_psdid.png},
-  abstract = {Synthetic control methods are widely used for causal inference in case studies and panel data settings, often applied to model counterfactuals for proportional outcomes. However, conventional synthetic control methods are designed for univariate outcomes, leading researchers to model counterfactuals for each proportion separately. We make the case for jointly estimating synthetic controls across multiple compositional outcomes. Using the same weights for each proportion establishes a constant control comparison, improving comparability while adhering to important treatment constraints. We illustrate the benefits of the method through a simulation and two applications to recent empirical studies. This ForestGreen implementation integrates naturally with a wide range of synthetic control approaches, providing interpretable estimates for compositional panel data common in political science.}
-}
-
- 
 @techreport{blossey_haffert_stoetzer_2025_coal_rush,
   bibtex_show={true},
-  status={review},
+  status={condaccept},
+  journal      = {American Journal of Political Science},
   title        = {Coal Rush: The Built Legacy of the Industrial Revolution and the Rise of the Radical Right},
   author       = {Blossey, Nils and Haffert, Lukas and Stoetzer, Lukas F},
   year         = {2025},
@@ -37,7 +23,32 @@
 
 
 
+% RaR
+
+@article{stoetzer_bahnsen_2026_breaking,
+  title        = {Breaking Pre-electoral Coalition Commitments: Electoral Accountability and Satisfaction with Democracy},
+  author       = {Stoetzer, Lukas F. and Bahnsen, Oke},
+  year         = {2026},
+  status       = {rar},
+  impact       = {2},
+  preview      = {wp_placeholder.png},
+  abstract     = {Pre-electoral coalition signals are widely seen as essential for democratic accountability in proportional representation systems, as they help voters anticipate post-electoral governments. Among these, pre-electoral coalition commitments to enter or rule out specific coalitions provide particularly strong guidance to voters. However, we know little about how citizens react when parties violate such commitments. We argue that while electoral punishment for breaking coalition commitments is context-dependent, such violations reduce satisfaction with democracy more broadly. We test this claim using a quasi-experimental analysis of the 1996 New Zealand election and a survey experiment conducted during the 2020 Irish government formation process. We find that violations of coalition commitments consistently reduce democratic satisfaction, whereas electoral punishment of the violating party appears only in the survey experiment and depends on voters’ preferences over the coalition outcome. These results show how violations of informal institutional commitments can undermine democratic support even in the absence of strong electoral sanctions.}
+}
+
+
+
 % Under Review
+
+@article{koch_munzert_hagemann_rajski_gschwend_erfort_stoetzer_2026_visual,
+  title        = {Visual presentation raises trust in election polls},
+  author       = {Koch, Elias and Munzert, Simon and Hagemann, Linus and Rajski, Hannah and Gschwend, Thomas and Erfort, Cornelius and Stoetzer, Lukas F.},
+  year         = {2026},
+  status       = {review},
+  impact       = {2},
+  preview      = {wp_placeholder.png},
+  abstract     = {Opinion polls are central to voters' understanding of electoral competition, shaping expectations, strategic choices, and turnout. But how the news media present polls varies widely, and whether that presentation shapes public perception is largely unknown. We conducted a visual conjoint experiment with 23,444 participants during the 2025 German federal election campaign, randomly varying the visual format and technical content of the same poll report across 160 versions. Visual formats, including bar charts, dot plots, and line graphs, were consistently perceived as more appealing and trustworthy than text-only reports. The trust gains were largest among participants with lower data and visualization literacy and less accurate prior beliefs about the poll standings, whereas the appeal of visualization was greatest among the most literate. Technical features mattered less and not always favorably: disclosing statistical uncertainty reduced the perceived attractiveness of a report, while reference values shifted trust depending on the benchmark used. These findings suggest that visual reporting holds consistent advantages over the text-only format that still dominates poll reporting in the news media, particularly for audiences who struggle most to interpret quantitative information.}
+}
+
 @techreport{haas_wappenhans_geissler_etal_2024_protest_bystanders,
   title        = {Beyond Persuasion: Protest’s Direct Behavioral Impact on Bystanders},
   author       = {Haas, Violeta and Wappenhans, Tim and Geißler, Ferdinand and Hartmann, Felix and Bischof, Daniel and Giesecke, Johannes and Humphreys, Macartan and Klüver, Heike and Stoetzer, Lukas F.},
@@ -100,20 +111,68 @@ bibtex_show={true},
   title        = {Measuring Attribute Relevance in Conjoint Analysis},
   author       = {Stoetzer, Lukas F. and Asya Magazinnik},
   status={conf},
-  preview={wp_con.png},
+  preview={wp_placeholder.png},
   year         = {2026},
   type         = {Preprint},
   number       = {h5prv\_v1},
-  abstract     = {Researchers often rely on conjoint analysis to examine which attributes are most relevant for selecting a profile. However, standard estimands are not well suited to assess the relevance of attributes. In this paper, we introduce a novel approach to measuring attribute relevance in conjoint analyses by drawing on causal attribution methods. We propose the Average Probability of Necessary and Sufficient conditions (APNS) as a new estimand that captures the probability that a change in an attribute level is both necessary and sufficient for a decision. We show that under a set of assumptions related to monotonicity and separability, the APNS can be identified nonparametrically as a function of the widely used Average Marginal Component Effect (AMCE). Using simulations and applications to two conjoint experiments, we demonstrate how the APNS provides a nuanced measure of attribute relevance in decision-making. The APNS is highly correlated with respondents’ subjective issue importance measures, supporting its validity as a tool for examining the role of attribute relevance in choice behavior.}  
+  abstract     = {Researchers often rely on conjoint analysis to examine which attributes are most relevant for selecting a profile. However, standard estimands are not well suited to assess the relevance of attributes. In this paper, we introduce a novel approach to measuring attribute relevance in conjoint analyses by drawing on causal attribution methods. We propose the Average Probability of Necessary and Sufficient conditions (APNS) as a new estimand that captures the probability that a change in an attribute level is both necessary and sufficient for a decision. We show that under a set of assumptions related to monotonicity and separability, the APNS can be identified nonparametrically as a function of the widely used Average Marginal Component Effect (AMCE). Using simulations and applications to two conjoint experiments, we demonstrate how the APNS provides a nuanced measure of attribute relevance in decision-making. The APNS is highly correlated with respondents’ subjective issue importance measures, supporting its validity as a tool for examining the role of attribute relevance in choice behavior.}
+}
+
+
+@article{stoetzer_erfort_2026_stacking,
+  title        = {Stacking Election Forecasts},
+  author       = {Stoetzer, Lukas F. and Erfort, Cornelius},
+  status       = {conf},
+  preview      = {wp_placeholder.png},
+  year         = {2026},
+  impact       = {2},
+  abstract     = {Accurately predicting election outcomes is challenging due to model uncertainty, limited data availability, and the sequential nature of electoral prediction. While election forecasting increasingly relies on diverse models that combine different theories, predictors, and data sources, forecasts are still commonly treated as a competition among individual models rather than combined into ensemble forecasts. We propose the use of stacking weights, computed from leave-future-out predictive performance, to systematically combine forecasts from different election forecasting models. Our framework accounts for model uncertainty, the complete predictive distribution and weights forecasts according to their past predictive performance. We demonstrate the approach using applications to U.S. presidential elections and German federal elections. The results show that stacked forecasts improve on individual and alternative ensemble models in terms of predictive density of the realized outcomes.}
+}
+
+@article{stoetzer_rajski_2026_precision,
+  title        = {Precision-Weighted Aggregation of Citizen Election Forecasts},
+  author       = {Stoetzer, Lukas F. and Rajski, Hannah},
+  status       = {conf},
+  preview      = {wp_placeholder.png},
+  year         = {2026},
+  impact       = {2},
+  abstract     = {Citizen forecasts aggregate individuals’ electoral expectations to predict election outcomes, typically weighting all respondents equally and implicitly assuming homogeneous forecast quality. Yet forecasting accuracy varies across individuals, suggesting that weighting more capable forecasters more heavily could improve performance. Existing weighting approaches, however, rely on information about forecasters, such as political knowledge or past accuracy, and therefore require historical data. We propose an elicitation-based approach that weights forecasts by respondents’ subjective precision. We derive oracle weights that minimize the mean squared error of weighted vote-share forecasts and show that a set of feasible precision-based weights can approximate them. To estimate precision directly, we introduce Manski-style elicitation questions that collect both expected vote shares and subjective uncertainty assessments. Using original pre-election survey data from approximately 14,600 eligible voters in the 2025 German federal election, we forecast seven parties’ vote shares nationally and across 299 electoral districts. Nationally, precision weighting reduces RMSE from 1.39 to 0.95 percentage points. In district-level forecasts, additional corrections for overconfidence yield the largest improvements, although gains are more modest.}
+}
+
+@article{stoetzer_koch_gschwend_2026_coordination,
+  title        = {Coordination Spirals in Proportional Elections},
+  author       = {Stoetzer, Lukas F. and Koch, Elias and Gschwend, Thomas},
+  status       = {conf},
+  preview      = {wp_placeholder.png},
+  year         = {2026},
+  impact       = {2},
+  abstract     = {Fragmentation in proportional representation (PR) systems is often seen as a source of difficulties for government formation and electoral accountability. What can hold these party systems together? We argue that PR also contains an inherent coordination mechanism that concentrates competition on the two leading parties. When polls signal a close race at the top, and both parties hold balanced potentials in the electorate, voters shift support away from smaller parties toward the frontrunners, thereby reducing party system fragmentation. We show formally that when voters derive utility from which party wins, equilibrium behavior exhibits a coordination spiral in close contests: strategic voting feeds back into greater concentration on the top two. We test this argument in two studies. First, linking pre-election polls to outcomes across 320 PR elections, we find that the combined top-two vote share rises by up to 10 percentage points in close races, with effects emerging roughly two to four weeks before election day. Second, panel data from the 2021 German campaign — a close and balanced race — show that the same dynamic operates at the individual level. Together, these findings reveal a previously underappreciated stabilizing force that arises endogenously from electoral competition in proportional systems.}
 }
 
 
 
 
 
-
-
 % Published
+
+@article{bogatyrev2024,
+  bibtex_show  = {true},
+  status       = {published},
+  title        = {Estimating Treatment Effects on Proportions with Synthetic Controls},
+  author       = {Bogatyrev, Konstantin and Stoetzer, Lukas F.},
+  year         = {2026},
+  journal      = {Political Analysis},
+  volume       = {First View},
+  pages        = {1--17},
+  impact       = {1},
+  doi          = {10.1017/pan.2026.10046},
+  website      = {https://doi.org/10.1017/pan.2026.10046},
+  publisher    = {Cambridge University Press},
+  selected     = {true},
+  preview      = {pa.jpg},
+  abstract = {Synthetic control methods are widely used for causal inference in case studies and panel data settings, often applied to model counterfactuals for proportional outcomes. However, conventional synthetic control methods are designed for univariate outcomes, leading researchers to model counterfactuals for each proportion separately. We make the case for jointly estimating synthetic controls across multiple compositional outcomes. Using the same weights for each proportion establishes a constant control comparison, improving comparability while adhering to important treatment constraints. We illustrate the benefits of the method through a simulation and two applications to recent empirical studies. This implementation integrates naturally with a wide range of synthetic control approaches, providing interpretable estimates for compositional panel data common in political science.}
+}
+
 
 @article{adendorf2014,
   bibtex_show={true},
@@ -328,6 +387,7 @@ bibtex_show={true},
   journal={Journal of Politics},
   preview={jop2.png},
   volume={First View},
+  selected={true},
   website={https://doi.org/10.1086/736445},
   abstract={When voters support parties in multi-party democracies, it is often uncertain what coalition government the party will join.  How do voters deal with the lack of clarity in parties' coalition government prospects? We develop a novel conceptualization of coalition-directed voting to study the effects of this type of uncertainty. We present observational and experimental evidence that supports the idea that voters are risk-averse when considering coalition government options. Observational survey analyses show that the perception of uncertain coalition prospects negatively affects the propensity to vote for such a party, even when holding the expected coalition government payoffs constant. Using a survey vignette experiment, we provide causal evidence that uncertain coalition prospects reduce the propensity to support a party, compared to certain coalition prospects given the same expected coalition government payoffs. Together, these findings provide  insights for our understanding of party competition and parties’ coalition strategies.}
 }
@@ -610,7 +670,6 @@ bibtex_show={true},
   pages={541--553},
   year={2021},
   publisher={Cambridge University Press},
-  selected={true},
   code={https://doi.org/10.7910/DVN/GEC2LS},
   abstract={Citizens’ beliefs about uncertain events are fundamental variables in many areas of political science. While beliefs are often conceptualized in the form of distributions, obtaining reliable measures in terms of full probability densities is a difficult task. In this letter, we ask if there is an effective way of eliciting beliefs as distributions in the context of online surveys. Relying on experimental evidence, we evaluate the performance of five different elicitation methods designed to capture citizens’ uncertain expectations. Our results suggest that an elicitation method originally proposed by Manski (2009) performs well. It measures average citizens’ subjective belief distributions reliably and is easily implemented in the context of regular (online) surveys. We expect that a wider use of this method will lead to considerable improvements in the study of citizens’ expectations and beliefs.}
 }

@@ -10,6 +10,9 @@ nav_order: 1
 <!-- _pages/publications.md -->
 <div class="publications">
 
+<h2> conditionally accepted </h2>
+{% bibliography -f papers -q @*[status=condaccept] %}
+
 <h2> revise and resubmit </h2>
 {% bibliography -f papers -q @*[status=rar] %}
 
