@@ -194,9 +194,9 @@
             {%- assign entry_doi = entry.website | split: "doi.org/" | last -%}
           {%- endif -%}
           {%- if entry.altmetric %}
-            <script type="text/javascript" src="https://d1bxh8uas1mnw7.cloudfront.net/assets/embed.js"></script><div data-altmetric-id="{{ entry.altmetric }}" class="altmetric-embed" data-hide-no-mentions="true" data-hide-less-than="15" data-badge-popover="right" data-badge-type="2" style="display:inline"></div>
+            <script type="text/javascript" src="https://d1bxh8uas1mnw7.cloudfront.net/assets/embed.js"></script><div data-altmetric-id="{{ entry.altmetric }}" class="altmetric-embed" data-badge-popover="right" data-badge-type="2" style="display:inline"></div>
           {%- elsif entry_doi %}
-            <script type="text/javascript" src="https://d1bxh8uas1mnw7.cloudfront.net/assets/embed.js"></script><div data-doi="{{ entry_doi }}" class="altmetric-embed" data-hide-no-mentions="true" data-hide-less-than="15" data-badge-popover="right" data-badge-type="2" style="display:inline"></div>
+            <script type="text/javascript" src="https://d1bxh8uas1mnw7.cloudfront.net/assets/embed.js"></script><div data-doi="{{ entry_doi }}" class="altmetric-embed" data-badge-popover="right" data-badge-type="2" style="display:inline"></div>
           {%- endif %}
           </div>
 
