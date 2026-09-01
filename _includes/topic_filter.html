@@ -1,0 +1,8 @@
+{% if page.topics %}
+  <div class="topic-filter" id="topic-filter">
+    <button type="button" class="topic-filter-btn active" data-topic="all">All</button>
+    {%- for topic in page.topics %}
+    <button type="button" class="topic-filter-btn" data-topic="{{ topic | slugify }}">{{ topic }}</button>
+    {%- endfor %}
+  </div>
+{% endif %}

@@ -55,27 +55,8 @@ document.addEventListener("DOMContentLoaded", function () {
     return nonMatchingElements;
   };
 
-  var filterItems = function (searchTerm) {
-    document.querySelectorAll(".bibliography, .unloaded").forEach(function (element) {
-      element.classList.remove("unloaded");
-    });
-
-    if (CSS.highlights) {
-      var nonMatchingElements = highlightSearchTerm(searchTerm, ".bibliography > li");
-      if (nonMatchingElements == null) return;
-      nonMatchingElements.forEach(function (element) {
-        element.classList.add("unloaded");
-      });
-    } else {
-      document.querySelectorAll(".bibliography > li").forEach(function (element) {
-        var text = element.innerText.toLowerCase();
-        if (text.indexOf(searchTerm) === -1) {
-          element.classList.add("unloaded");
-        }
-      });
-    }
-
-    // Hide section/year headings whose entire group got filtered out.
+  // Hides year/status headings whose entire group of entries is unloaded.
+  var updateGroupVisibility = function () {
     document.querySelectorAll(".publications > h2").forEach(function (heading) {
       var iterator = heading.nextElementSibling;
       var hideHeading = true;
@@ -95,26 +76,103 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   };
 
-  var updateInputField = function () {
-    var hashValue = decodeURIComponent(window.location.hash.substring(1));
-    var input = document.getElementById("bibsearch");
-    if (!input) return;
-    input.value = hashValue;
-    filterItems(hashValue.toLowerCase());
+  var resetUnloaded = function () {
+    document.querySelectorAll(".bibliography, .unloaded").forEach(function (element) {
+      element.classList.remove("unloaded");
+    });
+    if (CSS.highlights) CSS.highlights.delete(CUSTOM_HIGHLIGHT_NAME);
   };
 
-  var input = document.getElementById("bibsearch");
-  if (!input) return;
+  var filterByText = function (searchTerm) {
+    resetUnloaded();
 
-  var timeoutId;
-  input.addEventListener("input", function () {
-    clearTimeout(timeoutId);
-    var searchTerm = this.value.toLowerCase();
-    timeoutId = setTimeout(function () {
-      filterItems(searchTerm);
-    }, 300);
+    if (CSS.highlights) {
+      var nonMatchingElements = highlightSearchTerm(searchTerm, ".bibliography > li");
+      if (nonMatchingElements == null) {
+        updateGroupVisibility();
+        return;
+      }
+      nonMatchingElements.forEach(function (element) {
+        element.classList.add("unloaded");
+      });
+    } else {
+      document.querySelectorAll(".bibliography > li").forEach(function (element) {
+        var text = element.innerText.toLowerCase();
+        if (text.indexOf(searchTerm) === -1) {
+          element.classList.add("unloaded");
+        }
+      });
+    }
+
+    updateGroupVisibility();
+  };
+
+  var filterByTopic = function (topicSlug) {
+    resetUnloaded();
+
+    if (topicSlug && topicSlug !== "all") {
+      document.querySelectorAll(".bibliography > li").forEach(function (li) {
+        var badges = li.querySelectorAll(".topic-badge");
+        var match = Array.prototype.some.call(badges, function (badge) {
+          return badge.dataset.topic === topicSlug;
+        });
+        if (!match) li.classList.add("unloaded");
+      });
+    }
+
+    updateGroupVisibility();
+  };
+
+  var setActiveTopicButton = function (topicSlug) {
+    document.querySelectorAll(".topic-filter-btn").forEach(function (btn) {
+      btn.classList.toggle("active", btn.dataset.topic === (topicSlug || "all"));
+    });
+  };
+
+  var updateFromHash = function () {
+    var hashValue = decodeURIComponent(window.location.hash.substring(1));
+    var searchInput = document.getElementById("bibsearch");
+
+    if (hashValue.indexOf("topic:") === 0) {
+      var topicSlug = hashValue.slice("topic:".length);
+      if (searchInput) searchInput.value = "";
+      setActiveTopicButton(topicSlug);
+      filterByTopic(topicSlug);
+    } else {
+      setActiveTopicButton("all");
+      if (searchInput) searchInput.value = hashValue;
+      filterByText(hashValue.toLowerCase());
+    }
+  };
+
+  var searchInput = document.getElementById("bibsearch");
+  if (searchInput) {
+    var timeoutId;
+    searchInput.addEventListener("input", function () {
+      setActiveTopicButton("all");
+      clearTimeout(timeoutId);
+      var searchTerm = this.value.toLowerCase();
+      timeoutId = setTimeout(function () {
+        filterByText(searchTerm);
+      }, 300);
+    });
+  }
+
+  document.querySelectorAll(".topic-filter-btn").forEach(function (btn) {
+    btn.addEventListener("click", function () {
+      var topicSlug = this.dataset.topic;
+      var alreadyActive = this.classList.contains("active");
+      var nextSlug = alreadyActive && topicSlug !== "all" ? "all" : topicSlug;
+      window.location.hash = nextSlug === "all" ? "" : "topic:" + nextSlug;
+      // If the hash didn't actually change (e.g. already empty), react directly.
+      setActiveTopicButton(nextSlug);
+      if (searchInput) searchInput.value = "";
+      filterByTopic(nextSlug);
+    });
   });
 
-  window.addEventListener("hashchange", updateInputField);
-  updateInputField();
+  window.addEventListener("hashchange", updateFromHash);
+  if (searchInput || document.querySelector(".topic-filter-btn")) {
+    updateFromHash();
+  }
 });

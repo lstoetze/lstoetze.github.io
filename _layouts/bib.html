@@ -126,6 +126,16 @@
           </div>
         {%- endif %}
         
+          {% if entry.keywords -%}
+          <!-- Topic tags -->
+          {%- assign topics = entry.keywords | split: ", " -%}
+          <div class="topics">
+          {%- for topic in topics -%}
+            <span class="topic-badge" data-topic="{{ topic | slugify }}">{{ topic }}</span>
+          {%- endfor -%}
+          </div>
+          {%- endif %}
+
           <!-- Links/Buttons -->
           <div class="links">
           {%- if entry.abstract %}

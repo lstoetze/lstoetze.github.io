@@ -3,6 +3,7 @@ layout: page
 permalink: /workingpaper/
 title: working papers
 description: 
+topics: [Methods, "Election Forecasting", "Coalition Politics", "Populism & Radical Right", "Issue Voting"]
 nav: true
 nav_order: 2
 ---
@@ -11,6 +12,7 @@ nav_order: 2
 <div class="publications">
 
 {% include bib_search.html %}
+{% include topic_filter.html %}
 
 <h2> conditionally accepted </h2>
 {% bibliography -f papers -q @*[status=condaccept] %}
