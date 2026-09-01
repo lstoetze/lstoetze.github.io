@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Pre-electoral coaltion politics
+title: Pre-electoral coalition politics
 description: DFG Project
 img: assets/img/proj_pre.png
 importance: 1
@@ -8,7 +8,7 @@ category: concluded
 ---
 
 
-In the research project with Thomas Gschwend, Oke Bahnsen und Anna Adendorf, we study how colaition politics influences voters and parties. 
+In the research project with Thomas Gschwend, Oke Bahnsen, and Anna Adendorf, we study how coalition politics influences voters and parties. 
 
 ## Description
 

@@ -4,7 +4,7 @@ title: research projects
 permalink: /projects/
 description: ongoing and concluded
 nav: true
-nav_order: 1
+nav_order: 3
 display_categories: [ongoing,concluded]
 horizontal: true
 ---
