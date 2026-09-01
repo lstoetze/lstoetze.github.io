@@ -10,6 +10,8 @@ nav_order: 2
 <!-- _pages/publications.md -->
 <div class="publications">
 
+{% include bib_search.html %}
+
 <h2> conditionally accepted </h2>
 {% bibliography -f papers -q @*[status=condaccept] %}
 
