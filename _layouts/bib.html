@@ -187,15 +187,6 @@
           {%- if entry.website %}
             <a href="{{ entry.website }}" class="btn btn-sm z-depth-0" role="button">Website</a>
           {%- endif %}
-          {%- assign entry_doi = nil -%}
-          {%- if entry.doi -%}
-            {%- assign entry_doi = entry.doi | replace: "https://doi.org/", "" | replace: "http://doi.org/", "" -%}
-          {%- elsif entry.website contains "doi.org/" -%}
-            {%- assign entry_doi = entry.website | split: "doi.org/" | last -%}
-          {%- endif -%}
-          {%- if entry_doi %}
-            <span class="citation-count btn btn-sm z-depth-0" data-doi="{{ entry_doi }}" style="display:none;"></span>
-          {%- endif %}
           {%- if entry.title %}
             <a href="https://scholar.google.com/scholar?q=%22{{ entry.title | strip_html | url_encode }}%22" class="btn btn-sm z-depth-0" role="button" target="_blank" rel="noopener">Scholar</a>
           {%- endif %}
