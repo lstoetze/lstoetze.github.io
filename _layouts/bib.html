@@ -193,10 +193,11 @@
           {%- elsif entry.website contains "doi.org/" -%}
             {%- assign entry_doi = entry.website | split: "doi.org/" | last -%}
           {%- endif -%}
-          {%- if entry.altmetric %}
-            <script type="text/javascript" src="https://d1bxh8uas1mnw7.cloudfront.net/assets/embed.js"></script><div data-altmetric-id="{{ entry.altmetric }}" class="altmetric-embed" data-badge-popover="right" data-badge-type="2" style="display:inline"></div>
-          {%- elsif entry_doi %}
-            <script type="text/javascript" src="https://d1bxh8uas1mnw7.cloudfront.net/assets/embed.js"></script><div data-doi="{{ entry_doi }}" class="altmetric-embed" data-badge-popover="right" data-badge-type="2" style="display:inline"></div>
+          {%- if entry_doi %}
+            <span class="citation-count btn btn-sm z-depth-0" data-doi="{{ entry_doi }}" style="display:none;"></span>
+          {%- endif %}
+          {%- if entry.title %}
+            <a href="https://scholar.google.com/scholar?q=%22{{ entry.title | strip_html | url_encode }}%22" class="btn btn-sm z-depth-0" role="button" target="_blank" rel="noopener">Scholar</a>
           {%- endif %}
           </div>
 

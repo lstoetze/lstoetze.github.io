@@ -13,6 +13,7 @@ nav_order: 2
 
 {% include bib_search.html %}
 {% include topic_filter.html %}
+{% include citations.html %}
 
 <h2> conditionally accepted </h2>
 {% bibliography -f papers -q @*[status=condaccept] %}

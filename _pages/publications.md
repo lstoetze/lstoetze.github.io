@@ -14,6 +14,7 @@ Peer-reviewed Journal Articles
 
 {% include bib_search.html %}
 {% include topic_filter.html %}
+{% include citations.html %}
 
 {%- for y in page.years %}
   <h2 class="year">{{y}}</h2>
