@@ -3,7 +3,7 @@ layout: page
 permalink: /workingpaper/
 title: working papers
 description: 
-topics: [Methods, "Election Forecasting", "Coalition Politics", "Populism & Radical Right", "Voting Decisions", "Representation"]
+topics: [Methods, "Election Forecasting", "Coalition Politics", "Populism & Radical Right", "Voting Decisions", "Representation", "Attitudes and Beliefs"]
 nav: true
 nav_order: 2
 ---
