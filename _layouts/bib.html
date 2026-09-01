@@ -187,8 +187,16 @@
           {%- if entry.website %}
             <a href="{{ entry.website }}" class="btn btn-sm z-depth-0" role="button">Website</a>
           {%- endif %}
+          {%- assign entry_doi = nil -%}
+          {%- if entry.doi -%}
+            {%- assign entry_doi = entry.doi | replace: "https://doi.org/", "" | replace: "http://doi.org/", "" -%}
+          {%- elsif entry.website contains "doi.org/" -%}
+            {%- assign entry_doi = entry.website | split: "doi.org/" | last -%}
+          {%- endif -%}
           {%- if entry.altmetric %}
             <script type="text/javascript" src="https://d1bxh8uas1mnw7.cloudfront.net/assets/embed.js"></script><div data-altmetric-id="{{ entry.altmetric }}" class="altmetric-embed" data-hide-no-mentions="true" data-hide-less-than="15" data-badge-popover="right" data-badge-type="2" style="display:inline"></div>
+          {%- elsif entry_doi %}
+            <script type="text/javascript" src="https://d1bxh8uas1mnw7.cloudfront.net/assets/embed.js"></script><div data-doi="{{ entry_doi }}" class="altmetric-embed" data-hide-no-mentions="true" data-hide-less-than="15" data-badge-popover="right" data-badge-type="2" style="display:inline"></div>
           {%- endif %}
           </div>
 
