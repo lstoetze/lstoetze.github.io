@@ -1,0 +1,9 @@
+{% if include.values %}
+  <div class="topic-filter" data-filter-group="{{ include.attr }}">
+    <span class="topic-filter-label">{{ include.title }}</span>
+    <button type="button" class="topic-filter-btn active" data-value="all">All</button>
+    {%- for value in include.values %}
+    <button type="button" class="topic-filter-btn" data-value="{{ value | slugify }}">{{ value }}</button>
+    {%- endfor %}
+  </div>
+{% endif %}

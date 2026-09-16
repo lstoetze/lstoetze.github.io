@@ -1,5 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
   var CUSTOM_HIGHLIGHT_NAME = "search";
+  var FILTER_GROUPS = ["method", "topic", "context"];
 
   var getTextNodesInElementContainingText = function (element, text) {
     var nodes = [];
@@ -107,49 +108,93 @@ document.addEventListener("DOMContentLoaded", function () {
     updateGroupVisibility();
   };
 
-  var filterByTopic = function (topicSlug) {
+  // Independent selection per filter dimension (method / topic / context);
+  // an entry must match every active dimension (AND across rows).
+  var activeFilters = { method: "all", topic: "all", context: "all" };
+
+  var filterByLabels = function () {
     resetUnloaded();
 
-    if (topicSlug && topicSlug !== "all") {
+    var anyActive = FILTER_GROUPS.some(function (group) {
+      return activeFilters[group] !== "all";
+    });
+
+    if (anyActive) {
       document.querySelectorAll(".bibliography > li").forEach(function (li) {
-        var badges = li.querySelectorAll(".topic-badge");
-        var match = Array.prototype.some.call(badges, function (badge) {
-          return badge.dataset.topic === topicSlug;
+        var matches = FILTER_GROUPS.every(function (group) {
+          if (activeFilters[group] === "all") return true;
+          var badges = li.querySelectorAll(".topic-badge[data-" + group + "]");
+          return Array.prototype.some.call(badges, function (badge) {
+            return badge.dataset[group] === activeFilters[group];
+          });
         });
-        if (!match) li.classList.add("unloaded");
+        if (!matches) li.classList.add("unloaded");
       });
     }
 
     updateGroupVisibility();
   };
 
-  var setActiveTopicButton = function (topicSlug) {
-    document.querySelectorAll(".topic-filter-btn").forEach(function (btn) {
-      btn.classList.toggle("active", btn.dataset.topic === (topicSlug || "all"));
+  var setActiveFilterButtons = function () {
+    document.querySelectorAll(".topic-filter").forEach(function (group) {
+      var dimension = group.dataset.filterGroup;
+      group.querySelectorAll(".topic-filter-btn").forEach(function (btn) {
+        btn.classList.toggle("active", btn.dataset.value === activeFilters[dimension]);
+      });
     });
   };
 
+  var resetActiveFilters = function () {
+    FILTER_GROUPS.forEach(function (group) {
+      activeFilters[group] = "all";
+    });
+  };
+
+  var encodeFiltersToHash = function () {
+    var parts = [];
+    FILTER_GROUPS.forEach(function (group) {
+      if (activeFilters[group] !== "all") parts.push(group + ":" + activeFilters[group]);
+    });
+    return parts.join(";");
+  };
+
+  var parseFiltersFromHash = function (hashValue) {
+    return hashValue.split(";").some(function (piece) {
+      var idx = piece.indexOf(":");
+      return idx > 0 && FILTER_GROUPS.indexOf(piece.slice(0, idx)) !== -1;
+    });
+  };
+
+  var searchInput = document.getElementById("bibsearch");
+
   var updateFromHash = function () {
     var hashValue = decodeURIComponent(window.location.hash.substring(1));
-    var searchInput = document.getElementById("bibsearch");
 
-    if (hashValue.indexOf("topic:") === 0) {
-      var topicSlug = hashValue.slice("topic:".length);
+    if (hashValue && parseFiltersFromHash(hashValue)) {
+      resetActiveFilters();
+      hashValue.split(";").forEach(function (piece) {
+        var idx = piece.indexOf(":");
+        if (idx === -1) return;
+        var group = piece.slice(0, idx);
+        var value = piece.slice(idx + 1);
+        if (FILTER_GROUPS.indexOf(group) !== -1) activeFilters[group] = value;
+      });
       if (searchInput) searchInput.value = "";
-      setActiveTopicButton(topicSlug);
-      filterByTopic(topicSlug);
+      setActiveFilterButtons();
+      filterByLabels();
     } else {
-      setActiveTopicButton("all");
+      resetActiveFilters();
+      setActiveFilterButtons();
       if (searchInput) searchInput.value = hashValue;
       filterByText(hashValue.toLowerCase());
     }
   };
 
-  var searchInput = document.getElementById("bibsearch");
   if (searchInput) {
     var timeoutId;
     searchInput.addEventListener("input", function () {
-      setActiveTopicButton("all");
+      resetActiveFilters();
+      setActiveFilterButtons();
       clearTimeout(timeoutId);
       var searchTerm = this.value.toLowerCase();
       timeoutId = setTimeout(function () {
@@ -160,14 +205,22 @@ document.addEventListener("DOMContentLoaded", function () {
 
   document.querySelectorAll(".topic-filter-btn").forEach(function (btn) {
     btn.addEventListener("click", function () {
-      var topicSlug = this.dataset.topic;
+      var group = this.closest(".topic-filter");
+      var dimension = group.dataset.filterGroup;
+      var value = this.dataset.value;
       var alreadyActive = this.classList.contains("active");
-      var nextSlug = alreadyActive && topicSlug !== "all" ? "all" : topicSlug;
-      window.location.hash = nextSlug === "all" ? "" : "topic:" + nextSlug;
-      // If the hash didn't actually change (e.g. already empty), react directly.
-      setActiveTopicButton(nextSlug);
-      if (searchInput) searchInput.value = "";
-      filterByTopic(nextSlug);
+      activeFilters[dimension] = alreadyActive && value !== "all" ? "all" : value;
+
+      var nextHash = encodeFiltersToHash();
+      if (window.location.hash.substring(1) === nextHash) {
+        // Hash unchanged (e.g. toggling back to "all" from empty state) so
+        // the hashchange event won't fire; apply directly.
+        setActiveFilterButtons();
+        if (searchInput) searchInput.value = "";
+        filterByLabels();
+      } else {
+        window.location.hash = nextHash;
+      }
     });
   });
 

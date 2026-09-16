@@ -27,6 +27,35 @@
         {% if entry.type == "thesis" -%}
           {{reference}}
         {%- else %}
+          {% if entry.methods or entry.keywords or entry.context -%}
+          <!-- Label rows: methods, topics, context -->
+          <div class="labels">
+          {%- if entry.methods -%}
+          {%- assign methods = entry.methods | split: ", " -%}
+          <div class="topics">
+          {%- for method in methods -%}
+            <span class="topic-badge" data-method="{{ method | slugify }}">{{ method }}</span>
+          {%- endfor -%}
+          </div>
+          {%- endif -%}
+          {%- if entry.keywords -%}
+          {%- assign topics = entry.keywords | split: ", " -%}
+          <div class="topics">
+          {%- for topic in topics -%}
+            <span class="topic-badge" data-topic="{{ topic | slugify }}">{{ topic }}</span>
+          {%- endfor -%}
+          </div>
+          {%- endif -%}
+          {%- if entry.context -%}
+          {%- assign contexts = entry.context | split: ", " -%}
+          <div class="topics">
+          {%- for ctx in contexts -%}
+            <span class="topic-badge" data-context="{{ ctx | slugify }}">{{ ctx }}</span>
+          {%- endfor -%}
+          </div>
+          {%- endif -%}
+          </div>
+          {%- endif %}
           <!-- Title -->
           <div class="title">{{entry.title}}</div>
           <!-- Author -->
@@ -125,16 +154,6 @@
             {{ periodical | strip }}
           </div>
         {%- endif %}
-        
-          {% if entry.keywords -%}
-          <!-- Topic tags -->
-          {%- assign topics = entry.keywords | split: ", " -%}
-          <div class="topics">
-          {%- for topic in topics -%}
-            <span class="topic-badge" data-topic="{{ topic | slugify }}">{{ topic }}</span>
-          {%- endfor -%}
-          </div>
-          {%- endif %}
 
           <!-- Links/Buttons -->
           <div class="links">
