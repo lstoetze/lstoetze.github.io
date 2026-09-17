@@ -3,9 +3,7 @@ layout: page
 permalink: /workingpaper/
 title: working papers
 description: 
-methods: [Measurement, "Causal Inference", Modelling, Forecasting]
 topics: [Methods, "Election Forecasting", "Coalition Politics", "Populism & Radical Right", "Voting Decisions", "Representation", "Attitudes and Beliefs", "Party Competition"]
-contexts: [Germany, Comparative]
 nav: true
 nav_order: 2
 ---
@@ -14,9 +12,7 @@ nav_order: 2
 <div class="publications">
 
 {% include bib_search.html %}
-{% include label_filter.html title="Methods:" attr="method" values=page.methods %}
-{% include label_filter.html title="Topics:" attr="topic" values=page.topics %}
-{% include label_filter.html title="Context:" attr="context" values=page.contexts %}
+{% include topic_filter.html %}
 
 <h2> conditionally accepted </h2>
 {% bibliography -f papers -q @*[status=condaccept] %}

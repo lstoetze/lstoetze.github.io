@@ -743,20 +743,8 @@ progress {
  .topic-filter {
      display: flex;
      flex-wrap: wrap;
-     align-items: center;
      gap: 0.5rem;
-     margin: 0 0 0.6rem 0;
- }
-
- .topic-filter:last-of-type {
-     margin-bottom: 1.5rem;
- }
-
- .topic-filter-label {
-     font-size: 0.85rem;
-     font-weight: 600;
-     color: var(--global-text-color-light);
-     margin-right: 0.25rem;
+     margin: 0 0 1.5rem 0;
  }
 
  .topic-filter-btn {
@@ -778,10 +766,6 @@ progress {
      background: var(--global-theme-color);
      border-color: var(--global-theme-color);
      color: var(--global-bg-color);
- }
-
- .labels {
-     margin: 0 0 0.25rem 0;
  }
 
  .topics {
