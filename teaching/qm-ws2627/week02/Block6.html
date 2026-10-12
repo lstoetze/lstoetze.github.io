@@ -125,6 +125,7 @@ ul.task-list li input[type="checkbox"] {
 </table>
 <section id="what-does-the-error-say" class="level2">
 <h2 class="anchored" data-anchor-id="what-does-the-error-say">1. What does the error say?</h2>
+<div class="quiz" data-correct="1"><div class="quiz-q">Predict: What kind of error message will <code>mean(world.popp)</code> give?</div><label><input type="radio" name="q11" value="0"> <i>could not find function</i></label><label><input type="radio" name="q11" value="1"> <i>object 'world.popp' not found</i></label><label><input type="radio" name="q11" value="2"> <i>unexpected symbol</i></label><label><input type="radio" name="q11" value="3"> <i>cannot open file</i></label><button class="quiz-check" type="button">Check</button><div class="quiz-feedback"></div><div class="quiz-expl">The object name has a typo, so R cannot find it.</div></div>
 <div class="cell" data-exercise="b6_1">
 <div>
 <div id="webr-1" class="exercise-cell">
@@ -168,6 +169,7 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoibWVhbih3b3JsZC5wb3ApIn0=
 </section>
 <section id="and-this-one" class="level2">
 <h2 class="anchored" data-anchor-id="and-this-one">2. And this one?</h2>
+<div class="quiz" data-correct="0"><div class="quiz-q">Predict: What kind of error message will <code>Mean(world.pop)</code> give?</div><label><input type="radio" name="q12" value="0"> <i>could not find function "Mean"</i></label><label><input type="radio" name="q12" value="1"> <i>object 'Mean' not found</i></label><label><input type="radio" name="q12" value="2"> <i>unexpected symbol</i></label><label><input type="radio" name="q12" value="3"> No error</label><button class="quiz-check" type="button">Check</button><div class="quiz-feedback"></div><div class="quiz-expl">R is case sensitive: <code>Mean</code> is not <code>mean</code>, and it is used as a function.</div></div>
 <div class="cell" data-exercise="b6_2">
 <div>
 <div id="webr-5" class="exercise-cell">
@@ -344,6 +346,28 @@ WyJVTnBvcC5jc3YiXQ==
 
 </main>
 <!-- /main column -->
+<script>
+document.addEventListener("click", function (e) {
+  var btn = e.target.closest(".quiz-check");
+  if (!btn) return;
+  var q = btn.closest(".quiz");
+  var picked = q.querySelector("input[type=radio]:checked");
+  var fb = q.querySelector(".quiz-feedback");
+  q.querySelectorAll("label").forEach(function (l) { l.classList.remove("right", "wrong"); });
+  if (!picked) { fb.className = "quiz-feedback"; fb.textContent = "Pick an answer first."; return; }
+  var label = picked.closest("label");
+  if (picked.value === q.dataset.correct) {
+    label.classList.add("right");
+    fb.className = "quiz-feedback ok";
+    fb.innerHTML = "<strong>Correct.</strong> " + q.querySelector(".quiz-expl").innerHTML +
+                   " <em>Now run the code below to see it yourself.</em>";
+  } else {
+    label.classList.add("wrong");
+    fb.className = "quiz-feedback no";
+    fb.innerHTML = "<strong>Not quite.</strong> Think again and try another answer.";
+  }
+});
+</script>
 <script type="ojs-module-contents">
 eyJjb250ZW50cyI6W119
 </script>

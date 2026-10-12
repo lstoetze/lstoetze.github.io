@@ -91,6 +91,7 @@ ul.task-list li input[type="checkbox"] {
 <section id="predict-missing-values" class="level2">
 <h2 class="anchored" data-anchor-id="predict-missing-values">1. Predict: missing values</h2>
 <p>What does each line return? Write down your guess, then run.</p>
+<div class="quiz" data-correct="2"><div class="quiz-q">Predict: What does <code>mean(c(UNpop$world.pop, NA))</code> return?</div><label><input type="radio" name="q10" value="0"> The mean of the 7 known values</label><label><input type="radio" name="q10" value="1"> An error</label><label><input type="radio" name="q10" value="2"> <code>NA</code></label><label><input type="radio" name="q10" value="3"> <code>0</code></label><button class="quiz-check" type="button">Check</button><div class="quiz-feedback"></div><div class="quiz-expl">Most functions return <code>NA</code> if any input is <code>NA</code>. <code>na.rm = TRUE</code> ignores it, but that is a substantive choice.</div></div>
 <div class="cell" data-exercise="b5_na">
 <div>
 <div id="webr-1" class="exercise-cell">
@@ -198,6 +199,28 @@ WyJVTnBvcC5jc3YiXQ==
 
 </main>
 <!-- /main column -->
+<script>
+document.addEventListener("click", function (e) {
+  var btn = e.target.closest(".quiz-check");
+  if (!btn) return;
+  var q = btn.closest(".quiz");
+  var picked = q.querySelector("input[type=radio]:checked");
+  var fb = q.querySelector(".quiz-feedback");
+  q.querySelectorAll("label").forEach(function (l) { l.classList.remove("right", "wrong"); });
+  if (!picked) { fb.className = "quiz-feedback"; fb.textContent = "Pick an answer first."; return; }
+  var label = picked.closest("label");
+  if (picked.value === q.dataset.correct) {
+    label.classList.add("right");
+    fb.className = "quiz-feedback ok";
+    fb.innerHTML = "<strong>Correct.</strong> " + q.querySelector(".quiz-expl").innerHTML +
+                   " <em>Now run the code below to see it yourself.</em>";
+  } else {
+    label.classList.add("wrong");
+    fb.className = "quiz-feedback no";
+    fb.innerHTML = "<strong>Not quite.</strong> Think again and try another answer.";
+  }
+});
+</script>
 <script type="ojs-module-contents">
 eyJjb250ZW50cyI6W119
 </script>

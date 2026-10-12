@@ -105,6 +105,7 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoid29ybGQucG9wIDwtIGMoMjUy
 <section id="predict-indexing" class="level2">
 <h2 class="anchored" data-anchor-id="predict-indexing">2. Predict: indexing</h2>
 <p>Which elements do these return? Write down your guess, then run.</p>
+<div class="quiz" data-correct="1"><div class="quiz-q">Predict: What does <code>world.pop[c(4, 2)]</code> return?</div><label><input type="radio" name="q3" value="0"> The 2nd and 4th elements, in original order</label><label><input type="radio" name="q3" value="1"> The 4th and then the 2nd element</label><label><input type="radio" name="q3" value="2"> An error</label><label><input type="radio" name="q3" value="3"> The elements at positions 4 and 2, sorted</label><button class="quiz-check" type="button">Check</button><div class="quiz-feedback"></div><div class="quiz-expl">Indexing returns elements in the order you ask for them.</div></div>
 <div class="cell" data-exercise="b2_idx">
 <div>
 <div id="webr-2" class="exercise-cell">
@@ -119,6 +120,7 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoid29ybGQucG9wIDwtIGMoMjUy
 <section id="predict-arithmetic-on-vectors" class="level2">
 <h2 class="anchored" data-anchor-id="predict-arithmetic-on-vectors">3. Predict: arithmetic on vectors</h2>
 <p>What are the <strong>first</strong> and <strong>last</strong> element of <code>pop.rate</code>?</p>
+<div class="quiz" data-correct="0"><div class="quiz-q">Predict: What are the first and last element of <code>pop.rate &lt;- world.pop / world.pop[1]</code>?</div><label><input type="radio" name="q4" value="0"> <code>1</code> and about <code>2.74</code></label><label><input type="radio" name="q4" value="1"> <code>1</code> and <code>6916183</code></label><label><input type="radio" name="q4" value="2"> <code>2525779</code> and <code>1</code></label><label><input type="radio" name="q4" value="3"> <code>0</code> and <code>2.74</code></label><button class="quiz-check" type="button">Check</button><div class="quiz-feedback"></div><div class="quiz-expl">Dividing by the first element gives 1 for 1950 and 6916183 / 2525779 ≈ 2.74 for 2010: the population almost tripled.</div></div>
 <div class="cell" data-exercise="b2_arith">
 <div>
 <div id="webr-3" class="exercise-cell">
@@ -133,6 +135,7 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoid29ybGQucG9wIDwtIGMoMjUy
 <section id="predict-growth-between-decades" class="level2">
 <h2 class="anchored" data-anchor-id="predict-growth-between-decades">4. Predict: growth between decades</h2>
 <p>How long is <code>pop.increase</code>? Why do we drop the <strong>first</strong> element in one vector and the <strong>last</strong> in the other?</p>
+<div class="quiz" data-correct="1"><div class="quiz-q">Predict: How long is <code>pop.increase &lt;- world.pop[-1] - world.pop[-7]</code>?</div><label><input type="radio" name="q5" value="0"> 7</label><label><input type="radio" name="q5" value="1"> 6</label><label><input type="radio" name="q5" value="2"> 8</label><label><input type="radio" name="q5" value="3"> 1</label><button class="quiz-check" type="button">Check</button><div class="quiz-feedback"></div><div class="quiz-expl">Seven values give six changes. <code>[-1]</code> drops the first, <code>[-7]</code> the last, so each value is lined up with the <b>previous</b> one.</div></div>
 <div class="cell" data-exercise="b2_growth">
 <div>
 <div id="webr-4" class="exercise-cell">
@@ -201,6 +204,28 @@ WyJVTnBvcC5jc3YiXQ==
 
 </main>
 <!-- /main column -->
+<script>
+document.addEventListener("click", function (e) {
+  var btn = e.target.closest(".quiz-check");
+  if (!btn) return;
+  var q = btn.closest(".quiz");
+  var picked = q.querySelector("input[type=radio]:checked");
+  var fb = q.querySelector(".quiz-feedback");
+  q.querySelectorAll("label").forEach(function (l) { l.classList.remove("right", "wrong"); });
+  if (!picked) { fb.className = "quiz-feedback"; fb.textContent = "Pick an answer first."; return; }
+  var label = picked.closest("label");
+  if (picked.value === q.dataset.correct) {
+    label.classList.add("right");
+    fb.className = "quiz-feedback ok";
+    fb.innerHTML = "<strong>Correct.</strong> " + q.querySelector(".quiz-expl").innerHTML +
+                   " <em>Now run the code below to see it yourself.</em>";
+  } else {
+    label.classList.add("wrong");
+    fb.className = "quiz-feedback no";
+    fb.innerHTML = "<strong>Not quite.</strong> Think again and try another answer.";
+  }
+});
+</script>
 <script type="ojs-module-contents">
 eyJjb250ZW50cyI6W119
 </script>

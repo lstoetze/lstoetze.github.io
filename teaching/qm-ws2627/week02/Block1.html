@@ -105,6 +105,7 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiNSArIDNcbjUgLSAzXG41IC8g
 <section id="predict-overwriting-an-object" class="level2">
 <h2 class="anchored" data-anchor-id="predict-overwriting-an-object">2. Predict: overwriting an object</h2>
 <p>What does each of the three <code>result</code> lines print? Write down your guess, then run.</p>
+<div class="quiz" data-correct="1"><div class="quiz-q">Predict: What does the last line, <code>result</code>, print?</div><label><input type="radio" name="q1" value="0"> <code>8</code></label><label><input type="radio" name="q1" value="1"> <code>2</code></label><label><input type="radio" name="q1" value="2"> <code>8</code> and <code>2</code> together</label><label><input type="radio" name="q1" value="3"> An error</label><button class="quiz-check" type="button">Check</button><div class="quiz-feedback"></div><div class="quiz-expl"><code>result &lt;- 5 - 3</code> <b>overwrites</b> the old value; an object holds only its latest content.</div></div>
 <div class="cell" data-exercise="b1_result">
 <div>
 <div id="webr-2" class="exercise-cell">
@@ -133,6 +134,7 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoicmVzdWx0IDwtIDJcblJlc3Vs
 <section id="change-it-break-it" class="level2">
 <h2 class="anchored" data-anchor-id="change-it-break-it">4. Change it: break it</h2>
 <p>What happens with <code>Result + 1</code>? With <code>result + 1</code>? <strong>Read the error message.</strong> What does it tell you?</p>
+<div class="quiz" data-correct="2"><div class="quiz-q">Predict: What does <code>Result + 1</code> do when <code>Result</code> is the text <code>"5"</code>?</div><label><input type="radio" name="q2" value="0"> Returns <code>6</code></label><label><input type="radio" name="q2" value="1"> Returns <code>"51"</code></label><label><input type="radio" name="q2" value="2"> An error: <i>non-numeric argument to binary operator</i></label><label><input type="radio" name="q2" value="3"> Returns <code>NA</code></label><button class="quiz-check" type="button">Check</button><div class="quiz-feedback"></div><div class="quiz-expl"><code>"5"</code> in quotes is text, not a number. <code>class()</code> tells you what kind of object you have.</div></div>
 <div class="cell" data-exercise="b1_err">
 <div>
 <div id="webr-4" class="exercise-cell">
@@ -187,6 +189,28 @@ WyJVTnBvcC5jc3YiXQ==
 
 </main>
 <!-- /main column -->
+<script>
+document.addEventListener("click", function (e) {
+  var btn = e.target.closest(".quiz-check");
+  if (!btn) return;
+  var q = btn.closest(".quiz");
+  var picked = q.querySelector("input[type=radio]:checked");
+  var fb = q.querySelector(".quiz-feedback");
+  q.querySelectorAll("label").forEach(function (l) { l.classList.remove("right", "wrong"); });
+  if (!picked) { fb.className = "quiz-feedback"; fb.textContent = "Pick an answer first."; return; }
+  var label = picked.closest("label");
+  if (picked.value === q.dataset.correct) {
+    label.classList.add("right");
+    fb.className = "quiz-feedback ok";
+    fb.innerHTML = "<strong>Correct.</strong> " + q.querySelector(".quiz-expl").innerHTML +
+                   " <em>Now run the code below to see it yourself.</em>";
+  } else {
+    label.classList.add("wrong");
+    fb.className = "quiz-feedback no";
+    fb.innerHTML = "<strong>Not quite.</strong> Think again and try another answer.";
+  }
+});
+</script>
 <script type="ojs-module-contents">
 eyJjb250ZW50cyI6W119
 </script>

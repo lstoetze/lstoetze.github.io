@@ -104,6 +104,7 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiVU5wb3AgPC0gcmVhZC5jc3Yo
 </section>
 <section id="predict-do-these-three-return-the-same-thing" class="level2">
 <h2 class="anchored" data-anchor-id="predict-do-these-three-return-the-same-thing">2. Predict: do these three return the same thing?</h2>
+<div class="quiz" data-correct="0"><div class="quiz-q">Predict: Do <code>UNpop$world.pop</code>, <code>UNpop[, "world.pop"]</code> and <code>UNpop[, 2]</code> return the same thing?</div><label><input type="radio" name="q8" value="0"> Yes, the same vector</label><label><input type="radio" name="q8" value="1"> No, only the first two agree</label><label><input type="radio" name="q8" value="2"> No, all three differ</label><label><input type="radio" name="q8" value="3"> Two return a vector, one a data frame</label><button class="quiz-check" type="button">Check</button><div class="quiz-feedback"></div><div class="quiz-expl">Each picks the second column; selecting one column gives a <b>vector</b>.</div></div>
 <div class="cell" data-exercise="b4_same">
 <div>
 <div id="webr-2" class="exercise-cell">
@@ -118,6 +119,7 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiVU5wb3AgPC0gcmVhZC5jc3Yo
 <section id="predict-what-shape-does-each-return" class="level2">
 <h2 class="anchored" data-anchor-id="predict-what-shape-does-each-return">3. Predict: what shape does each return?</h2>
 <p>A vector or a data frame?</p>
+<div class="quiz" data-correct="1"><div class="quiz-q">Predict: What does <code>UNpop[1:3, "year"]</code> return?</div><label><input type="radio" name="q9" value="0"> A data frame with 3 rows</label><label><input type="radio" name="q9" value="1"> A vector with 3 values</label><label><input type="radio" name="q9" value="2"> A single number</label><label><input type="radio" name="q9" value="3"> An error</label><button class="quiz-check" type="button">Check</button><div class="quiz-feedback"></div><div class="quiz-expl">One column gives a vector; <code>UNpop[1:3, ]</code> (several columns) gives a data frame.</div></div>
 <div class="cell" data-exercise="b4_shape">
 <div>
 <div id="webr-3" class="exercise-cell">
@@ -199,6 +201,28 @@ WyJVTnBvcC5jc3YiXQ==
 
 </main>
 <!-- /main column -->
+<script>
+document.addEventListener("click", function (e) {
+  var btn = e.target.closest(".quiz-check");
+  if (!btn) return;
+  var q = btn.closest(".quiz");
+  var picked = q.querySelector("input[type=radio]:checked");
+  var fb = q.querySelector(".quiz-feedback");
+  q.querySelectorAll("label").forEach(function (l) { l.classList.remove("right", "wrong"); });
+  if (!picked) { fb.className = "quiz-feedback"; fb.textContent = "Pick an answer first."; return; }
+  var label = picked.closest("label");
+  if (picked.value === q.dataset.correct) {
+    label.classList.add("right");
+    fb.className = "quiz-feedback ok";
+    fb.innerHTML = "<strong>Correct.</strong> " + q.querySelector(".quiz-expl").innerHTML +
+                   " <em>Now run the code below to see it yourself.</em>";
+  } else {
+    label.classList.add("wrong");
+    fb.className = "quiz-feedback no";
+    fb.innerHTML = "<strong>Not quite.</strong> Think again and try another answer.";
+  }
+});
+</script>
 <script type="ojs-module-contents">
 eyJjb250ZW50cyI6W119
 </script>
