@@ -1,0 +1,756 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.9.37">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Block 3: Bayes’ rule: predicting race</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="../libs/clipboard/clipboard.min.js"></script>
+<script src="../libs/quarto-html/quarto.js" type="module"></script>
+<script src="../libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../libs/quarto-html/popper.min.js"></script>
+<script src="../libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../libs/quarto-html/anchor.min.js"></script>
+<link href="../libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../libs/bootstrap/bootstrap.min.js"></script>
+<link href="../libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../libs/bootstrap/bootstrap-811c29991c062aa722966c064eca9e31.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="../libs/quarto-contrib/live-runtime/live-runtime.js" type="module"></script>
+<link href="../libs/quarto-contrib/live-runtime/live-runtime.css" rel="stylesheet">
+<script type="module" src="../libs/quarto-ojs/quarto-ojs-runtime.js"></script>
+<link href="../libs/quarto-ojs/quarto-ojs.css" rel="stylesheet">
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="lehre-live.css">
+</head>
+
+<body class="fullcontent quarto-light">
+
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Block 3: Bayes’ rule: predicting race</h1>
+<p class="subtitle lead">Week 9 · Probability I · Imai §6.2.2 · about 7 min</p>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<div class="progress-dots">
+<p><span class="done"></span><span class="done"></span><span class="now"></span><span></span><span></span></p>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>How this works
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>Read the code and predict</strong> (write it down or tell your neighbour), answer the question, then <strong>run</strong> it with <em>Run Code</em>. Every cell is editable; <em>Start Over</em> resets it. Errors are information: read them.</p>
+</div>
+</div>
+<p>We predict a voter’s <strong>race</strong> from their surname and residence using Bayes’ rule. <code>names.csv</code>: for each surname, the percent of Americans with that surname in each race group, i.e.&nbsp;<span class="math inline">\(P(\text{race} \mid \text{surname})\)</span>, and the surname count.</p>
+<p><em>This block loads about 8 MB of data. The first run takes a few seconds.</em></p>
+<section id="the-surname-table" class="level2">
+<h2 class="anchored" data-anchor-id="the-surname-table">1. The surname table</h2>
+<p><strong>Read this code</strong> (it is not run yet):</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>cnames <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"names.csv"</span>)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">dim</span>(cnames)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>cnames[cnames<span class="sc">$</span>surname <span class="sc">==</span> <span class="st">"WHITE"</span>, ]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="quiz" data-correct="1" data-gate="gate-b3_white"><div class="quiz-q">Predict: What is P(black | surname "White"), i.e. the share of Black Americans among all people called White?</div><label><input type="radio" name="q5" value="0"> About 3%</label><label><input type="radio" name="q5" value="1"> About 27%</label><label><input type="radio" name="q5" value="2"> About 68%</label><label><input type="radio" name="q5" value="3"> About 95%</label><button class="quiz-check" type="button">Check</button><div class="quiz-feedback"></div><div class="quiz-expl">About 27%; 68% of Americans named White are white. Surnames carry information about race, but far from certainty.</div></div>
+<div id="gate-b3_white" class="gated">
+<p><strong>Now run it</strong> and compare with your answer:</p>
+<div class="cell" data-exercise="b3_white">
+<div>
+<div id="webr-1" class="exercise-cell">
+
+</div>
+<script type="webr-1-contents">
+eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiY25hbWVzIDwtIHJlYWQuY3N2KFwibmFtZXMuY3N2XCIpXG5kaW0oY25hbWVzKVxuY25hbWVzW2NuYW1lcyRzdXJuYW1lID09IFwiV0hJVEVcIiwgXSJ9
+</script>
+</div>
+</div>
+</div>
+</section>
+<section id="prediction-from-surname-only" class="level2">
+<h2 class="anchored" data-anchor-id="prediction-from-surname-only">2. Prediction from surname only</h2>
+<p>Predict each voter’s race by the group with the largest <span class="math inline">\(P(\text{race} \mid \text{surname})\)</span>. How often is the prediction right?</p>
+<p><strong>Read this code</strong> (it is not run yet):</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>whites <span class="ot">&lt;-</span> <span class="fu">subset</span>(FLVoters, <span class="at">subset =</span> (race <span class="sc">==</span> <span class="st">"white"</span>))</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>w.indx <span class="ot">&lt;-</span> <span class="fu">match</span>(whites<span class="sc">$</span>surname, cnames<span class="sc">$</span>surname)</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(<span class="fu">apply</span>(cnames[w.indx, vars], <span class="dv">1</span>, max) <span class="sc">==</span> cnames<span class="sc">$</span>pctwhite[w.indx])</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>blacks <span class="ot">&lt;-</span> <span class="fu">subset</span>(FLVoters, <span class="at">subset =</span> (race <span class="sc">==</span> <span class="st">"black"</span>))</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>b.indx <span class="ot">&lt;-</span> <span class="fu">match</span>(blacks<span class="sc">$</span>surname, cnames<span class="sc">$</span>surname)</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(<span class="fu">apply</span>(cnames[b.indx, vars], <span class="dv">1</span>, max) <span class="sc">==</span> cnames<span class="sc">$</span>pctblack[b.indx])</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>hispanics <span class="ot">&lt;-</span> <span class="fu">subset</span>(FLVoters, <span class="at">subset =</span> (race <span class="sc">==</span> <span class="st">"hispanic"</span>))</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>h.indx <span class="ot">&lt;-</span> <span class="fu">match</span>(hispanics<span class="sc">$</span>surname, cnames<span class="sc">$</span>surname)</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(<span class="fu">apply</span>(cnames[h.indx, vars], <span class="dv">1</span>, max) <span class="sc">==</span> cnames<span class="sc">$</span>pcthispanic[h.indx])</span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>asians <span class="ot">&lt;-</span> <span class="fu">subset</span>(FLVoters, <span class="at">subset =</span> (race <span class="sc">==</span> <span class="st">"asian"</span>))</span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>a.indx <span class="ot">&lt;-</span> <span class="fu">match</span>(asians<span class="sc">$</span>surname, cnames<span class="sc">$</span>surname)</span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(<span class="fu">apply</span>(cnames[a.indx, vars], <span class="dv">1</span>, max) <span class="sc">==</span> cnames<span class="sc">$</span>pctapi[a.indx])</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="quiz" data-correct="0" data-gate="gate-b3_acc"><div class="quiz-q">Predict: Using only the surname: for which group is the prediction most accurate, and for which least?</div><label><input type="radio" name="q6" value="0"> Most accurate for whites (about 95%), least for Black voters (about 16%)</label><label><input type="radio" name="q6" value="1"> Most accurate for Black voters, least for whites</label><label><input type="radio" name="q6" value="2"> Equally accurate for all groups</label><label><input type="radio" name="q6" value="3"> Most accurate for Asians</label><button class="quiz-check" type="button">Check</button><div class="quiz-feedback"></div><div class="quiz-expl">Whites 95%, Hispanics 85%, Asians 56%, Black voters only 16%: Black Americans share surnames with white Americans, so surname alone is a poor predictor for them.</div></div>
+<div id="gate-b3_acc" class="gated">
+<p><strong>Now run it</strong> and compare with your answer:</p>
+<div class="cell" data-exercise="b3_acc">
+<div>
+<div id="webr-2" class="exercise-cell">
+
+</div>
+<script type="webr-2-contents">
+eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoid2hpdGVzIDwtIHN1YnNldChGTFZvdGVycywgc3Vic2V0ID0gKHJhY2UgPT0gXCJ3aGl0ZVwiKSlcbncuaW5keCA8LSBtYXRjaCh3aGl0ZXMkc3VybmFtZSwgY25hbWVzJHN1cm5hbWUpXG5tZWFuKGFwcGx5KGNuYW1lc1t3LmluZHgsIHZhcnNdLCAxLCBtYXgpID09IGNuYW1lcyRwY3R3aGl0ZVt3LmluZHhdKVxuYmxhY2tzIDwtIHN1YnNldChGTFZvdGVycywgc3Vic2V0ID0gKHJhY2UgPT0gXCJibGFja1wiKSlcbmIuaW5keCA8LSBtYXRjaChibGFja3Mkc3VybmFtZSwgY25hbWVzJHN1cm5hbWUpXG5tZWFuKGFwcGx5KGNuYW1lc1tiLmluZHgsIHZhcnNdLCAxLCBtYXgpID09IGNuYW1lcyRwY3RibGFja1tiLmluZHhdKVxuaGlzcGFuaWNzIDwtIHN1YnNldChGTFZvdGVycywgc3Vic2V0ID0gKHJhY2UgPT0gXCJoaXNwYW5pY1wiKSlcbmguaW5keCA8LSBtYXRjaChoaXNwYW5pY3Mkc3VybmFtZSwgY25hbWVzJHN1cm5hbWUpXG5tZWFuKGFwcGx5KGNuYW1lc1toLmluZHgsIHZhcnNdLCAxLCBtYXgpID09IGNuYW1lcyRwY3RoaXNwYW5pY1toLmluZHhdKVxuYXNpYW5zIDwtIHN1YnNldChGTFZvdGVycywgc3Vic2V0ID0gKHJhY2UgPT0gXCJhc2lhblwiKSlcbmEuaW5keCA8LSBtYXRjaChhc2lhbnMkc3VybmFtZSwgY25hbWVzJHN1cm5hbWUpXG5tZWFuKGFwcGx5KGNuYW1lc1thLmluZHgsIHZhcnNdLCAxLCBtYXgpID09IGNuYW1lcyRwY3RhcGlbYS5pbmR4XSkifQ==
+</script>
+</div>
+</div>
+<div class="cell" data-setup="true" data-exercise="b3_acc">
+<div>
+<div id="webr-3" class="exercise-cell">
+
+</div>
+<script type="webr-3-contents">
+eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiRkxWb3RlcnMgPC0gbmEub21pdChyZWFkLmNzdihcIkZMVm90ZXJzLmNzdlwiKSlcbmNuYW1lcyA8LSByZWFkLmNzdihcIm5hbWVzLmNzdlwiKVxuRkxWb3RlcnMgPC0gRkxWb3RlcnNbIWlzLm5hKG1hdGNoKEZMVm90ZXJzJHN1cm5hbWUsIGNuYW1lcyRzdXJuYW1lKSksIF1cbnZhcnMgPC0gYyhcInBjdHdoaXRlXCIsIFwicGN0YmxhY2tcIiwgXCJwY3RhcGlcIiwgXCJwY3RoaXNwYW5pY1wiLCBcInBjdG90aGVyc1wiKSJ9
+</script>
+</div>
+</div>
+</div>
+</section>
+<section id="adding-residence-with-bayes-rule" class="level2">
+<h2 class="anchored" data-anchor-id="adding-residence-with-bayes-rule">3. Adding residence with Bayes’ rule</h2>
+<p>Steps: (1) <span class="math inline">\(P(\text{surname} \mid \text{race})\)</span> from <span class="math inline">\(P(\text{race} \mid \text{surname})\)</span>; (2) attach the precinct’s race composition <span class="math inline">\(P(\text{race} \mid \text{residence})\)</span>; (3) <span class="math inline">\(P(\text{surname} \mid \text{residence})\)</span> by summing over races; (4) <span class="math inline">\(P(\text{race} \mid \text{surname}, \text{residence})\)</span>. The code is long: <strong>read it, then run it.</strong></p>
+<p><strong>Read this code</strong> (it is not run yet):</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>FLCensus <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"FLCensusVTD.csv"</span>)</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>race.prop <span class="ot">&lt;-</span> <span class="fu">apply</span>(FLCensus[, <span class="fu">c</span>(<span class="st">"white"</span>, <span class="st">"black"</span>, <span class="st">"api"</span>, <span class="st">"hispanic"</span>, <span class="st">"others"</span>)],</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>                   <span class="dv">2</span>, weighted.mean, <span class="at">w =</span> FLCensus<span class="sc">$</span>total.pop)</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>race.prop                     <span class="co"># P(race) in Florida overall</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>total.count <span class="ot">&lt;-</span> <span class="fu">sum</span>(cnames<span class="sc">$</span>count)</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Step 1: P(surname | race) = P(race | surname) P(surname) / P(race)</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>cnames<span class="sc">$</span>name.white    <span class="ot">&lt;-</span> (cnames<span class="sc">$</span>pctwhite    <span class="sc">/</span> <span class="dv">100</span>) <span class="sc">*</span> (cnames<span class="sc">$</span>count <span class="sc">/</span> total.count) <span class="sc">/</span> race.prop[<span class="st">"white"</span>]</span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>cnames<span class="sc">$</span>name.black    <span class="ot">&lt;-</span> (cnames<span class="sc">$</span>pctblack    <span class="sc">/</span> <span class="dv">100</span>) <span class="sc">*</span> (cnames<span class="sc">$</span>count <span class="sc">/</span> total.count) <span class="sc">/</span> race.prop[<span class="st">"black"</span>]</span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>cnames<span class="sc">$</span>name.hispanic <span class="ot">&lt;-</span> (cnames<span class="sc">$</span>pcthispanic <span class="sc">/</span> <span class="dv">100</span>) <span class="sc">*</span> (cnames<span class="sc">$</span>count <span class="sc">/</span> total.count) <span class="sc">/</span> race.prop[<span class="st">"hispanic"</span>]</span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>cnames<span class="sc">$</span>name.asian    <span class="ot">&lt;-</span> (cnames<span class="sc">$</span>pctapi      <span class="sc">/</span> <span class="dv">100</span>) <span class="sc">*</span> (cnames<span class="sc">$</span>count <span class="sc">/</span> total.count) <span class="sc">/</span> race.prop[<span class="st">"api"</span>]</span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>cnames<span class="sc">$</span>name.others   <span class="ot">&lt;-</span> (cnames<span class="sc">$</span>pctothers   <span class="sc">/</span> <span class="dv">100</span>) <span class="sc">*</span> (cnames<span class="sc">$</span>count <span class="sc">/</span> total.count) <span class="sc">/</span> race.prop[<span class="st">"others"</span>]</span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a><span class="co"># Step 2: attach precinct composition P(race | residence) to each voter</span></span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>FLVoters <span class="ot">&lt;-</span> <span class="fu">merge</span>(<span class="at">x =</span> FLVoters, <span class="at">y =</span> FLCensus, <span class="at">by =</span> <span class="fu">c</span>(<span class="st">"county"</span>, <span class="st">"VTD"</span>), <span class="at">all =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a>indx <span class="ot">&lt;-</span> <span class="fu">match</span>(FLVoters<span class="sc">$</span>surname, cnames<span class="sc">$</span>surname)</span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a><span class="co"># Step 3: P(surname | residence) = sum over races of P(surname | race) P(race | residence)</span></span>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a>FLVoters<span class="sc">$</span>name.residence <span class="ot">&lt;-</span> cnames<span class="sc">$</span>name.white[indx] <span class="sc">*</span> FLVoters<span class="sc">$</span>white <span class="sc">+</span></span>
+<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a>    cnames<span class="sc">$</span>name.black[indx] <span class="sc">*</span> FLVoters<span class="sc">$</span>black <span class="sc">+</span></span>
+<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a>    cnames<span class="sc">$</span>name.hispanic[indx] <span class="sc">*</span> FLVoters<span class="sc">$</span>hispanic <span class="sc">+</span></span>
+<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a>    cnames<span class="sc">$</span>name.asian[indx] <span class="sc">*</span> FLVoters<span class="sc">$</span>api <span class="sc">+</span></span>
+<span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a>    cnames<span class="sc">$</span>name.others[indx] <span class="sc">*</span> FLVoters<span class="sc">$</span>others</span>
+<span id="cb3-24"><a href="#cb3-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-25"><a href="#cb3-25" aria-hidden="true" tabindex="-1"></a><span class="co"># Step 4: P(race | surname, residence)</span></span>
+<span id="cb3-26"><a href="#cb3-26" aria-hidden="true" tabindex="-1"></a>FLVoters<span class="sc">$</span>pre.white <span class="ot">&lt;-</span> cnames<span class="sc">$</span>name.white[indx] <span class="sc">*</span> FLVoters<span class="sc">$</span>white <span class="sc">/</span> FLVoters<span class="sc">$</span>name.residence</span>
+<span id="cb3-27"><a href="#cb3-27" aria-hidden="true" tabindex="-1"></a>FLVoters<span class="sc">$</span>pre.black <span class="ot">&lt;-</span> cnames<span class="sc">$</span>name.black[indx] <span class="sc">*</span> FLVoters<span class="sc">$</span>black <span class="sc">/</span> FLVoters<span class="sc">$</span>name.residence</span>
+<span id="cb3-28"><a href="#cb3-28" aria-hidden="true" tabindex="-1"></a>FLVoters<span class="sc">$</span>pre.hispanic <span class="ot">&lt;-</span> cnames<span class="sc">$</span>name.hispanic[indx] <span class="sc">*</span> FLVoters<span class="sc">$</span>hispanic <span class="sc">/</span> FLVoters<span class="sc">$</span>name.residence</span>
+<span id="cb3-29"><a href="#cb3-29" aria-hidden="true" tabindex="-1"></a>FLVoters<span class="sc">$</span>pre.asian <span class="ot">&lt;-</span> cnames<span class="sc">$</span>name.asian[indx] <span class="sc">*</span> FLVoters<span class="sc">$</span>api <span class="sc">/</span> FLVoters<span class="sc">$</span>name.residence</span>
+<span id="cb3-30"><a href="#cb3-30" aria-hidden="true" tabindex="-1"></a>FLVoters<span class="sc">$</span>pre.others <span class="ot">&lt;-</span> <span class="dv">1</span> <span class="sc">-</span> FLVoters<span class="sc">$</span>pre.white <span class="sc">-</span> FLVoters<span class="sc">$</span>pre.black <span class="sc">-</span></span>
+<span id="cb3-31"><a href="#cb3-31" aria-hidden="true" tabindex="-1"></a>    FLVoters<span class="sc">$</span>pre.hispanic <span class="sc">-</span> FLVoters<span class="sc">$</span>pre.asian</span>
+<span id="cb3-32"><a href="#cb3-32" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-33"><a href="#cb3-33" aria-hidden="true" tabindex="-1"></a><span class="co"># Re-compute the accuracy with the residence information</span></span>
+<span id="cb3-34"><a href="#cb3-34" aria-hidden="true" tabindex="-1"></a>vars1 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"pre.white"</span>, <span class="st">"pre.black"</span>, <span class="st">"pre.hispanic"</span>, <span class="st">"pre.asian"</span>, <span class="st">"pre.others"</span>)</span>
+<span id="cb3-35"><a href="#cb3-35" aria-hidden="true" tabindex="-1"></a>whites <span class="ot">&lt;-</span> <span class="fu">subset</span>(FLVoters, <span class="at">subset =</span> (race <span class="sc">==</span> <span class="st">"white"</span>))</span>
+<span id="cb3-36"><a href="#cb3-36" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(<span class="fu">apply</span>(whites[, vars1], <span class="dv">1</span>, max) <span class="sc">==</span> whites<span class="sc">$</span>pre.white)</span>
+<span id="cb3-37"><a href="#cb3-37" aria-hidden="true" tabindex="-1"></a>blacks <span class="ot">&lt;-</span> <span class="fu">subset</span>(FLVoters, <span class="at">subset =</span> (race <span class="sc">==</span> <span class="st">"black"</span>))</span>
+<span id="cb3-38"><a href="#cb3-38" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(<span class="fu">apply</span>(blacks[, vars1], <span class="dv">1</span>, max) <span class="sc">==</span> blacks<span class="sc">$</span>pre.black)</span>
+<span id="cb3-39"><a href="#cb3-39" aria-hidden="true" tabindex="-1"></a>hispanics <span class="ot">&lt;-</span> <span class="fu">subset</span>(FLVoters, <span class="at">subset =</span> (race <span class="sc">==</span> <span class="st">"hispanic"</span>))</span>
+<span id="cb3-40"><a href="#cb3-40" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(<span class="fu">apply</span>(hispanics[, vars1], <span class="dv">1</span>, max) <span class="sc">==</span> hispanics<span class="sc">$</span>pre.hispanic)</span>
+<span id="cb3-41"><a href="#cb3-41" aria-hidden="true" tabindex="-1"></a>asians <span class="ot">&lt;-</span> <span class="fu">subset</span>(FLVoters, <span class="at">subset =</span> (race <span class="sc">==</span> <span class="st">"asian"</span>))</span>
+<span id="cb3-42"><a href="#cb3-42" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(<span class="fu">apply</span>(asians[, vars1], <span class="dv">1</span>, max) <span class="sc">==</span> asians<span class="sc">$</span>pre.asian)</span>
+<span id="cb3-43"><a href="#cb3-43" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-44"><a href="#cb3-44" aria-hidden="true" tabindex="-1"></a><span class="co"># Voters named White: P(black | surname) = 27% nationally. What does residence do?</span></span>
+<span id="cb3-45"><a href="#cb3-45" aria-hidden="true" tabindex="-1"></a>cnames<span class="sc">$</span>pctblack[cnames<span class="sc">$</span>surname <span class="sc">==</span> <span class="st">"WHITE"</span>]</span>
+<span id="cb3-46"><a href="#cb3-46" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(FLVoters<span class="sc">$</span>pre.black[FLVoters<span class="sc">$</span>surname <span class="sc">==</span> <span class="st">"WHITE"</span>])</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="quiz" data-correct="0" data-gate="gate-b3_bayes"><div class="quiz-q">Predict: Which group gains most in accuracy when the precinct is added?</div><label><input type="radio" name="q7" value="0"> Black voters (from about 16% to about 63%)</label><label><input type="radio" name="q7" value="1"> White voters (from 95% to 100%)</label><label><input type="radio" name="q7" value="2"> Asian voters</label><label><input type="radio" name="q7" value="3"> No group gains</label><button class="quiz-check" type="button">Check</button><div class="quiz-feedback"></div><div class="quiz-expl">Black voters live more segregated than their surnames suggest: the precinct is very informative. Accuracy for them rises from 16% to 63%. Voters named White: the posterior P(black) varies from under 1% to 98% depending on the precinct; that is how strongly the residence moves the prior.</div></div>
+<div id="gate-b3_bayes" class="gated">
+<p><strong>Now run it</strong> and compare with your answer:</p>
+<div class="cell" data-exercise="b3_bayes">
+<div>
+<div id="webr-4" class="exercise-cell">
+
+</div>
+<script type="webr-4-contents">
+eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiRkxDZW5zdXMgPC0gcmVhZC5jc3YoXCJGTENlbnN1c1ZURC5jc3ZcIilcbnJhY2UucHJvcCA8LSBhcHBseShGTENlbnN1c1ssIGMoXCJ3aGl0ZVwiLCBcImJsYWNrXCIsIFwiYXBpXCIsIFwiaGlzcGFuaWNcIiwgXCJvdGhlcnNcIildLFxuICAgICAgICAgICAgICAgICAgIDIsIHdlaWdodGVkLm1lYW4sIHcgPSBGTENlbnN1cyR0b3RhbC5wb3ApXG5yYWNlLnByb3AgICAgICAgICAgICAgICAgICAgICAjIFAocmFjZSkgaW4gRmxvcmlkYSBvdmVyYWxsXG50b3RhbC5jb3VudCA8LSBzdW0oY25hbWVzJGNvdW50KVxuXG4jIFN0ZXAgMTogUChzdXJuYW1lIHwgcmFjZSkgPSBQKHJhY2UgfCBzdXJuYW1lKSBQKHN1cm5hbWUpIC8gUChyYWNlKVxuY25hbWVzJG5hbWUud2hpdGUgICAgPC0gKGNuYW1lcyRwY3R3aGl0ZSAgICAvIDEwMCkgKiAoY25hbWVzJGNvdW50IC8gdG90YWwuY291bnQpIC8gcmFjZS5wcm9wW1wid2hpdGVcIl1cbmNuYW1lcyRuYW1lLmJsYWNrICAgIDwtIChjbmFtZXMkcGN0YmxhY2sgICAgLyAxMDApICogKGNuYW1lcyRjb3VudCAvIHRvdGFsLmNvdW50KSAvIHJhY2UucHJvcFtcImJsYWNrXCJdXG5jbmFtZXMkbmFtZS5oaXNwYW5pYyA8LSAoY25hbWVzJHBjdGhpc3BhbmljIC8gMTAwKSAqIChjbmFtZXMkY291bnQgLyB0b3RhbC5jb3VudCkgLyByYWNlLnByb3BbXCJoaXNwYW5pY1wiXVxuY25hbWVzJG5hbWUuYXNpYW4gICAgPC0gKGNuYW1lcyRwY3RhcGkgICAgICAvIDEwMCkgKiAoY25hbWVzJGNvdW50IC8gdG90YWwuY291bnQpIC8gcmFjZS5wcm9wW1wiYXBpXCJdXG5jbmFtZXMkbmFtZS5vdGhlcnMgICA8LSAoY25hbWVzJHBjdG90aGVycyAgIC8gMTAwKSAqIChjbmFtZXMkY291bnQgLyB0b3RhbC5jb3VudCkgLyByYWNlLnByb3BbXCJvdGhlcnNcIl1cblxuIyBTdGVwIDI6IGF0dGFjaCBwcmVjaW5jdCBjb21wb3NpdGlvbiBQKHJhY2UgfCByZXNpZGVuY2UpIHRvIGVhY2ggdm90ZXJcbkZMVm90ZXJzIDwtIG1lcmdlKHggPSBGTFZvdGVycywgeSA9IEZMQ2Vuc3VzLCBieSA9IGMoXCJjb3VudHlcIiwgXCJWVERcIiksIGFsbCA9IEZBTFNFKVxuaW5keCA8LSBtYXRjaChGTFZvdGVycyRzdXJuYW1lLCBjbmFtZXMkc3VybmFtZSlcblxuIyBTdGVwIDM6IFAoc3VybmFtZSB8IHJlc2lkZW5jZSkgPSBzdW0gb3ZlciByYWNlcyBvZiBQKHN1cm5hbWUgfCByYWNlKSBQKHJhY2UgfCByZXNpZGVuY2UpXG5GTFZvdGVycyRuYW1lLnJlc2lkZW5jZSA8LSBjbmFtZXMkbmFtZS53aGl0ZVtpbmR4XSAqIEZMVm90ZXJzJHdoaXRlICtcbiAgICBjbmFtZXMkbmFtZS5ibGFja1tpbmR4XSAqIEZMVm90ZXJzJGJsYWNrICtcbiAgICBjbmFtZXMkbmFtZS5oaXNwYW5pY1tpbmR4XSAqIEZMVm90ZXJzJGhpc3BhbmljICtcbiAgICBjbmFtZXMkbmFtZS5hc2lhbltpbmR4XSAqIEZMVm90ZXJzJGFwaSArXG4gICAgY25hbWVzJG5hbWUub3RoZXJzW2luZHhdICogRkxWb3RlcnMkb3RoZXJzXG5cbiMgU3RlcCA0OiBQKHJhY2UgfCBzdXJuYW1lLCByZXNpZGVuY2UpXG5GTFZvdGVycyRwcmUud2hpdGUgPC0gY25hbWVzJG5hbWUud2hpdGVbaW5keF0gKiBGTFZvdGVycyR3aGl0ZSAvIEZMVm90ZXJzJG5hbWUucmVzaWRlbmNlXG5GTFZvdGVycyRwcmUuYmxhY2sgPC0gY25hbWVzJG5hbWUuYmxhY2tbaW5keF0gKiBGTFZvdGVycyRibGFjayAvIEZMVm90ZXJzJG5hbWUucmVzaWRlbmNlXG5GTFZvdGVycyRwcmUuaGlzcGFuaWMgPC0gY25hbWVzJG5hbWUuaGlzcGFuaWNbaW5keF0gKiBGTFZvdGVycyRoaXNwYW5pYyAvIEZMVm90ZXJzJG5hbWUucmVzaWRlbmNlXG5GTFZvdGVycyRwcmUuYXNpYW4gPC0gY25hbWVzJG5hbWUuYXNpYW5baW5keF0gKiBGTFZvdGVycyRhcGkgLyBGTFZvdGVycyRuYW1lLnJlc2lkZW5jZVxuRkxWb3RlcnMkcHJlLm90aGVycyA8LSAxIC0gRkxWb3RlcnMkcHJlLndoaXRlIC0gRkxWb3RlcnMkcHJlLmJsYWNrIC1cbiAgICBGTFZvdGVycyRwcmUuaGlzcGFuaWMgLSBGTFZvdGVycyRwcmUuYXNpYW5cblxuIyBSZS1jb21wdXRlIHRoZSBhY2N1cmFjeSB3aXRoIHRoZSByZXNpZGVuY2UgaW5mb3JtYXRpb25cbnZhcnMxIDwtIGMoXCJwcmUud2hpdGVcIiwgXCJwcmUuYmxhY2tcIiwgXCJwcmUuaGlzcGFuaWNcIiwgXCJwcmUuYXNpYW5cIiwgXCJwcmUub3RoZXJzXCIpXG53aGl0ZXMgPC0gc3Vic2V0KEZMVm90ZXJzLCBzdWJzZXQgPSAocmFjZSA9PSBcIndoaXRlXCIpKVxubWVhbihhcHBseSh3aGl0ZXNbLCB2YXJzMV0sIDEsIG1heCkgPT0gd2hpdGVzJHByZS53aGl0ZSlcbmJsYWNrcyA8LSBzdWJzZXQoRkxWb3RlcnMsIHN1YnNldCA9IChyYWNlID09IFwiYmxhY2tcIikpXG5tZWFuKGFwcGx5KGJsYWNrc1ssIHZhcnMxXSwgMSwgbWF4KSA9PSBibGFja3MkcHJlLmJsYWNrKVxuaGlzcGFuaWNzIDwtIHN1YnNldChGTFZvdGVycywgc3Vic2V0ID0gKHJhY2UgPT0gXCJoaXNwYW5pY1wiKSlcbm1lYW4oYXBwbHkoaGlzcGFuaWNzWywgdmFyczFdLCAxLCBtYXgpID09IGhpc3BhbmljcyRwcmUuaGlzcGFuaWMpXG5hc2lhbnMgPC0gc3Vic2V0KEZMVm90ZXJzLCBzdWJzZXQgPSAocmFjZSA9PSBcImFzaWFuXCIpKVxubWVhbihhcHBseShhc2lhbnNbLCB2YXJzMV0sIDEsIG1heCkgPT0gYXNpYW5zJHByZS5hc2lhbilcblxuIyBWb3RlcnMgbmFtZWQgV2hpdGU6IFAoYmxhY2sgfCBzdXJuYW1lKSA9IDI3JSBuYXRpb25hbGx5LiBXaGF0IGRvZXMgcmVzaWRlbmNlIGRvP1xuY25hbWVzJHBjdGJsYWNrW2NuYW1lcyRzdXJuYW1lID09IFwiV0hJVEVcIl1cbnN1bW1hcnkoRkxWb3RlcnMkcHJlLmJsYWNrW0ZMVm90ZXJzJHN1cm5hbWUgPT0gXCJXSElURVwiXSkifQ==
+</script>
+</div>
+</div>
+<div class="cell" data-setup="true" data-exercise="b3_bayes">
+<div>
+<div id="webr-5" class="exercise-cell">
+
+</div>
+<script type="webr-5-contents">
+eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiRkxWb3RlcnMgPC0gbmEub21pdChyZWFkLmNzdihcIkZMVm90ZXJzLmNzdlwiKSlcbmNuYW1lcyA8LSByZWFkLmNzdihcIm5hbWVzLmNzdlwiKVxuRkxWb3RlcnMgPC0gRkxWb3RlcnNbIWlzLm5hKG1hdGNoKEZMVm90ZXJzJHN1cm5hbWUsIGNuYW1lcyRzdXJuYW1lKSksIF1cbnZhcnMgPC0gYyhcInBjdHdoaXRlXCIsIFwicGN0YmxhY2tcIiwgXCJwY3RhcGlcIiwgXCJwY3RoaXNwYW5pY1wiLCBcInBjdG90aGVyc1wiKSJ9
+</script>
+</div>
+</div>
+</div>
+<div class="blocknav">
+<p><a href="Block2.html" class="prev-block">← Block 2</a> <a href="Block4.html" class="next-block">Next: Block 4, Independence →</a></p>
+</div>
+<script type="webr-data">
+eyJvcHRpb25zIjp7ImJhc2VVcmwiOiJodHRwczovL3dlYnIuci13YXNtLm9yZy92MC42LjAvIn0sInBhY2thZ2VzIjp7InBrZ3MiOlsiZXZhbHVhdGUiLCJrbml0ciIsImh0bWx0b29scyJdLCJyZXBvcyI6W119LCJyZW5kZXJfZGYiOiJkZWZhdWx0In0=
+</script>
+<script type="ojs-module-contents">
+eyJjb250ZW50cyI6W3siY2VsbE5hbWUiOiJ3ZWJyLXdpZGdldC01IiwiaW5saW5lIjpmYWxzZSwibWV0aG9kTmFtZSI6ImludGVycHJldFF1aWV0Iiwic291cmNlIjoie1xuICAvLyBXYWl0IGZvciBvdXRwdXQgdG8gYmUgd3JpdHRlbiB0byB0aGUgRE9NLCB0aGVuIHRyaWdnZXIgd2lkZ2V0IHJlbmRlcmluZ1xuICBhd2FpdCBfd2Vicl92YWx1ZV81O1xuICBpZiAod2luZG93LkhUTUxXaWRnZXRzKSB7XG4gICAgd2luZG93LkhUTUxXaWRnZXRzLnN0YXRpY1JlbmRlcigpO1xuICB9XG4gIGlmICh3aW5kb3cuUGFnZWRUYWJsZURvYykge1xuICAgIHdpbmRvdy5QYWdlZFRhYmxlRG9jLmluaXRBbGwoKTtcbiAgfVxufVxuIn0seyJjZWxsTmFtZSI6IndlYnItNSIsImlubGluZSI6ZmFsc2UsIm1ldGhvZE5hbWUiOiJpbnRlcnByZXQiLCJzb3VyY2UiOiJ2aWV3b2YgX3dlYnJfZWRpdG9yXzUgPSB7XG4gIGNvbnN0IHsgV2ViUkV4ZXJjaXNlRWRpdG9yLCBiNjREZWNvZGUgfSA9IHdpbmRvdy5fZXhlcmNpc2Vfb2pzX3J1bnRpbWU7XG4gIGNvbnN0IHNjcmlwdENvbnRlbnQgPSBkb2N1bWVudC5xdWVyeVNlbGVjdG9yKGBzY3JpcHRbdHlwZT1cXFwid2Vici01LWNvbnRlbnRzXFxcIl1gKS50ZXh0Q29udGVudDtcbiAgY29uc3QgYmxvY2sgPSBKU09OLnBhcnNlKGI2NERlY29kZShzY3JpcHRDb250ZW50KSk7XG5cbiAgY29uc3Qgb3B0aW9ucyA9IE9iamVjdC5hc3NpZ24oeyBpZDogYHdlYnItNS1jb250ZW50c2AgfSwgYmxvY2suYXR0cik7XG4gIGNvbnN0IGVkaXRvciA9IG5ldyBXZWJSRXhlcmNpc2VFZGl0b3Iod2ViUk9qcy53ZWJSUHJvbWlzZSwgYmxvY2suY29kZSwgb3B0aW9ucyk7XG5cbiAgcmV0dXJuIGVkaXRvci5jb250YWluZXI7XG59XG5fd2Vicl92YWx1ZV81ID0gd2ViUk9qcy5wcm9jZXNzKF93ZWJyX2VkaXRvcl81LCB7fSk7XG4ifSx7ImNlbGxOYW1lIjoid2Vici13aWRnZXQtNCIsImlubGluZSI6ZmFsc2UsIm1ldGhvZE5hbWUiOiJpbnRlcnByZXRRdWlldCIsInNvdXJjZSI6IntcbiAgLy8gV2FpdCBmb3Igb3V0cHV0IHRvIGJlIHdyaXR0ZW4gdG8gdGhlIERPTSwgdGhlbiB0cmlnZ2VyIHdpZGdldCByZW5kZXJpbmdcbiAgYXdhaXQgX3dlYnJfdmFsdWVfNDtcbiAgaWYgKHdpbmRvdy5IVE1MV2lkZ2V0cykge1xuICAgIHdpbmRvdy5IVE1MV2lkZ2V0cy5zdGF0aWNSZW5kZXIoKTtcbiAgfVxuICBpZiAod2luZG93LlBhZ2VkVGFibGVEb2MpIHtcbiAgICB3aW5kb3cuUGFnZWRUYWJsZURvYy5pbml0QWxsKCk7XG4gIH1cbn1cbiJ9LHsiY2VsbE5hbWUiOiJ3ZWJyLTQiLCJpbmxpbmUiOmZhbHNlLCJtZXRob2ROYW1lIjoiaW50ZXJwcmV0Iiwic291cmNlIjoidmlld29mIF93ZWJyX2VkaXRvcl80ID0ge1xuICBjb25zdCB7IFdlYlJFeGVyY2lzZUVkaXRvciwgYjY0RGVjb2RlIH0gPSB3aW5kb3cuX2V4ZXJjaXNlX29qc19ydW50aW1lO1xuICBjb25zdCBzY3JpcHRDb250ZW50ID0gZG9jdW1lbnQucXVlcnlTZWxlY3Rvcihgc2NyaXB0W3R5cGU9XFxcIndlYnItNC1jb250ZW50c1xcXCJdYCkudGV4dENvbnRlbnQ7XG4gIGNvbnN0IGJsb2NrID0gSlNPTi5wYXJzZShiNjREZWNvZGUoc2NyaXB0Q29udGVudCkpO1xuXG4gIGNvbnN0IG9wdGlvbnMgPSBPYmplY3QuYXNzaWduKHsgaWQ6IGB3ZWJyLTQtY29udGVudHNgIH0sIGJsb2NrLmF0dHIpO1xuICBjb25zdCBlZGl0b3IgPSBuZXcgV2ViUkV4ZXJjaXNlRWRpdG9yKHdlYlJPanMud2ViUlByb21pc2UsIGJsb2NrLmNvZGUsIG9wdGlvbnMpO1xuXG4gIHJldHVybiBlZGl0b3IuY29udGFpbmVyO1xufVxuX3dlYnJfdmFsdWVfNCA9IHdlYlJPanMucHJvY2Vzcyhfd2Vicl9lZGl0b3JfNCwge30pO1xuIn0seyJjZWxsTmFtZSI6IndlYnItd2lkZ2V0LTMiLCJpbmxpbmUiOmZhbHNlLCJtZXRob2ROYW1lIjoiaW50ZXJwcmV0UXVpZXQiLCJzb3VyY2UiOiJ7XG4gIC8vIFdhaXQgZm9yIG91dHB1dCB0byBiZSB3cml0dGVuIHRvIHRoZSBET00sIHRoZW4gdHJpZ2dlciB3aWRnZXQgcmVuZGVyaW5nXG4gIGF3YWl0IF93ZWJyX3ZhbHVlXzM7XG4gIGlmICh3aW5kb3cuSFRNTFdpZGdldHMpIHtcbiAgICB3aW5kb3cuSFRNTFdpZGdldHMuc3RhdGljUmVuZGVyKCk7XG4gIH1cbiAgaWYgKHdpbmRvdy5QYWdlZFRhYmxlRG9jKSB7XG4gICAgd2luZG93LlBhZ2VkVGFibGVEb2MuaW5pdEFsbCgpO1xuICB9XG59XG4ifSx7ImNlbGxOYW1lIjoid2Vici0zIiwiaW5saW5lIjpmYWxzZSwibWV0aG9kTmFtZSI6ImludGVycHJldCIsInNvdXJjZSI6InZpZXdvZiBfd2Vicl9lZGl0b3JfMyA9IHtcbiAgY29uc3QgeyBXZWJSRXhlcmNpc2VFZGl0b3IsIGI2NERlY29kZSB9ID0gd2luZG93Ll9leGVyY2lzZV9vanNfcnVudGltZTtcbiAgY29uc3Qgc2NyaXB0Q29udGVudCA9IGRvY3VtZW50LnF1ZXJ5U2VsZWN0b3IoYHNjcmlwdFt0eXBlPVxcXCJ3ZWJyLTMtY29udGVudHNcXFwiXWApLnRleHRDb250ZW50O1xuICBjb25zdCBibG9jayA9IEpTT04ucGFyc2UoYjY0RGVjb2RlKHNjcmlwdENvbnRlbnQpKTtcblxuICBjb25zdCBvcHRpb25zID0gT2JqZWN0LmFzc2lnbih7IGlkOiBgd2Vici0zLWNvbnRlbnRzYCB9LCBibG9jay5hdHRyKTtcbiAgY29uc3QgZWRpdG9yID0gbmV3IFdlYlJFeGVyY2lzZUVkaXRvcih3ZWJST2pzLndlYlJQcm9taXNlLCBibG9jay5jb2RlLCBvcHRpb25zKTtcblxuICByZXR1cm4gZWRpdG9yLmNvbnRhaW5lcjtcbn1cbl93ZWJyX3ZhbHVlXzMgPSB3ZWJST2pzLnByb2Nlc3MoX3dlYnJfZWRpdG9yXzMsIHt9KTtcbiJ9LHsiY2VsbE5hbWUiOiJ3ZWJyLXdpZGdldC0yIiwiaW5saW5lIjpmYWxzZSwibWV0aG9kTmFtZSI6ImludGVycHJldFF1aWV0Iiwic291cmNlIjoie1xuICAvLyBXYWl0IGZvciBvdXRwdXQgdG8gYmUgd3JpdHRlbiB0byB0aGUgRE9NLCB0aGVuIHRyaWdnZXIgd2lkZ2V0IHJlbmRlcmluZ1xuICBhd2FpdCBfd2Vicl92YWx1ZV8yO1xuICBpZiAod2luZG93LkhUTUxXaWRnZXRzKSB7XG4gICAgd2luZG93LkhUTUxXaWRnZXRzLnN0YXRpY1JlbmRlcigpO1xuICB9XG4gIGlmICh3aW5kb3cuUGFnZWRUYWJsZURvYykge1xuICAgIHdpbmRvdy5QYWdlZFRhYmxlRG9jLmluaXRBbGwoKTtcbiAgfVxufVxuIn0seyJjZWxsTmFtZSI6IndlYnItMiIsImlubGluZSI6ZmFsc2UsIm1ldGhvZE5hbWUiOiJpbnRlcnByZXQiLCJzb3VyY2UiOiJ2aWV3b2YgX3dlYnJfZWRpdG9yXzIgPSB7XG4gIGNvbnN0IHsgV2ViUkV4ZXJjaXNlRWRpdG9yLCBiNjREZWNvZGUgfSA9IHdpbmRvdy5fZXhlcmNpc2Vfb2pzX3J1bnRpbWU7XG4gIGNvbnN0IHNjcmlwdENvbnRlbnQgPSBkb2N1bWVudC5xdWVyeVNlbGVjdG9yKGBzY3JpcHRbdHlwZT1cXFwid2Vici0yLWNvbnRlbnRzXFxcIl1gKS50ZXh0Q29udGVudDtcbiAgY29uc3QgYmxvY2sgPSBKU09OLnBhcnNlKGI2NERlY29kZShzY3JpcHRDb250ZW50KSk7XG5cbiAgY29uc3Qgb3B0aW9ucyA9IE9iamVjdC5hc3NpZ24oeyBpZDogYHdlYnItMi1jb250ZW50c2AgfSwgYmxvY2suYXR0cik7XG4gIGNvbnN0IGVkaXRvciA9IG5ldyBXZWJSRXhlcmNpc2VFZGl0b3Iod2ViUk9qcy53ZWJSUHJvbWlzZSwgYmxvY2suY29kZSwgb3B0aW9ucyk7XG5cbiAgcmV0dXJuIGVkaXRvci5jb250YWluZXI7XG59XG5fd2Vicl92YWx1ZV8yID0gd2ViUk9qcy5wcm9jZXNzKF93ZWJyX2VkaXRvcl8yLCB7fSk7XG4ifSx7ImNlbGxOYW1lIjoid2Vici13aWRnZXQtMSIsImlubGluZSI6ZmFsc2UsIm1ldGhvZE5hbWUiOiJpbnRlcnByZXRRdWlldCIsInNvdXJjZSI6IntcbiAgLy8gV2FpdCBmb3Igb3V0cHV0IHRvIGJlIHdyaXR0ZW4gdG8gdGhlIERPTSwgdGhlbiB0cmlnZ2VyIHdpZGdldCByZW5kZXJpbmdcbiAgYXdhaXQgX3dlYnJfdmFsdWVfMTtcbiAgaWYgKHdpbmRvdy5IVE1MV2lkZ2V0cykge1xuICAgIHdpbmRvdy5IVE1MV2lkZ2V0cy5zdGF0aWNSZW5kZXIoKTtcbiAgfVxuICBpZiAod2luZG93LlBhZ2VkVGFibGVEb2MpIHtcbiAgICB3aW5kb3cuUGFnZWRUYWJsZURvYy5pbml0QWxsKCk7XG4gIH1cbn1cbiJ9LHsiY2VsbE5hbWUiOiJ3ZWJyLTEiLCJpbmxpbmUiOmZhbHNlLCJtZXRob2ROYW1lIjoiaW50ZXJwcmV0Iiwic291cmNlIjoidmlld29mIF93ZWJyX2VkaXRvcl8xID0ge1xuICBjb25zdCB7IFdlYlJFeGVyY2lzZUVkaXRvciwgYjY0RGVjb2RlIH0gPSB3aW5kb3cuX2V4ZXJjaXNlX29qc19ydW50aW1lO1xuICBjb25zdCBzY3JpcHRDb250ZW50ID0gZG9jdW1lbnQucXVlcnlTZWxlY3Rvcihgc2NyaXB0W3R5cGU9XFxcIndlYnItMS1jb250ZW50c1xcXCJdYCkudGV4dENvbnRlbnQ7XG4gIGNvbnN0IGJsb2NrID0gSlNPTi5wYXJzZShiNjREZWNvZGUoc2NyaXB0Q29udGVudCkpO1xuXG4gIGNvbnN0IG9wdGlvbnMgPSBPYmplY3QuYXNzaWduKHsgaWQ6IGB3ZWJyLTEtY29udGVudHNgIH0sIGJsb2NrLmF0dHIpO1xuICBjb25zdCBlZGl0b3IgPSBuZXcgV2ViUkV4ZXJjaXNlRWRpdG9yKHdlYlJPanMud2ViUlByb21pc2UsIGJsb2NrLmNvZGUsIG9wdGlvbnMpO1xuXG4gIHJldHVybiBlZGl0b3IuY29udGFpbmVyO1xufVxuX3dlYnJfdmFsdWVfMSA9IHdlYlJPanMucHJvY2Vzcyhfd2Vicl9lZGl0b3JfMSwge30pO1xuIn0seyJjZWxsTmFtZSI6IndlYnItcHJlbHVkZSIsImlubGluZSI6ZmFsc2UsIm1ldGhvZE5hbWUiOiJpbnRlcnByZXRRdWlldCIsInNvdXJjZSI6IndlYlJPanMgPSB7XG4gIGNvbnN0IHsgV2ViUiwgQ2hhbm5lbFR5cGUgfSA9IHdpbmRvdy5fZXhlcmNpc2Vfb2pzX3J1bnRpbWUuV2ViUjtcbiAgY29uc3Qge1xuICAgIFdlYlJFdmFsdWF0b3IsXG4gICAgV2ViUkVudmlyb25tZW50TWFuYWdlcixcbiAgICBzZXR1cFIsXG4gICAgYjY0RGVjb2RlLFxuICAgIGNvbGxhcHNlUGF0aFxuICB9ID0gd2luZG93Ll9leGVyY2lzZV9vanNfcnVudGltZTtcblxuICBjb25zdCBzdGF0dXNDb250YWluZXIgPSBkb2N1bWVudC5nZXRFbGVtZW50QnlJZChcImV4ZXJjaXNlLWxvYWRpbmctc3RhdHVzXCIpO1xuICBjb25zdCBpbmRpY2F0b3JDb250YWluZXIgPSBkb2N1bWVudC5nZXRFbGVtZW50QnlJZChcImV4ZXJjaXNlLWxvYWRpbmctaW5kaWNhdG9yXCIpO1xuICBpbmRpY2F0b3JDb250YWluZXIuY2xhc3NMaXN0LnJlbW92ZShcImQtbm9uZVwiKTtcblxuICBsZXQgc3RhdHVzVGV4dCA9IGRvY3VtZW50LmNyZWF0ZUVsZW1lbnQoXCJkaXZcIilcbiAgc3RhdHVzVGV4dC5jbGFzc0xpc3QgPSBcImV4ZXJjaXNlLWxvYWRpbmctZGV0YWlsc1wiO1xuICBzdGF0dXNUZXh0ID0gc3RhdHVzQ29udGFpbmVyLmFwcGVuZENoaWxkKHN0YXR1c1RleHQpO1xuICBzdGF0dXNUZXh0LnRleHRDb250ZW50ID0gYEluaXRpYWxpc2VgO1xuXG4gIC8vIEhvaXN0IGluZGljYXRvciBvdXQgZnJvbSBmaW5hbCBzbGlkZSB3aGVuIHJ1bm5pbmcgdW5kZXIgcmV2ZWFsXG4gIGNvbnN0IHJldmVhbFN0YXR1cyA9IGRvY3VtZW50LnF1ZXJ5U2VsZWN0b3IoXCIucmV2ZWFsIC5leGVyY2lzZS1sb2FkaW5nLWluZGljYXRvclwiKTtcbiAgaWYgKHJldmVhbFN0YXR1cykge1xuICAgIHJldmVhbFN0YXR1cy5yZW1vdmUoKTtcbiAgICBkb2N1bWVudC5xdWVyeVNlbGVjdG9yKFwiLnJldmVhbCA+IC5zbGlkZXNcIikuYXBwZW5kQ2hpbGQocmV2ZWFsU3RhdHVzKTtcbiAgfVxuXG4gIC8vIE1ha2UgYW55IHJldmVhbCBzbGlkZXMgd2l0aCBsaXZlIGNlbGxzIHNjcm9sbGFibGVcbiAgZG9jdW1lbnQucXVlcnlTZWxlY3RvckFsbChcIi5yZXZlYWwgLmV4ZXJjaXNlLWNlbGxcIikuZm9yRWFjaCgoZWwpID0+IHtcbiAgICBlbC5jbG9zZXN0KCdzZWN0aW9uLnNsaWRlJykuY2xhc3NMaXN0LmFkZChcInNjcm9sbGFibGVcIik7XG4gIH0pXG5cbiAgLy8gd2ViUiBzdXBwbGVtZW50YWwgZGF0YSBhbmQgb3B0aW9uc1xuICBjb25zdCBkYXRhQ29udGVudCA9IGRvY3VtZW50LnF1ZXJ5U2VsZWN0b3IoYHNjcmlwdFt0eXBlPVxcXCJ3ZWJyLWRhdGFcXFwiXWApLnRleHRDb250ZW50O1xuICBjb25zdCBkYXRhID0gSlNPTi5wYXJzZShiNjREZWNvZGUoZGF0YUNvbnRlbnQpKTtcblxuICAvLyBHcmFiIGxpc3Qgb2YgcmVzb3VyY2VzIHRvIGJlIGRvd25sb2FkZWRcbiAgY29uc3QgZmlsZXNDb250ZW50ID0gZG9jdW1lbnQucXVlcnlTZWxlY3Rvcihgc2NyaXB0W3R5cGU9XFxcInZmcy1maWxlXFxcIl1gKS50ZXh0Q29udGVudDtcbiAgY29uc3QgZmlsZXMgPSBKU09OLnBhcnNlKGI2NERlY29kZShmaWxlc0NvbnRlbnQpKTtcblxuICAvLyBJbml0aWFsaXNlIHdlYlIgYW5kIHNldHVwIGZvciBSIGNvZGUgZXZhbHVhdGlvblxuICBsZXQgd2ViUlByb21pc2UgPSAoYXN5bmMgKHdlYlIpID0+IHtcbiAgICBzdGF0dXNUZXh0LnRleHRDb250ZW50ID0gYERvd25sb2FkaW5nIHdlYlJgO1xuICAgIGF3YWl0IHdlYlIuaW5pdCgpO1xuXG4gICAgLy8gSW5zdGFsbCBwcm92aWRlZCBsaXN0IG9mIHBhY2thZ2VzXG4gICAgLy8gRW5zdXJlIHdlYlIgZGVmYXVsdCByZXBvIGlzIGluY2x1ZGVkXG4gICAgZGF0YS5wYWNrYWdlcy5yZXBvcy5wdXNoKFwiaHR0cHM6Ly9yZXBvLnItd2FzbS5vcmdcIilcbiAgICBhd2FpdCBkYXRhLnBhY2thZ2VzLnBrZ3MubWFwKChwa2cpID0+ICgpID0+IHtcbiAgICAgIHN0YXR1c1RleHQudGV4dENvbnRlbnQgPSBgRG93bmxvYWRpbmcgcGFja2FnZTogJHtwa2d9YDtcbiAgICAgIHJldHVybiB3ZWJSLmV2YWxSVm9pZChgXG4gICAgICAgIHdlYnI6Omluc3RhbGwocGtnLCByZXBvcyA9IHJlcG9zKVxuICAgICAgICBsaWJyYXJ5KHBrZywgY2hhcmFjdGVyLm9ubHkgPSBUUlVFKVxuICAgICAgYCwgeyBlbnY6IHtcbiAgICAgICAgcGtnOiBwa2csXG4gICAgICAgIHJlcG9zOiBkYXRhLnBhY2thZ2VzLnJlcG9zLFxuICAgICAgfX0pO1xuICAgIH0pLnJlZHVjZSgoY3VyLCBuZXh0KSA9PiBjdXIudGhlbihuZXh0KSwgUHJvbWlzZS5yZXNvbHZlKCkpO1xuXG4gICAgLy8gRG93bmxvYWQgYW5kIGluc3RhbGwgcmVzb3VyY2VzXG4gICAgYXdhaXQgZmlsZXMubWFwKChmaWxlKSA9PiBhc3luYyAoKSA9PiB7XG4gICAgICBjb25zdCBuYW1lID0gZmlsZS5zdWJzdHJpbmcoZmlsZS5sYXN0SW5kZXhPZignLycpICsgMSk7XG4gICAgICBzdGF0dXNUZXh0LnRleHRDb250ZW50ID0gYERvd25sb2FkaW5nIHJlc291cmNlOiAke25hbWV9YDtcbiAgICAgIGNvbnN0IHJlc3BvbnNlID0gYXdhaXQgZmV0Y2goZmlsZSk7XG4gICAgICBpZiAoIXJlc3BvbnNlLm9rKSB7XG4gICAgICAgIHRocm93IG5ldyBFcnJvcihgQ2FuJ3QgZG93bmxvYWQgXFxgJHtmaWxlfVxcYC4gRXJyb3IgJHtyZXNwb25zZS5zdGF0dXN9OiBcIiR7cmVzcG9uc2Uuc3RhdHVzVGV4dH1cIi5gKTtcbiAgICAgIH1cbiAgICAgIGNvbnN0IGRhdGEgPSBhd2FpdCByZXNwb25zZS5hcnJheUJ1ZmZlcigpO1xuXG4gICAgICAvLyBTdG9yZSBVUkxzIGluIHRoZSBjd2Qgd2l0aG91dCBhbnkgc3ViZGlyZWN0b3J5IHN0cnVjdHVyZVxuICAgICAgaWYgKGZpbGUuaW5jbHVkZXMoXCI6Ly9cIikpIHtcbiAgICAgICAgZmlsZSA9IG5hbWU7XG4gICAgICB9XG5cbiAgICAgIC8vIENvbGxhcHNlIGhpZ2hlciBkaXJlY3Rvcnkgc3RydWN0dXJlXG4gICAgICBmaWxlID0gY29sbGFwc2VQYXRoKGZpbGUpO1xuXG4gICAgICAvLyBDcmVhdGUgZGlyZWN0b3J5IHRyZWUsIGlnbm9yaW5nIFwiZGlyZWN0b3J5IGV4aXN0c1wiIFZGUyBlcnJvcnNcbiAgICAgIGNvbnN0IHBhcnRzID0gZmlsZS5zcGxpdCgnLycpLnNsaWNlKDAsIC0xKTtcbiAgICAgIGxldCBwYXRoID0gJyc7XG4gICAgICB3aGlsZSAocGFydHMubGVuZ3RoID4gMCkge1xuICAgICAgICBwYXRoICs9IHBhcnRzLnNoaWZ0KCkgKyAnLyc7XG4gICAgICAgIGNvbnN0IGFuYWx5c2lzID0gYXdhaXQgd2ViUi5GUy5hbmFseXplUGF0aChwYXRoKTtcbiAgICAgICAgaWYgKCFhbmFseXNpcy5leGlzdHMpIHtcbiAgICAgICAgICB0cnkge1xuICAgICAgICAgICAgYXdhaXQgd2ViUi5GUy5ta2RpcihwYXRoKTtcbiAgICAgICAgICB9IGNhdGNoIChlKSB7XG4gICAgICAgICAgICB0aHJvdyBuZXcgRXJyb3IoYEZpbGVzeXN0ZW0gRXJyb3I6IFwiJHtlLm1lc3NhZ2V9XCIuYCk7XG4gICAgICAgICAgfVxuICAgICAgICB9XG4gICAgICB9XG5cbiAgICAgIC8vIFdyaXRlIHRoaXMgZmlsZSB0byB0aGUgVkZTXG4gICAgICByZXR1cm4gYXdhaXQgd2ViUi5GUy53cml0ZUZpbGUoZmlsZSwgbmV3IFVpbnQ4QXJyYXkoZGF0YSkpO1xuICAgIH0pLnJlZHVjZSgoY3VyLCBuZXh0KSA9PiBjdXIudGhlbihuZXh0KSwgUHJvbWlzZS5yZXNvbHZlKCkpO1xuXG4gICAgc3RhdHVzVGV4dC50ZXh0Q29udGVudCA9IGBJbnN0YWxsaW5nIHdlYlIgc2hpbXNgO1xuICAgIGF3YWl0IHdlYlIuZXZhbFJWb2lkKGB3ZWJyOjpzaGltX2luc3RhbGwoKWApO1xuXG4gICAgc3RhdHVzVGV4dC50ZXh0Q29udGVudCA9IGBXZWJSIGVudmlyb25tZW50IHNldHVwYDtcbiAgICBhd2FpdCBzZXR1cFIod2ViUiwgZGF0YSk7XG5cbiAgICBzdGF0dXNUZXh0LnJlbW92ZSgpO1xuICAgIGlmIChzdGF0dXNDb250YWluZXIuY2hpbGRyZW4ubGVuZ3RoID09IDApIHtcbiAgICAgIHN0YXR1c0NvbnRhaW5lci5wYXJlbnROb2RlLnJlbW92ZSgpO1xuICAgIH1cbiAgICByZXR1cm4gd2ViUjtcbiAgfSkobmV3IFdlYlIoZGF0YS5vcHRpb25zKSk7XG5cbiAgLy8gS2VlcCB0cmFjayBvZiBpbml0aWFsIE9KUyBibG9jayByZW5kZXJcbiAgY29uc3QgcmVuZGVyZWRPanMgPSB7fTtcblxuICBjb25zdCBwcm9jZXNzID0gYXN5bmMgKGNvbnRleHQsIGlucHV0cykgPT4ge1xuICAgIGNvbnN0IHdlYlIgPSBhd2FpdCB3ZWJSUHJvbWlzZTtcbiAgICBjb25zdCBldmFsdWF0b3IgPSBuZXcgV2ViUkV2YWx1YXRvcih3ZWJSLCBjb250ZXh0KVxuICAgIGF3YWl0IGV2YWx1YXRvci5wcm9jZXNzKGlucHV0cyk7XG4gICAgcmV0dXJuIGV2YWx1YXRvci5jb250YWluZXI7XG4gIH1cblxuICByZXR1cm4ge1xuICAgIHByb2Nlc3MsXG4gICAgd2ViUlByb21pc2UsXG4gICAgcmVuZGVyZWRPanMsXG4gIH07XG59XG4ifV19
+</script>
+<div id="exercise-loading-indicator" class="exercise-loading-indicator d-none d-flex align-items-center gap-2">
+<div id="exercise-loading-status" class="d-flex gap-2">
+
+</div>
+<div class="spinner-grow spinner-grow-sm">
+
+</div>
+</div>
+<script type="vfs-file">
+WyJGTFZvdGVycy5jc3YiLCJGTENlbnN1c1ZURC5jc3YiLCJuYW1lcy5jc3YiXQ==
+</script>
+</section>
+
+</main>
+<!-- /main column -->
+<script>
+document.addEventListener("click", function (e) {
+  var btn = e.target.closest(".quiz-check");
+  if (!btn) return;
+  var q = btn.closest(".quiz");
+  var picked = q.querySelector("input[type=radio]:checked");
+  var fb = q.querySelector(".quiz-feedback");
+  q.querySelectorAll("label").forEach(function (l) { l.classList.remove("right", "wrong"); });
+  if (!picked) { fb.className = "quiz-feedback"; fb.textContent = "Pick an answer first."; return; }
+  var label = picked.closest("label");
+  if (picked.value === q.dataset.correct) {
+    label.classList.add("right");
+    fb.className = "quiz-feedback ok";
+    fb.innerHTML = "<strong>Correct.</strong> " + q.querySelector(".quiz-expl").innerHTML;
+    var g = document.getElementById(q.dataset.gate);
+    if (g) { g.classList.add("open"); setTimeout(function () { window.dispatchEvent(new Event("resize")); }, 50); }
+  } else {
+    label.classList.add("wrong");
+    fb.className = "quiz-feedback no";
+    fb.innerHTML = "<strong>Not quite.</strong> Think again and try another answer.";
+  }
+});
+</script>
+<script type="ojs-module-contents">
+eyJjb250ZW50cyI6W119
+</script>
+<script type="module">
+if (window.location.protocol === "file:") { alert("The OJS runtime does not work with file:// URLs. Please use a web server to view this document."); }
+window._ojs.paths.runtimeToDoc = "../../..";
+window._ojs.paths.runtimeToRoot = "../../..";
+window._ojs.paths.docToRoot = "";
+window._ojs.selfContained = false;
+window._ojs.runtime.interpretFromScriptTags();
+</script>
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
