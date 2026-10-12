@@ -23,6 +23,41 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -91,7 +126,19 @@ ul.task-list li input[type="checkbox"] {
 <section id="predict-mean-and-seq" class="level2">
 <h2 class="anchored" data-anchor-id="predict-mean-and-seq">1. Predict: <code>mean()</code> and <code>seq()</code></h2>
 <p>Does <code>sum(x) / length(x)</code> give the same as <code>mean(x)</code>? Does the <strong>order of named arguments</strong> matter in <code>seq()</code>?</p>
-<div class="quiz" data-correct="0"><div class="quiz-q">Predict: Does <code>sum(x) / length(x)</code> equal <code>mean(x)</code>? Does the order of <i>named</i> arguments in <code>seq()</code> matter?</div><label><input type="radio" name="q6" value="0"> Yes, equal; order of named arguments does <b>not</b> matter</label><label><input type="radio" name="q6" value="1"> Yes, equal; order of named arguments matters</label><label><input type="radio" name="q6" value="2"> No, they differ; order does not matter</label><label><input type="radio" name="q6" value="3"> No, they differ; order matters</label><button class="quiz-check" type="button">Check</button><div class="quiz-feedback"></div><div class="quiz-expl"><code>mean()</code> is exactly sum divided by length. Named arguments are matched by name, so their order is irrelevant (unnamed ones are matched by position).</div></div>
+<p><strong>Read this code</strong> (it is not run yet):</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>world.pop <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">2525779</span>, <span class="dv">3026003</span>, <span class="dv">3691173</span>, <span class="dv">4449049</span>, <span class="dv">5320817</span>, <span class="dv">6127700</span>, <span class="dv">6916183</span>)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(world.pop)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(world.pop) <span class="sc">/</span> <span class="fu">length</span>(world.pop)</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">seq</span>(<span class="at">from =</span> <span class="dv">1950</span>, <span class="at">to =</span> <span class="dv">2010</span>, <span class="at">by =</span> <span class="dv">10</span>)</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="fu">seq</span>(<span class="at">to =</span> <span class="dv">2010</span>, <span class="at">by =</span> <span class="dv">10</span>, <span class="at">from =</span> <span class="dv">1950</span>)</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="fu">seq</span>(<span class="at">from =</span> <span class="dv">2010</span>, <span class="at">to =</span> <span class="dv">1950</span>, <span class="at">by =</span> <span class="sc">-</span><span class="dv">10</span>)</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="dv">2008</span><span class="sc">:</span><span class="dv">2012</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="dv">2012</span><span class="sc">:</span><span class="dv">2008</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="quiz" data-correct="0" data-gate="gate-b3_seq"><div class="quiz-q">Predict: Does <code>sum(x) / length(x)</code> equal <code>mean(x)</code>? Does the order of <i>named</i> arguments in <code>seq()</code> matter?</div><label><input type="radio" name="q6" value="0"> Yes, equal; order of named arguments does <b>not</b> matter</label><label><input type="radio" name="q6" value="1"> Yes, equal; order of named arguments matters</label><label><input type="radio" name="q6" value="2"> No, they differ; order does not matter</label><label><input type="radio" name="q6" value="3"> No, they differ; order matters</label><button class="quiz-check" type="button">Check</button><div class="quiz-feedback"></div><div class="quiz-expl"><code>mean()</code> is exactly sum divided by length. Named arguments are matched by name, so their order is irrelevant (unnamed ones are matched by position).</div></div>
+<div id="gate-b3_seq" class="gated">
+<p><strong>Now run it</strong> and compare with your answer:</p>
 <div class="cell" data-exercise="b3_seq">
 <div>
 <div id="webr-1" class="exercise-cell">
@@ -102,12 +149,27 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoid29ybGQucG9wIDwtIGMoMjUy
 </script>
 </div>
 </div>
+</div>
 <p><strong>Change it:</strong> what does <code>seq(1950, 2010, 10)</code> give (no names)? And <code>seq(10, 1950, 2010)</code>?</p>
 </section>
 <section id="read-then-run-my.summary" class="level2">
 <h2 class="anchored" data-anchor-id="read-then-run-my.summary">2. Read, then run: <code>my.summary()</code></h2>
 <p><strong>Read the code first.</strong> What will the output look like? Then run it.</p>
-<div class="quiz" data-correct="1"><div class="quiz-q">Predict: What does <code>my.summary(1:10)</code> return?</div><label><input type="radio" name="q7" value="0"> A single number, <code>5.5</code></label><label><input type="radio" name="q7" value="1"> A named vector: sum = 55, length = 10, mean = 5.5</label><label><input type="radio" name="q7" value="2"> An error, because <code>s.out</code> is not defined</label><label><input type="radio" name="q7" value="3"> Only <code>55</code></label><button class="quiz-check" type="button">Check</button><div class="quiz-feedback"></div><div class="quiz-expl">The function returns <code>out</code>, a vector with three values and the names set by <code>names(out)</code>.</div></div>
+<p><strong>Read this code</strong> (it is not run yet):</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>my.summary <span class="ot">&lt;-</span> <span class="cf">function</span>(x) {</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  s.out <span class="ot">&lt;-</span> <span class="fu">sum</span>(x)</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>  l.out <span class="ot">&lt;-</span> <span class="fu">length</span>(x)</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>  m.out <span class="ot">&lt;-</span> s.out <span class="sc">/</span> l.out</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>  out <span class="ot">&lt;-</span> <span class="fu">c</span>(s.out, l.out, m.out)</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">names</span>(out) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"sum"</span>, <span class="st">"length"</span>, <span class="st">"mean"</span>)</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(out)</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>z <span class="ot">&lt;-</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">10</span></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="fu">my.summary</span>(z)</span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a><span class="fu">my.summary</span>(world.pop)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="quiz" data-correct="1" data-gate="gate-b3_mysum"><div class="quiz-q">Predict: What does <code>my.summary(1:10)</code> return?</div><label><input type="radio" name="q7" value="0"> A single number, <code>5.5</code></label><label><input type="radio" name="q7" value="1"> A named vector: sum = 55, length = 10, mean = 5.5</label><label><input type="radio" name="q7" value="2"> An error, because <code>s.out</code> is not defined</label><label><input type="radio" name="q7" value="3"> Only <code>55</code></label><button class="quiz-check" type="button">Check</button><div class="quiz-feedback"></div><div class="quiz-expl">The function returns <code>out</code>, a vector with three values and the names set by <code>names(out)</code>.</div></div>
+<div id="gate-b3_mysum" class="gated">
+<p><strong>Now run it</strong> and compare with your answer:</p>
 <div class="cell" data-exercise="b3_mysum">
 <div>
 <div id="webr-2" class="exercise-cell">
@@ -126,6 +188,7 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoibXkuc3VtbWFyeSA8LSBmdW5j
 <script type="webr-3-contents">
 eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoid29ybGQucG9wIDwtIGMoMjUyNTc3OSwgMzAyNjAwMywgMzY5MTE3MywgNDQ0OTA0OSwgNTMyMDgxNywgNjEyNzcwMCwgNjkxNjE4MykifQ==
 </script>
+</div>
 </div>
 </div>
 <p><strong>Change it:</strong> <code>s.out</code> was created <em>inside</em> the function. Type <code>s.out</code> on a new last line. What happens, and why?</p>
@@ -211,8 +274,9 @@ document.addEventListener("click", function (e) {
   if (picked.value === q.dataset.correct) {
     label.classList.add("right");
     fb.className = "quiz-feedback ok";
-    fb.innerHTML = "<strong>Correct.</strong> " + q.querySelector(".quiz-expl").innerHTML +
-                   " <em>Now run the code below to see it yourself.</em>";
+    fb.innerHTML = "<strong>Correct.</strong> " + q.querySelector(".quiz-expl").innerHTML;
+    var g = document.getElementById(q.dataset.gate);
+    if (g) { g.classList.add("open"); setTimeout(function () { window.dispatchEvent(new Event("resize")); }, 50); }
   } else {
     label.classList.add("wrong");
     fb.className = "quiz-feedback no";

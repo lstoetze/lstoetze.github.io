@@ -23,6 +23,41 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -104,7 +139,14 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiVU5wb3AgPC0gcmVhZC5jc3Yo
 </section>
 <section id="predict-do-these-three-return-the-same-thing" class="level2">
 <h2 class="anchored" data-anchor-id="predict-do-these-three-return-the-same-thing">2. Predict: do these three return the same thing?</h2>
-<div class="quiz" data-correct="0"><div class="quiz-q">Predict: Do <code>UNpop$world.pop</code>, <code>UNpop[, "world.pop"]</code> and <code>UNpop[, 2]</code> return the same thing?</div><label><input type="radio" name="q8" value="0"> Yes, the same vector</label><label><input type="radio" name="q8" value="1"> No, only the first two agree</label><label><input type="radio" name="q8" value="2"> No, all three differ</label><label><input type="radio" name="q8" value="3"> Two return a vector, one a data frame</label><button class="quiz-check" type="button">Check</button><div class="quiz-feedback"></div><div class="quiz-expl">Each picks the second column; selecting one column gives a <b>vector</b>.</div></div>
+<p><strong>Read this code</strong> (it is not run yet):</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>UNpop <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"UNpop.csv"</span>)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>UNpop<span class="sc">$</span>world.pop</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>UNpop[, <span class="st">"world.pop"</span>]</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>UNpop[, <span class="dv">2</span>]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="quiz" data-correct="0" data-gate="gate-b4_same"><div class="quiz-q">Predict: Do <code>UNpop$world.pop</code>, <code>UNpop[, "world.pop"]</code> and <code>UNpop[, 2]</code> return the same thing?</div><label><input type="radio" name="q8" value="0"> Yes, the same vector</label><label><input type="radio" name="q8" value="1"> No, only the first two agree</label><label><input type="radio" name="q8" value="2"> No, all three differ</label><label><input type="radio" name="q8" value="3"> Two return a vector, one a data frame</label><button class="quiz-check" type="button">Check</button><div class="quiz-feedback"></div><div class="quiz-expl">Each picks the second column; selecting one column gives a <b>vector</b>.</div></div>
+<div id="gate-b4_same" class="gated">
+<p><strong>Now run it</strong> and compare with your answer:</p>
 <div class="cell" data-exercise="b4_same">
 <div>
 <div id="webr-2" class="exercise-cell">
@@ -115,11 +157,20 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiVU5wb3AgPC0gcmVhZC5jc3Yo
 </script>
 </div>
 </div>
+</div>
 </section>
 <section id="predict-what-shape-does-each-return" class="level2">
 <h2 class="anchored" data-anchor-id="predict-what-shape-does-each-return">3. Predict: what shape does each return?</h2>
 <p>A vector or a data frame?</p>
-<div class="quiz" data-correct="1"><div class="quiz-q">Predict: What does <code>UNpop[1:3, "year"]</code> return?</div><label><input type="radio" name="q9" value="0"> A data frame with 3 rows</label><label><input type="radio" name="q9" value="1"> A vector with 3 values</label><label><input type="radio" name="q9" value="2"> A single number</label><label><input type="radio" name="q9" value="3"> An error</label><button class="quiz-check" type="button">Check</button><div class="quiz-feedback"></div><div class="quiz-expl">One column gives a vector; <code>UNpop[1:3, ]</code> (several columns) gives a data frame.</div></div>
+<p><strong>Read this code</strong> (it is not run yet):</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>UNpop <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"UNpop.csv"</span>)</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>UNpop[<span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>), ]</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>UNpop[<span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>, <span class="st">"year"</span>]</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(UNpop[<span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>), ])</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(UNpop[<span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>, <span class="st">"year"</span>])</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="quiz" data-correct="1" data-gate="gate-b4_shape"><div class="quiz-q">Predict: What does <code>UNpop[1:3, "year"]</code> return?</div><label><input type="radio" name="q9" value="0"> A data frame with 3 rows</label><label><input type="radio" name="q9" value="1"> A vector with 3 values</label><label><input type="radio" name="q9" value="2"> A single number</label><label><input type="radio" name="q9" value="3"> An error</label><button class="quiz-check" type="button">Check</button><div class="quiz-feedback"></div><div class="quiz-expl">One column gives a vector; <code>UNpop[1:3, ]</code> (several columns) gives a data frame.</div></div>
+<div id="gate-b4_shape" class="gated">
+<p><strong>Now run it</strong> and compare with your answer:</p>
 <div class="cell" data-exercise="b4_shape">
 <div>
 <div id="webr-3" class="exercise-cell">
@@ -128,6 +179,7 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiVU5wb3AgPC0gcmVhZC5jc3Yo
 <script type="webr-3-contents">
 eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiVU5wb3AgPC0gcmVhZC5jc3YoXCJVTnBvcC5jc3ZcIilcblVOcG9wW2MoMSwgMiwgMyksIF1cblVOcG9wWzE6MywgXCJ5ZWFyXCJdXG5jbGFzcyhVTnBvcFtjKDEsIDIsIDMpLCBdKVxuY2xhc3MoVU5wb3BbMTozLCBcInllYXJcIl0pIn0=
 </script>
+</div>
 </div>
 </div>
 </section>
@@ -214,8 +266,9 @@ document.addEventListener("click", function (e) {
   if (picked.value === q.dataset.correct) {
     label.classList.add("right");
     fb.className = "quiz-feedback ok";
-    fb.innerHTML = "<strong>Correct.</strong> " + q.querySelector(".quiz-expl").innerHTML +
-                   " <em>Now run the code below to see it yourself.</em>";
+    fb.innerHTML = "<strong>Correct.</strong> " + q.querySelector(".quiz-expl").innerHTML;
+    var g = document.getElementById(q.dataset.gate);
+    if (g) { g.classList.add("open"); setTimeout(function () { window.dispatchEvent(new Event("resize")); }, 50); }
   } else {
     label.classList.add("wrong");
     fb.className = "quiz-feedback no";

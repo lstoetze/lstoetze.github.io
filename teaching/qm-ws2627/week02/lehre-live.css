@@ -27,3 +27,5 @@ h1.title { border-bottom: 4px solid var(--uwh-orange); padding-bottom: .3em; }
 .quiz-feedback.ok { color:#15693b; }
 .quiz-feedback.no { color:#a12a1b; }
 .quiz-expl { display:none; }
+.gated { max-height:0; overflow:hidden; opacity:0; pointer-events:none; }
+.gated.open { max-height:none; overflow:visible; opacity:1; pointer-events:auto; }
