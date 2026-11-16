@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.9.37">
+<meta name="generator" content="quarto-1.10.18">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -12,51 +12,19 @@
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
 */
-code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
-div.columns{display: flex; gap: min(4vw, 1.5em);}
-div.column{flex: auto; overflow-x: auto;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
 div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
-}
-/* CSS for syntax highlighting */
-html { -webkit-text-size-adjust: 100%; }
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -68,17 +36,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../libs/quarto-html/anchor.min.js"></script>
 <link href="../libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../libs/bootstrap/bootstrap.min.js"></script>
 <link href="../libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../libs/bootstrap/bootstrap-811c29991c062aa722966c064eca9e31.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../libs/bootstrap/bootstrap-17adf1e77dc4ed90433053284acfe00f.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script src="../libs/quarto-contrib/live-runtime/live-runtime.js" type="module"></script>
 <link href="../libs/quarto-contrib/live-runtime/live-runtime.css" rel="stylesheet">
 <script type="module" src="../libs/quarto-ojs/quarto-ojs-runtime.js"></script>
 <link href="../libs/quarto-ojs/quarto-ojs.css" rel="stylesheet">
 
   <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js" type="text/javascript"></script>
 
 <script type="text/javascript">
 const typesetMath = (el) => {
@@ -119,7 +87,7 @@ window.Quarto = {
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
 <h1 class="title">Block 4: Errors and power</h1>
-<p class="subtitle lead">Week 12 · Uncertainty II · Imai §7.2.5–7.2.6 · about 7 min</p>
+<p class="subtitle lead">Week 12 · Uncertainty II · Imai §7.2.5–7.2.6 · about 4 min</p>
 </div>
 
 
@@ -149,57 +117,27 @@ window.Quarto = {
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p><strong>Read the code and predict</strong> (write it down or tell your neighbour), answer the question, then <strong>run</strong> it with <em>Run Code</em>. Every cell is editable; <em>Start Over</em> resets it. Errors are information: read them.</p>
+<p><strong>Run</strong> each cell with <em>Run Code</em>, look at the output, then answer the question at the end of the block. Every cell is editable; <em>Start Over</em> resets it. Errors are information: read them.</p>
 </div>
 </div>
 <p>Type I error = reject a true <span class="math inline">\(H_0\)</span> (controlled by <span class="math inline">\(\alpha\)</span>). Type II error = fail to reject a false <span class="math inline">\(H_0\)</span>. <strong>Power</strong> = 1 - P(Type II).</p>
-<section id="power-of-a-one-sample-test" class="level2">
-<h2 class="anchored" data-anchor-id="power-of-a-one-sample-test">1. Power of a one-sample test</h2>
-<p>A poll with n = 250; the true <span class="math inline">\(p = 0.48\)</span> but <span class="math inline">\(H_0\)</span>: <span class="math inline">\(p = 0.5\)</span>.</p>
-<p><strong>Read this code</strong> (it is not run yet):</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>n       <span class="ot">&lt;-</span> <span class="dv">250</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>p.star  <span class="ot">&lt;-</span> <span class="fl">0.48</span>                            <span class="co"># data generating process</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>p       <span class="ot">&lt;-</span> <span class="fl">0.5</span>                             <span class="co"># null value</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>alpha   <span class="ot">&lt;-</span> <span class="fl">0.05</span></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>cr.value <span class="ot">&lt;-</span> <span class="fu">qnorm</span>(<span class="dv">1</span> <span class="sc">-</span> alpha <span class="sc">/</span> <span class="dv">2</span>)</span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>se.star <span class="ot">&lt;-</span> <span class="fu">sqrt</span>(p.star <span class="sc">*</span> (<span class="dv">1</span> <span class="sc">-</span> p.star) <span class="sc">/</span> n)</span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>se      <span class="ot">&lt;-</span> <span class="fu">sqrt</span>(p <span class="sc">*</span> (<span class="dv">1</span> <span class="sc">-</span> p) <span class="sc">/</span> n)</span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="co"># power by formula</span></span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="fu">pnorm</span>(p <span class="sc">-</span> cr.value <span class="sc">*</span> se, <span class="at">mean =</span> p.star, <span class="at">sd =</span> se.star) <span class="sc">+</span></span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>    <span class="fu">pnorm</span>(p <span class="sc">+</span> cr.value <span class="sc">*</span> se, <span class="at">mean =</span> p.star, <span class="at">sd =</span> se.star, <span class="at">lower.tail =</span> <span class="cn">FALSE</span>)</span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="co"># power by simulation: how often do we reject?</span></span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">2026</span>)</span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>reject <span class="ot">&lt;-</span> <span class="fu">replicate</span>(<span class="dv">5000</span>, {</span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>    d <span class="ot">&lt;-</span> <span class="fu">rbinom</span>(<span class="dv">1</span>, <span class="at">size =</span> n, <span class="at">prob =</span> p.star) <span class="sc">/</span> n</span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>    <span class="fu">abs</span>(d <span class="sc">-</span> p) <span class="sc">/</span> se <span class="sc">&gt;</span> cr.value</span>
-<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>})</span>
-<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(reject)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="quiz" data-correct="0" data-gate="gate-b4_power"><div class="quiz-q">Predict: What is the power of a 5% two-sided test here?</div><label><input type="radio" name="q6" value="0"> About 10%: very low, we would usually fail to detect the 2-point difference</label><label><input type="radio" name="q6" value="1"> About 50%</label><label><input type="radio" name="q6" value="2"> About 95%</label><label><input type="radio" name="q6" value="3"> About 99%</label><button class="quiz-check" type="button">Check</button><div class="quiz-feedback"></div><div class="quiz-expl">The formula gives 9.7% (simulation: about 10%). A tiny effect with a small sample is nearly invisible: failing to reject does not mean H0 is true.</div></div>
-<div id="gate-b4_power" class="gated">
-<p><strong>Now run it</strong> and compare with your answer:</p>
+<section id="power-of-a-one-sample-test-by-simulation" class="level2">
+<h2 class="anchored" data-anchor-id="power-of-a-one-sample-test-by-simulation">1. Power of a one-sample test, by simulation</h2>
+<p>A poll with n = 250; the true <span class="math inline">\(p = 0.48\)</span> but <span class="math inline">\(H_0\)</span>: <span class="math inline">\(p = 0.5\)</span>. How often do we reject?</p>
 <div class="cell" data-exercise="b4_power">
 <div>
 <div id="webr-1" class="exercise-cell">
 
 </div>
 <script type="webr-1-contents">
-eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoibiAgICAgICA8LSAyNTBcbnAuc3RhciAgPC0gMC40OCAgICAgICAgICAgICAgICAgICAgICAgICAgICAjIGRhdGEgZ2VuZXJhdGluZyBwcm9jZXNzXG5wICAgICAgIDwtIDAuNSAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIyBudWxsIHZhbHVlXG5hbHBoYSAgIDwtIDAuMDVcbmNyLnZhbHVlIDwtIHFub3JtKDEgLSBhbHBoYSAvIDIpXG5zZS5zdGFyIDwtIHNxcnQocC5zdGFyICogKDEgLSBwLnN0YXIpIC8gbilcbnNlICAgICAgPC0gc3FydChwICogKDEgLSBwKSAvIG4pXG4jIHBvd2VyIGJ5IGZvcm11bGFcbnBub3JtKHAgLSBjci52YWx1ZSAqIHNlLCBtZWFuID0gcC5zdGFyLCBzZCA9IHNlLnN0YXIpICtcbiAgICBwbm9ybShwICsgY3IudmFsdWUgKiBzZSwgbWVhbiA9IHAuc3Rhciwgc2QgPSBzZS5zdGFyLCBsb3dlci50YWlsID0gRkFMU0UpXG5cbiMgcG93ZXIgYnkgc2ltdWxhdGlvbjogaG93IG9mdGVuIGRvIHdlIHJlamVjdD9cbnNldC5zZWVkKDIwMjYpXG5yZWplY3QgPC0gcmVwbGljYXRlKDUwMDAsIHtcbiAgICBkIDwtIHJiaW5vbSgxLCBzaXplID0gbiwgcHJvYiA9IHAuc3RhcikgLyBuXG4gICAgYWJzKGQgLSBwKSAvIHNlID4gY3IudmFsdWVcbn0pXG5tZWFuKHJlamVjdCkifQ==
+eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoic2V0LnNlZWQoMjAyNilcbm4gICAgICA8LSAyNTBcbnAuc3RhciA8LSAwLjQ4ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAjIHRoZSB0cnV0aFxucCAgICAgIDwtIDAuNSAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICMgbnVsbCB2YWx1ZVxuc2UgICAgIDwtIHNxcnQocCAqICgxIC0gcCkgLyBuKSAgICAgICAgICAgICMgc3RhbmRhcmQgZXJyb3IgdW5kZXIgSDBcbnJlamVjdCA8LSByZXBsaWNhdGUoNTAwMCwge1xuICAgIGQgPC0gcmJpbm9tKDEsIHNpemUgPSBuLCBwcm9iID0gcC5zdGFyKSAvIG4gICAgIyBvbmUgc2ltdWxhdGVkIHBvbGxcbiAgICBhYnMoZCAtIHApIC8gc2UgPiBxbm9ybSgwLjk3NSkgICAgICAgICAgICAgICAgICMgNSUgdHdvLXNpZGVkIHRlc3Rcbn0pXG5tZWFuKHJlamVjdCkgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIyB0aGUgcG93ZXIifQ==
 </script>
-</div>
 </div>
 </div>
 </section>
 <section id="two-sample-power-and-sample-size" class="level2">
 <h2 class="anchored" data-anchor-id="two-sample-power-and-sample-size">2. Two-sample power and sample size</h2>
 <p>Callback rate 5% vs.&nbsp;10%.</p>
-<p><strong>Read this code</strong> (it is not run yet):</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">power.prop.test</span>(<span class="at">n =</span> <span class="dv">500</span>, <span class="at">p1 =</span> <span class="fl">0.05</span>, <span class="at">p2 =</span> <span class="fl">0.10</span>, <span class="at">sig.level =</span> <span class="fl">0.05</span>)</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="co"># sample size for 90% power</span></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="fu">power.prop.test</span>(<span class="at">p1 =</span> <span class="fl">0.05</span>, <span class="at">p2 =</span> <span class="fl">0.10</span>, <span class="at">sig.level =</span> <span class="fl">0.05</span>, <span class="at">power =</span> <span class="fl">0.90</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="quiz" data-correct="0" data-gate="gate-b4_ppt"><div class="quiz-q">Predict: What is the power with 500 per group? And how many per group do you need for 90% power?</div><label><input type="radio" name="q7" value="0"> About 85% power; about 580 per group for 90%</label><label><input type="radio" name="q7" value="1"> About 99% power; 100 per group</label><label><input type="radio" name="q7" value="2"> About 20% power; 5,000 per group</label><label><input type="radio" name="q7" value="3"> Exactly 50%; 500 per group</label><button class="quiz-check" type="button">Check</button><div class="quiz-feedback"></div><div class="quiz-expl">power.prop.test gives 0.85 for n = 500 per group and n = 581 for 90% power. For a smaller difference (7% instead of 10%) you need about 2,960 per group: five times more.</div></div>
-<div id="gate-b4_ppt" class="gated">
-<p><strong>Now run it</strong> and compare with your answer:</p>
 <div class="cell" data-exercise="b4_ppt">
 <div>
 <div id="webr-2" class="exercise-cell">
@@ -210,8 +148,7 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoicG93ZXIucHJvcC50ZXN0KG4g
 </script>
 </div>
 </div>
-</div>
-<p><strong>Change it:</strong> use <code>p2 = 0.07</code>. How much larger must <em>n</em> be?</p>
+<div class="quiz" data-correct="0" data-gate=""><div class="quiz-q">Conclusion: What do the two results say about power?</div><label><input type="radio" name="q4" value="0"> The poll has only about 10% power; 500 per group give about 85% power; 90% power needs about 580 per group</label><label><input type="radio" name="q4" value="1"> The poll has about 95% power; 500 per group give 20% power</label><label><input type="radio" name="q4" value="2"> Both are exactly 80%</label><label><input type="radio" name="q4" value="3"> Power does not depend on the sample size</label><button class="quiz-check" type="button">Check</button><div class="quiz-feedback"></div><div class="quiz-expl">The poll example has about 10% power (formula 9.7%): a 2-point deviation is almost never detected with 250 respondents, and failing to reject does not mean H0 is true. power.prop.test gives 0.85 for n = 500 per group and n = 581 for 90% power. A smaller difference (7% instead of 10%) needs about 2,960 per group.</div></div>
 <div class="blocknav">
 <p><a href="Block3.html" class="prev-block">← Block 3</a> <a href="Block5.html" class="next-block">Next: Block 5, Linear regression with uncertainty →</a></p>
 </div>

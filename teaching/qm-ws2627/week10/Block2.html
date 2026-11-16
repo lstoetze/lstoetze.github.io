@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.9.37">
+<meta name="generator" content="quarto-1.10.18">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -12,51 +12,19 @@
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
 */
-code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
-div.columns{display: flex; gap: min(4vw, 1.5em);}
-div.column{flex: auto; overflow-x: auto;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
 div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
-}
-/* CSS for syntax highlighting */
-html { -webkit-text-size-adjust: 100%; }
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -68,10 +36,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../libs/quarto-html/anchor.min.js"></script>
 <link href="../libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../libs/bootstrap/bootstrap.min.js"></script>
 <link href="../libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../libs/bootstrap/bootstrap-811c29991c062aa722966c064eca9e31.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../libs/bootstrap/bootstrap-17adf1e77dc4ed90433053284acfe00f.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script src="../libs/quarto-contrib/live-runtime/live-runtime.js" type="module"></script>
 <link href="../libs/quarto-contrib/live-runtime/live-runtime.css" rel="stylesheet">
 <script type="module" src="../libs/quarto-ojs/quarto-ojs-runtime.js"></script>
@@ -90,7 +58,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
 <h1 class="title">Block 2: The binomial distribution</h1>
-<p class="subtitle lead">Week 10 · Probability II · Imai §6.3.3 · about 7 min</p>
+<p class="subtitle lead">Week 10 · Probability II · Imai §6.3.3 · about 3 min</p>
 </div>
 
 
@@ -120,7 +88,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p><strong>Read the code and predict</strong> (write it down or tell your neighbour), answer the question, then <strong>run</strong> it with <em>Run Code</em>. Every cell is editable; <em>Start Over</em> resets it. Errors are information: read them.</p>
+<p><strong>Run</strong> each cell with <em>Run Code</em>, look at the output, then answer the question at the end of the block. Every cell is editable; <em>Start Over</em> resets it. Errors are information: read them.</p>
 </div>
 </div>
 <p>The binomial: X = number of successes in <em>n</em> independent Bernoulli(<em>p</em>) trials.</p>
@@ -133,7 +101,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 </div>
 <script type="webr-1-contents">
-eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiZGJpbm9tKDIsIHNpemUgPSAzLCBwcm9iID0gMC41KSAgICAgICAgICAjIFBNRjogUChYID0gMikgd2l0aCBuID0gM1xucGJpbm9tKDEsIHNpemUgPSAzLCBwcm9iID0gMC41KSAgICAgICAgICAjIENERjogUChYIDw9IDEpXG5zdW0oZGJpbm9tKDA6Mywgc2l6ZSA9IDMsIHByb2IgPSAwLjUpKSAgICMgdGhlIFBNRiBzdW1zIHRvIDFcbmNob29zZSgzLCAyKSAqIDAuNV4yICogMC41ICAgICAgICAgICAgICAgIyBieSBoYW5kIn0=
+eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiZGJpbm9tKDIsIHNpemUgPSAzLCBwcm9iID0gMC41KSAgICAgICAgICAjIFBNRjogUChYID0gMikgd2l0aCBuID0gM1xucGJpbm9tKDEsIHNpemUgPSAzLCBwcm9iID0gMC41KSAgICAgICAgICAjIENERjogUChYIDw9IDEpXG5jaG9vc2UoMywgMikgKiAwLjVeMiAqIDAuNSAgICAgICAgICAgICAgICMgYnkgaGFuZCJ9
 </script>
 </div>
 </div>
@@ -141,28 +109,17 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiZGJpbm9tKDIsIHNpemUgPSAz
 <section id="a-tied-election" class="level2">
 <h2 class="anchored" data-anchor-id="a-tied-election">2. A tied election</h2>
 <p><em>n</em> voters, each votes for A with probability 0.5. What is the probability of an <strong>exact</strong> tie?</p>
-<p><strong>Read this code</strong> (it is not run yet):</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>voters <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1000</span>, <span class="dv">10000</span>, <span class="dv">100000</span>)</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">dbinom</span>(voters <span class="sc">/</span> <span class="dv">2</span>, <span class="at">size =</span> voters, <span class="at">prob =</span> <span class="fl">0.5</span>)</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co"># the same by simulation</span></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>x.binom <span class="ot">&lt;-</span> <span class="fu">rbinom</span>(<span class="dv">10000</span>, <span class="at">size =</span> <span class="dv">1000</span>, <span class="at">prob =</span> <span class="fl">0.5</span>)</span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(x.binom <span class="sc">==</span> <span class="dv">500</span>)</span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(x.binom, <span class="at">freq =</span> <span class="cn">FALSE</span>, <span class="at">xlab =</span> <span class="st">"Votes for A out of 1000"</span>, <span class="at">main =</span> <span class="st">""</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="quiz" data-correct="0" data-gate="gate-b2_tie"><div class="quiz-q">Predict: Does the probability of an exact tie grow or shrink as n goes from 1,000 to 10,000 to 100,000?</div><label><input type="radio" name="q3" value="0"> It shrinks: about 2.5%, 0.8%, 0.25%</label><label><input type="radio" name="q3" value="1"> It grows towards 1</label><label><input type="radio" name="q3" value="2"> It stays at 50%</label><label><input type="radio" name="q3" value="3"> It is always exactly 0</label><button class="quiz-check" type="button">Check</button><div class="quiz-feedback"></div><div class="quiz-expl">Even though the expected number of votes is n/2, the chance of landing <b>exactly</b> on it falls like 1/√n.</div></div>
-<div id="gate-b2_tie" class="gated">
-<p><strong>Now run it</strong> and compare with your answer:</p>
 <div class="cell" data-exercise="b2_tie">
 <div>
 <div id="webr-2" class="exercise-cell">
 
 </div>
 <script type="webr-2-contents">
-eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoidm90ZXJzIDwtIGMoMTAwMCwgMTAwMDAsIDEwMDAwMClcbmRiaW5vbSh2b3RlcnMgLyAyLCBzaXplID0gdm90ZXJzLCBwcm9iID0gMC41KVxuXG4jIHRoZSBzYW1lIGJ5IHNpbXVsYXRpb25cbnguYmlub20gPC0gcmJpbm9tKDEwMDAwLCBzaXplID0gMTAwMCwgcHJvYiA9IDAuNSlcbm1lYW4oeC5iaW5vbSA9PSA1MDApXG5oaXN0KHguYmlub20sIGZyZXEgPSBGQUxTRSwgeGxhYiA9IFwiVm90ZXMgZm9yIEEgb3V0IG9mIDEwMDBcIiwgbWFpbiA9IFwiXCIpIn0=
+eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoidm90ZXJzIDwtIGMoMTAwMCwgMTAwMDAsIDEwMDAwMClcbmRiaW5vbSh2b3RlcnMgLyAyLCBzaXplID0gdm90ZXJzLCBwcm9iID0gMC41KVxuXG4jIHRoZSBzYW1lIGJ5IHNpbXVsYXRpb24sIGZvciBuID0gMTAwMFxueC5iaW5vbSA8LSByYmlub20oMTAwMDAsIHNpemUgPSAxMDAwLCBwcm9iID0gMC41KVxubWVhbih4LmJpbm9tID09IDUwMCkifQ==
 </script>
 </div>
 </div>
-</div>
+<div class="quiz" data-correct="0" data-gate=""><div class="quiz-q">Conclusion: Does the probability of an exact tie grow or shrink as n goes from 1,000 to 100,000?</div><label><input type="radio" name="q2" value="0"> It shrinks: about 2.5%, 0.8%, 0.25%</label><label><input type="radio" name="q2" value="1"> It grows towards 1</label><label><input type="radio" name="q2" value="2"> It stays at 50%</label><label><input type="radio" name="q2" value="3"> It is always exactly 0</label><button class="quiz-check" type="button">Check</button><div class="quiz-feedback"></div><div class="quiz-expl">Even though the expected number of votes is n/2, the chance of landing exactly on it falls like 1/sqrt(n). The simulation (about 0.028) agrees with the exact answer (0.025) up to Monte Carlo error.</div></div>
 <div class="blocknav">
 <p><a href="Block1.html" class="prev-block">← Block 1</a> <a href="Block3.html" class="next-block">Next: Block 3, The normal distribution →</a></p>
 </div>

@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.9.37">
+<meta name="generator" content="quarto-1.10.18">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -12,51 +12,19 @@
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
 */
-code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
-div.columns{display: flex; gap: min(4vw, 1.5em);}
-div.column{flex: auto; overflow-x: auto;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
 div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
-}
-/* CSS for syntax highlighting */
-html { -webkit-text-size-adjust: 100%; }
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -68,17 +36,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../libs/quarto-html/anchor.min.js"></script>
 <link href="../libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../libs/bootstrap/bootstrap.min.js"></script>
 <link href="../libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../libs/bootstrap/bootstrap-811c29991c062aa722966c064eca9e31.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../libs/bootstrap/bootstrap-17adf1e77dc4ed90433053284acfe00f.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script src="../libs/quarto-contrib/live-runtime/live-runtime.js" type="module"></script>
 <link href="../libs/quarto-contrib/live-runtime/live-runtime.css" rel="stylesheet">
 <script type="module" src="../libs/quarto-ojs/quarto-ojs-runtime.js"></script>
 <link href="../libs/quarto-ojs/quarto-ojs.css" rel="stylesheet">
 
   <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js" type="text/javascript"></script>
 
 <script type="text/javascript">
 const typesetMath = (el) => {
@@ -119,7 +87,7 @@ window.Quarto = {
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
 <h1 class="title">Block 3: Confidence intervals and coverage</h1>
-<p class="subtitle lead">Week 11 · Uncertainty I · Imai §7.1.3 · about 8 min</p>
+<p class="subtitle lead">Week 11 · Uncertainty I · Imai §7.1.3 · about 4 min</p>
 </div>
 
 
@@ -149,24 +117,13 @@ window.Quarto = {
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p><strong>Read the code and predict</strong> (write it down or tell your neighbour), answer the question, then <strong>run</strong> it with <em>Run Code</em>. Every cell is editable; <em>Start Over</em> resets it. Errors are information: read them.</p>
+<p><strong>Run</strong> each cell with <em>Run Code</em>, look at the output, then answer the question at the end of the block. Every cell is editable; <em>Start Over</em> resets it. Errors are information: read them.</p>
 </div>
 </div>
 <p>A 95% confidence interval is: estimate <span class="math inline">\(\pm\)</span> 1.96 <span class="math inline">\(\times\)</span> standard error.</p>
 <section id="poll-99-95-and-90-intervals" class="level2">
 <h2 class="anchored" data-anchor-id="poll-99-95-and-90-intervals">1. Poll: 99%, 95% and 90% intervals</h2>
 <p>A poll of n = 1,000 finds a sample proportion <span class="math inline">\(\bar{x} = 0.6\)</span>.</p>
-<p><strong>Read this code</strong> (it is not run yet):</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="dv">1000</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>x.bar <span class="ot">&lt;-</span> <span class="fl">0.6</span>                             <span class="co"># an observed sample proportion</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>s.e. <span class="ot">&lt;-</span> <span class="fu">sqrt</span>(x.bar <span class="sc">*</span> (<span class="dv">1</span> <span class="sc">-</span> x.bar) <span class="sc">/</span> n)</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>s.e.</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">c</span>(x.bar <span class="sc">-</span> <span class="fu">qnorm</span>(<span class="fl">0.995</span>) <span class="sc">*</span> s.e., x.bar <span class="sc">+</span> <span class="fu">qnorm</span>(<span class="fl">0.995</span>) <span class="sc">*</span> s.e.)   <span class="co"># 99% CI</span></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="fu">c</span>(x.bar <span class="sc">-</span> <span class="fu">qnorm</span>(<span class="fl">0.975</span>) <span class="sc">*</span> s.e., x.bar <span class="sc">+</span> <span class="fu">qnorm</span>(<span class="fl">0.975</span>) <span class="sc">*</span> s.e.)   <span class="co"># 95% CI</span></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="fu">c</span>(x.bar <span class="sc">-</span> <span class="fu">qnorm</span>(<span class="fl">0.95</span>)  <span class="sc">*</span> s.e., x.bar <span class="sc">+</span> <span class="fu">qnorm</span>(<span class="fl">0.95</span>)  <span class="sc">*</span> s.e.)   <span class="co"># 90% CI</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="quiz" data-correct="0" data-gate="gate-b3_ci"><div class="quiz-q">Predict: Which interval is widest: 99%, 95% or 90%? Which one would you bet on?</div><label><input type="radio" name="q6" value="0"> 99% is widest (about 0.56 to 0.64): more confidence needs a wider interval</label><label><input type="radio" name="q6" value="1"> 90% is widest</label><label><input type="radio" name="q6" value="2"> All three are identical</label><label><input type="radio" name="q6" value="3"> 95% is widest</label><button class="quiz-check" type="button">Check</button><div class="quiz-feedback"></div><div class="quiz-expl">The s.e. is 0.0155; the 99% interval is 0.560 to 0.640, the 95% interval 0.570 to 0.630, the 90% interval 0.575 to 0.625. Higher confidence costs precision.</div></div>
-<div id="gate-b3_ci" class="gated">
-<p><strong>Now run it</strong> and compare with your answer:</p>
 <div class="cell" data-exercise="b3_ci">
 <div>
 <div id="webr-1" class="exercise-cell">
@@ -177,47 +134,21 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoibiA8LSAxMDAwXG54LmJhciA8
 </script>
 </div>
 </div>
-</div>
 </section>
 <section id="coverage-how-often-does-the-95-interval-contain-the-truth" class="level2">
 <h2 class="anchored" data-anchor-id="coverage-how-often-does-the-95-interval-contain-the-truth">2. Coverage: how often does the 95% interval contain the truth?</h2>
-<p>Read the simulation: <code>p</code> is the true proportion (0.6), <code>ci.results</code> records whether each interval contained it.</p>
-<p><strong>Read this code</strong> (it is not run yet):</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">2026</span>)</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>p     <span class="ot">&lt;-</span> <span class="fl">0.6</span></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>alpha <span class="ot">&lt;-</span> <span class="fl">0.05</span></span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>sims  <span class="ot">&lt;-</span> <span class="dv">5000</span></span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>n.vec <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">10</span>, <span class="dv">50</span>, <span class="dv">100</span>, <span class="dv">1000</span>)</span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>results <span class="ot">&lt;-</span> <span class="fu">rep</span>(<span class="cn">NA</span>, <span class="fu">length</span>(n.vec))</span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(n.vec)) {</span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>    ci.results <span class="ot">&lt;-</span> <span class="fu">rep</span>(<span class="cn">NA</span>, sims)</span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> (j <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>sims) {</span>
-<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>        data  <span class="ot">&lt;-</span> <span class="fu">rbinom</span>(n.vec[i], <span class="at">size =</span> <span class="dv">1</span>, <span class="at">prob =</span> p)      <span class="co"># simple random sample</span></span>
-<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>        x.bar <span class="ot">&lt;-</span> <span class="fu">mean</span>(data)</span>
-<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>        s.e.  <span class="ot">&lt;-</span> <span class="fu">sqrt</span>(x.bar <span class="sc">*</span> (<span class="dv">1</span> <span class="sc">-</span> x.bar) <span class="sc">/</span> n.vec[i])</span>
-<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>        ci.lower <span class="ot">&lt;-</span> x.bar <span class="sc">-</span> <span class="fu">qnorm</span>(<span class="dv">1</span> <span class="sc">-</span> alpha <span class="sc">/</span> <span class="dv">2</span>) <span class="sc">*</span> s.e.</span>
-<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>        ci.upper <span class="ot">&lt;-</span> x.bar <span class="sc">+</span> <span class="fu">qnorm</span>(<span class="dv">1</span> <span class="sc">-</span> alpha <span class="sc">/</span> <span class="dv">2</span>) <span class="sc">*</span> s.e.</span>
-<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>        ci.results[j] <span class="ot">&lt;-</span> (p <span class="sc">&gt;=</span> ci.lower) <span class="sc">&amp;</span> (p <span class="sc">&lt;=</span> ci.upper)</span>
-<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>    }</span>
-<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>    results[i] <span class="ot">&lt;-</span> <span class="fu">mean</span>(ci.results)</span>
-<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(results) <span class="ot">&lt;-</span> n.vec</span>
-<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a>results</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="quiz" data-correct="0" data-gate="gate-b3_cov"><div class="quiz-q">Predict: Is the coverage of the "95%" interval exactly 95%? For which sample size is it furthest away?</div><label><input type="radio" name="q7" value="0"> Not exactly: it approaches 95% as n grows; furthest away at n = 10 (about 90%)</label><label><input type="radio" name="q7" value="1"> Exactly 95% for all n</label><label><input type="radio" name="q7" value="2"> Always above 99%</label><label><input type="radio" name="q7" value="3"> Furthest away at n = 1000</label><button class="quiz-check" type="button">Check</button><div class="quiz-feedback"></div><div class="quiz-expl">Coverage is 0.90, 0.94, 0.94 and 0.95 for n = 10, 50, 100, 1000. The normal approximation needs enough data: with n = 10 the interval is too narrow.</div></div>
-<div id="gate-b3_cov" class="gated">
-<p><strong>Now run it</strong> and compare with your answer:</p>
+<p>The true proportion is p = 0.6. For each sample size we draw 5,000 samples, build the 95% interval each time and check whether it contains p.</p>
 <div class="cell" data-exercise="b3_cov">
 <div>
 <div id="webr-2" class="exercise-cell">
 
 </div>
 <script type="webr-2-contents">
-eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoic2V0LnNlZWQoMjAyNilcbnAgICAgIDwtIDAuNlxuYWxwaGEgPC0gMC4wNVxuc2ltcyAgPC0gNTAwMFxubi52ZWMgPC0gYygxMCwgNTAsIDEwMCwgMTAwMClcbnJlc3VsdHMgPC0gcmVwKE5BLCBsZW5ndGgobi52ZWMpKVxuZm9yIChpIGluIDE6bGVuZ3RoKG4udmVjKSkge1xuICAgIGNpLnJlc3VsdHMgPC0gcmVwKE5BLCBzaW1zKVxuICAgIGZvciAoaiBpbiAxOnNpbXMpIHtcbiAgICAgICAgZGF0YSAgPC0gcmJpbm9tKG4udmVjW2ldLCBzaXplID0gMSwgcHJvYiA9IHApICAgICAgIyBzaW1wbGUgcmFuZG9tIHNhbXBsZVxuICAgICAgICB4LmJhciA8LSBtZWFuKGRhdGEpXG4gICAgICAgIHMuZS4gIDwtIHNxcnQoeC5iYXIgKiAoMSAtIHguYmFyKSAvIG4udmVjW2ldKVxuICAgICAgICBjaS5sb3dlciA8LSB4LmJhciAtIHFub3JtKDEgLSBhbHBoYSAvIDIpICogcy5lLlxuICAgICAgICBjaS51cHBlciA8LSB4LmJhciArIHFub3JtKDEgLSBhbHBoYSAvIDIpICogcy5lLlxuICAgICAgICBjaS5yZXN1bHRzW2pdIDwtIChwID49IGNpLmxvd2VyKSAmIChwIDw9IGNpLnVwcGVyKVxuICAgIH1cbiAgICByZXN1bHRzW2ldIDwtIG1lYW4oY2kucmVzdWx0cylcbn1cbm5hbWVzKHJlc3VsdHMpIDwtIG4udmVjXG5yZXN1bHRzIn0=
+eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoic2V0LnNlZWQoMjAyNilcbnAgPC0gMC42XG5mb3IgKG4gaW4gYygxMCwgNTAsIDEwMCwgMTAwMCkpIHtcbiAgICBjb3ZlcmVkIDwtIHJlcGxpY2F0ZSg1MDAwLCB7XG4gICAgICAgIHguYmFyIDwtIG1lYW4ocmJpbm9tKG4sIHNpemUgPSAxLCBwcm9iID0gcCkpICAgICAjIG9uZSBzYW1wbGVcbiAgICAgICAgcy5lLiAgPC0gc3FydCh4LmJhciAqICgxIC0geC5iYXIpIC8gbilcbiAgICAgICAgKHguYmFyIC0gMS45NiAqIHMuZS4gPD0gcCkgJiAocCA8PSB4LmJhciArIDEuOTYgKiBzLmUuKVxuICAgIH0pXG4gICAgY2F0KFwibiA9XCIsIG4sIFwiIGNvdmVyYWdlID1cIiwgbWVhbihjb3ZlcmVkKSwgXCJcXG5cIilcbn0ifQ==
 </script>
 </div>
 </div>
-</div>
-<p><strong>Change it (optional):</strong> set <code>p &lt;- 0.05</code>. What happens to the coverage for n = 50? (It drops to about 92%.)</p>
+<div class="quiz" data-correct="0" data-gate=""><div class="quiz-q">Conclusion: Is the coverage of the "95%" interval exactly 95%?</div><label><input type="radio" name="q3" value="0"> Not exactly: it approaches 95% as n grows, and is furthest away at n = 10 (about 90%)</label><label><input type="radio" name="q3" value="1"> Exactly 95% for all n</label><label><input type="radio" name="q3" value="2"> Always above 99%</label><label><input type="radio" name="q3" value="3"> Furthest away at n = 1000</label><button class="quiz-check" type="button">Check</button><div class="quiz-feedback"></div><div class="quiz-expl">Coverage is about 0.90, 0.94, 0.95 and 0.95 for n = 10, 50, 100, 1000. The normal approximation needs enough data: with n = 10 the interval is too narrow. The 99% interval is the widest (0.560 to 0.640): higher confidence costs precision.</div></div>
 <div class="blocknav">
 <p><a href="Block2.html" class="prev-block">← Block 2</a> <a href="Block4.html" class="next-block">Next: Block 4, Application: polls and the 2008 election →</a></p>
 </div>

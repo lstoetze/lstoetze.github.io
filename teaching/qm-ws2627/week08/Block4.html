@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.9.37">
+<meta name="generator" content="quarto-1.10.18">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -12,51 +12,19 @@
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
 */
-code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
-div.columns{display: flex; gap: min(4vw, 1.5em);}
-div.column{flex: auto; overflow-x: auto;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
 div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
-}
-/* CSS for syntax highlighting */
-html { -webkit-text-size-adjust: 100%; }
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -68,17 +36,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../libs/quarto-html/anchor.min.js"></script>
 <link href="../libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../libs/bootstrap/bootstrap.min.js"></script>
 <link href="../libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../libs/bootstrap/bootstrap-811c29991c062aa722966c064eca9e31.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../libs/bootstrap/bootstrap-17adf1e77dc4ed90433053284acfe00f.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script src="../libs/quarto-contrib/live-runtime/live-runtime.js" type="module"></script>
 <link href="../libs/quarto-contrib/live-runtime/live-runtime.css" rel="stylesheet">
 <script type="module" src="../libs/quarto-ojs/quarto-ojs-runtime.js"></script>
 <link href="../libs/quarto-ojs/quarto-ojs.css" rel="stylesheet">
 
   <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js" type="text/javascript"></script>
 
 <script type="text/javascript">
 const typesetMath = (el) => {
@@ -119,7 +87,7 @@ window.Quarto = {
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
 <h1 class="title">Block 4: Model fit, residuals and outliers</h1>
-<p class="subtitle lead">Week 8 · Prediction II · Imai §4.2.5 · about 7 min</p>
+<p class="subtitle lead">Week 8 · Prediction II · Imai §4.2.5 · about 4 min</p>
 </div>
 
 
@@ -149,7 +117,7 @@ window.Quarto = {
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p><strong>Read the code and predict</strong> (write it down or tell your neighbour), answer the question, then <strong>run</strong> it with <em>Run Code</em>. Every cell is editable; <em>Start Over</em> resets it. Errors are information: read them.</p>
+<p><strong>Run</strong> each cell with <em>Run Code</em>, look at the output, then answer the question at the end of the block. Every cell is editable; <em>Start Over</em> resets it. Errors are information: read them.</p>
 </div>
 </div>
 <p><code>florida.csv</code>: one row = one Florida county, 2000 presidential election. We regress Buchanan’s 2000 votes on Perot’s 1996 votes.</p>
@@ -161,29 +129,20 @@ window.Quarto = {
 
 </div>
 <script type="webr-1-contents">
-eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiZmxvcmlkYSA8LSByZWFkLmNzdihcImZsb3JpZGEuY3N2XCIpXG5maXQyIDwtIGxtKEJ1Y2hhbmFuMDAgfiBQZXJvdDk2LCBkYXRhID0gZmxvcmlkYSkgICAgIyBCdWNoYW5hbiAyMDAwIG9uIFBlcm90IDE5OTZcbmZpdDJcbiMgUi1zcXVhcmVkID0gMSAtIFNTUiAvIFRTU1xuVFNTMiA8LSBzdW0oKGZsb3JpZGEkQnVjaGFuYW4wMCAtIG1lYW4oZmxvcmlkYSRCdWNoYW5hbjAwKSleMilcblNTUjIgPC0gc3VtKHJlc2lkKGZpdDIpXjIpXG4oVFNTMiAtIFNTUjIpIC8gVFNTMlxuc3VtbWFyeShmaXQyKSRyLnNxdWFyZWQgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAjIHRoZSBidWlsdC1pbiB2ZXJzaW9uIn0=
+eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiZmxvcmlkYSA8LSByZWFkLmNzdihcImZsb3JpZGEuY3N2XCIpXG5maXQyIDwtIGxtKEJ1Y2hhbmFuMDAgfiBQZXJvdDk2LCBkYXRhID0gZmxvcmlkYSkgICAgIyBCdWNoYW5hbiAyMDAwIG9uIFBlcm90IDE5OTZcbmZpdDJcbnN1bW1hcnkoZml0Mikkci5zcXVhcmVkICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIyBSLXNxdWFyZWQifQ==
 </script>
 </div>
 </div>
 </section>
 <section id="residuals-which-county-is-the-outlier" class="level2">
 <h2 class="anchored" data-anchor-id="residuals-which-county-is-the-outlier">2. Residuals: which county is the outlier?</h2>
-<p><strong>Read this code</strong> (it is not run yet):</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>fit2 <span class="ot">&lt;-</span> <span class="fu">lm</span>(Buchanan00 <span class="sc">~</span> Perot96, <span class="at">data =</span> florida)</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(<span class="fu">fitted</span>(fit2), <span class="fu">resid</span>(fit2), <span class="at">xlim =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">1500</span>), <span class="at">ylim =</span> <span class="fu">c</span>(<span class="sc">-</span><span class="dv">750</span>, <span class="dv">2500</span>),</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>     <span class="at">xlab =</span> <span class="st">"Fitted values"</span>, <span class="at">ylab =</span> <span class="st">"Residuals"</span>)</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">h =</span> <span class="dv">0</span>)</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>florida<span class="sc">$</span>county[<span class="fu">resid</span>(fit2) <span class="sc">==</span> <span class="fu">max</span>(<span class="fu">resid</span>(fit2))]      <span class="co"># the largest residual</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="quiz" data-correct="1" data-gate="gate-b4_resid"><div class="quiz-q">Predict: Plot the residuals against the fitted values. Which county has the largest residual?</div><label><input type="radio" name="q6" value="0"> Miami-Dade</label><label><input type="radio" name="q6" value="1"> Palm Beach</label><label><input type="radio" name="q6" value="2"> Duval</label><label><input type="radio" name="q6" value="3"> Leon</label><button class="quiz-check" type="button">Check</button><div class="quiz-feedback"></div><div class="quiz-expl">Palm Beach: Buchanan received 3,407 votes there, far more than the model predicts. The infamous "butterfly ballot" confused voters.</div></div>
-<div id="gate-b4_resid" class="gated">
-<p><strong>Now run it</strong> and compare with your answer:</p>
 <div class="cell" data-exercise="b4_resid">
 <div>
 <div id="webr-2" class="exercise-cell">
 
 </div>
 <script type="webr-2-contents">
-eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiZml0MiA8LSBsbShCdWNoYW5hbjAwIH4gUGVyb3Q5NiwgZGF0YSA9IGZsb3JpZGEpXG5wbG90KGZpdHRlZChmaXQyKSwgcmVzaWQoZml0MiksIHhsaW0gPSBjKDAsIDE1MDApLCB5bGltID0gYygtNzUwLCAyNTAwKSxcbiAgICAgeGxhYiA9IFwiRml0dGVkIHZhbHVlc1wiLCB5bGFiID0gXCJSZXNpZHVhbHNcIilcbmFibGluZShoID0gMClcbmZsb3JpZGEkY291bnR5W3Jlc2lkKGZpdDIpID09IG1heChyZXNpZChmaXQyKSldICAgICAgIyB0aGUgbGFyZ2VzdCByZXNpZHVhbCJ9
+eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiZml0MiA8LSBsbShCdWNoYW5hbjAwIH4gUGVyb3Q5NiwgZGF0YSA9IGZsb3JpZGEpXG5wbG90KGZpdHRlZChmaXQyKSwgcmVzaWQoZml0MiksIHhsYWIgPSBcIkZpdHRlZCB2YWx1ZXNcIiwgeWxhYiA9IFwiUmVzaWR1YWxzXCIpXG5hYmxpbmUoaCA9IDApXG5mbG9yaWRhJGNvdW50eVtyZXNpZChmaXQyKSA9PSBtYXgocmVzaWQoZml0MikpXSAgICAgICMgdGhlIGxhcmdlc3QgcmVzaWR1YWwifQ==
 </script>
 </div>
 </div>
@@ -197,34 +156,16 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiZmxvcmlkYSA8LSByZWFkLmNz
 </script>
 </div>
 </div>
-</div>
 </section>
 <section id="refit-without-palm-beach" class="level2">
 <h2 class="anchored" data-anchor-id="refit-without-palm-beach">3. Refit without Palm Beach</h2>
-<p><strong>Read this code</strong> (it is not run yet):</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>florida.pb <span class="ot">&lt;-</span> <span class="fu">subset</span>(florida, <span class="at">subset =</span> (county <span class="sc">!=</span> <span class="st">"PalmBeach"</span>))</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>fit2 <span class="ot">&lt;-</span> <span class="fu">lm</span>(Buchanan00 <span class="sc">~</span> Perot96, <span class="at">data =</span> florida)</span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>fit3 <span class="ot">&lt;-</span> <span class="fu">lm</span>(Buchanan00 <span class="sc">~</span> Perot96, <span class="at">data =</span> florida.pb)</span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>fit3</span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(fit3)<span class="sc">$</span>r.squared</span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(florida<span class="sc">$</span>Perot96, florida<span class="sc">$</span>Buchanan00, <span class="at">xlab =</span> <span class="st">"Perot's votes in 1996"</span>,</span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>     <span class="at">ylab =</span> <span class="st">"Buchanan's votes in 2000"</span>)</span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(fit2, <span class="at">lty =</span> <span class="st">"dashed"</span>)                         <span class="co"># with Palm Beach</span></span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(fit3)                                         <span class="co"># without Palm Beach</span></span>
-<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Predicted Buchanan votes in Palm Beach vs. actual</span></span>
-<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a><span class="fu">predict</span>(fit3, <span class="at">newdata =</span> florida[florida<span class="sc">$</span>county <span class="sc">==</span> <span class="st">"PalmBeach"</span>, ])</span>
-<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>florida<span class="sc">$</span>Buchanan00[florida<span class="sc">$</span>county <span class="sc">==</span> <span class="st">"PalmBeach"</span>]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="quiz" data-correct="0" data-gate="gate-b4_refit"><div class="quiz-q">Predict: Without Palm Beach, what happens to R², and what would the model predict for Buchanan in Palm Beach?</div><label><input type="radio" name="q7" value="0"> R² rises from 0.51 to 0.85; predicted about 800 votes vs. 3,407 actual</label><label><input type="radio" name="q7" value="1"> R² falls; predicted 3,400 votes</label><label><input type="radio" name="q7" value="2"> R² unchanged; predicted 0</label><label><input type="radio" name="q7" value="3"> R² rises to 1; predicted 3,407</label><button class="quiz-check" type="button">Check</button><div class="quiz-feedback"></div><div class="quiz-expl">One outlier strongly changes the fit. Without Palm Beach the line is much better (R² 0.85) and predicts about 794 votes for Palm Beach: the excess is about 2,600 votes, more than Bush's margin of 537 in Florida.</div></div>
-<div id="gate-b4_refit" class="gated">
-<p><strong>Now run it</strong> and compare with your answer:</p>
 <div class="cell" data-exercise="b4_refit">
 <div>
 <div id="webr-4" class="exercise-cell">
 
 </div>
 <script type="webr-4-contents">
-eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiZmxvcmlkYS5wYiA8LSBzdWJzZXQoZmxvcmlkYSwgc3Vic2V0ID0gKGNvdW50eSAhPSBcIlBhbG1CZWFjaFwiKSlcbmZpdDIgPC0gbG0oQnVjaGFuYW4wMCB+IFBlcm90OTYsIGRhdGEgPSBmbG9yaWRhKVxuZml0MyA8LSBsbShCdWNoYW5hbjAwIH4gUGVyb3Q5NiwgZGF0YSA9IGZsb3JpZGEucGIpXG5maXQzXG5zdW1tYXJ5KGZpdDMpJHIuc3F1YXJlZFxucGxvdChmbG9yaWRhJFBlcm90OTYsIGZsb3JpZGEkQnVjaGFuYW4wMCwgeGxhYiA9IFwiUGVyb3QncyB2b3RlcyBpbiAxOTk2XCIsXG4gICAgIHlsYWIgPSBcIkJ1Y2hhbmFuJ3Mgdm90ZXMgaW4gMjAwMFwiKVxuYWJsaW5lKGZpdDIsIGx0eSA9IFwiZGFzaGVkXCIpICAgICAgICAgICAgICAgICAgICAgICAgICMgd2l0aCBQYWxtIEJlYWNoXG5hYmxpbmUoZml0MykgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICMgd2l0aG91dCBQYWxtIEJlYWNoXG5cbiMgUHJlZGljdGVkIEJ1Y2hhbmFuIHZvdGVzIGluIFBhbG0gQmVhY2ggdnMuIGFjdHVhbFxucHJlZGljdChmaXQzLCBuZXdkYXRhID0gZmxvcmlkYVtmbG9yaWRhJGNvdW50eSA9PSBcIlBhbG1CZWFjaFwiLCBdKVxuZmxvcmlkYSRCdWNoYW5hbjAwW2Zsb3JpZGEkY291bnR5ID09IFwiUGFsbUJlYWNoXCJdIn0=
+eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiZmxvcmlkYS5wYiA8LSBzdWJzZXQoZmxvcmlkYSwgc3Vic2V0ID0gKGNvdW50eSAhPSBcIlBhbG1CZWFjaFwiKSlcbmZpdDMgPC0gbG0oQnVjaGFuYW4wMCB+IFBlcm90OTYsIGRhdGEgPSBmbG9yaWRhLnBiKVxuc3VtbWFyeShmaXQzKSRyLnNxdWFyZWRcblxuIyBQcmVkaWN0ZWQgQnVjaGFuYW4gdm90ZXMgaW4gUGFsbSBCZWFjaCB2cy4gYWN0dWFsXG5wcmVkaWN0KGZpdDMsIG5ld2RhdGEgPSBmbG9yaWRhW2Zsb3JpZGEkY291bnR5ID09IFwiUGFsbUJlYWNoXCIsIF0pXG5mbG9yaWRhJEJ1Y2hhbmFuMDBbZmxvcmlkYSRjb3VudHkgPT0gXCJQYWxtQmVhY2hcIl0ifQ==
 </script>
 </div>
 </div>
@@ -238,7 +179,7 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiZmxvcmlkYSA8LSByZWFkLmNz
 </script>
 </div>
 </div>
-</div>
+<div class="quiz" data-correct="0" data-gate=""><div class="quiz-q">Conclusion: Which county is the outlier, and what happens when we drop it?</div><label><input type="radio" name="q4" value="0"> Palm Beach; R² rises from 0.51 to 0.85; predicted about 800 votes vs. 3,407 actual</label><label><input type="radio" name="q4" value="1"> Miami-Dade; R² falls; predicted 3,400 votes</label><label><input type="radio" name="q4" value="2"> Leon; R² unchanged</label><label><input type="radio" name="q4" value="3"> Duval; R² rises to 1</label><button class="quiz-check" type="button">Check</button><div class="quiz-feedback"></div><div class="quiz-expl">Palm Beach: Buchanan received 3,407 votes, far more than the model predicts (about 794). One outlier strongly changes the fit. The excess is about 2,600 votes, more than the 537-vote margin in Florida: the "butterfly ballot" confused voters.</div></div>
 <div class="blocknav">
 <p><a href="Block3.html" class="prev-block">← Block 3</a> <a href="Block5.html" class="next-block">Next: Block 5, Regression and causation →</a></p>
 </div>

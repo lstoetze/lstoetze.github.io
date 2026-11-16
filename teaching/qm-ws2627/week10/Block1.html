@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.9.37">
+<meta name="generator" content="quarto-1.10.18">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -12,51 +12,19 @@
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
 */
-code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
-div.columns{display: flex; gap: min(4vw, 1.5em);}
-div.column{flex: auto; overflow-x: auto;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
 div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
-}
-/* CSS for syntax highlighting */
-html { -webkit-text-size-adjust: 100%; }
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -68,10 +36,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../libs/quarto-html/anchor.min.js"></script>
 <link href="../libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../libs/bootstrap/bootstrap.min.js"></script>
 <link href="../libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../libs/bootstrap/bootstrap-811c29991c062aa722966c064eca9e31.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../libs/bootstrap/bootstrap-17adf1e77dc4ed90433053284acfe00f.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script src="../libs/quarto-contrib/live-runtime/live-runtime.js" type="module"></script>
 <link href="../libs/quarto-contrib/live-runtime/live-runtime.css" rel="stylesheet">
 <script type="module" src="../libs/quarto-ojs/quarto-ojs-runtime.js"></script>
@@ -90,7 +58,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
 <h1 class="title">Block 1: Random variables: Bernoulli and uniform</h1>
-<p class="subtitle lead">Week 10 · Probability II · Imai §6.3.1–6.3.2 · about 7 min</p>
+<p class="subtitle lead">Week 10 · Probability II · Imai §6.3.1–6.3.2 · about 3 min</p>
 </div>
 
 
@@ -120,46 +88,27 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p><strong>Read the code and predict</strong> (write it down or tell your neighbour), answer the question, then <strong>run</strong> it with <em>Run Code</em>. Every cell is editable; <em>Start Over</em> resets it. Errors are information: read them.</p>
+<p><strong>Run</strong> each cell with <em>Run Code</em>, look at the output, then answer the question at the end of the block. Every cell is editable; <em>Start Over</em> resets it. Errors are information: read them.</p>
 </div>
 </div>
 <p>A random variable assigns a number to each outcome. Its distribution says how likely each value is: PMF (discrete), PDF (continuous) and CDF.</p>
 <section id="the-uniform-distribution" class="level2">
 <h2 class="anchored" data-anchor-id="the-uniform-distribution">1. The uniform distribution</h2>
-<p><strong>Read this code</strong> (it is not run yet):</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">dunif</span>(<span class="fl">0.5</span>, <span class="at">min =</span> <span class="dv">0</span>, <span class="at">max =</span> <span class="dv">1</span>)             <span class="co"># PDF (a density, not a probability)</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">punif</span>(<span class="dv">1</span>, <span class="at">min =</span> <span class="sc">-</span><span class="dv">2</span>, <span class="at">max =</span> <span class="dv">2</span>)              <span class="co"># CDF: P(X &lt;= 1) for Uniform(-2, 2)</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">punif</span>(<span class="fl">0.3</span>)                               <span class="co"># P(X &lt;= 0.3): the default is U(0, 1)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="quiz" data-correct="0" data-gate="gate-b1_unif"><div class="quiz-q">Predict: <code>dunif(0.5)</code> returns a <b>density</b>. What value, and why is a density allowed to be larger than 1?</div><label><input type="radio" name="q1" value="0"> It returns 1. A density is not a probability: the area under the curve must be 1, so heights above 1 are fine on short intervals</label><label><input type="radio" name="q1" value="1"> It returns 0.5: probabilities cannot exceed 1</label><label><input type="radio" name="q1" value="2"> It returns 0, because P(X = 0.5) = 0</label><label><input type="radio" name="q1" value="3"> It returns 2</label><button class="quiz-check" type="button">Check</button><div class="quiz-feedback"></div><div class="quiz-expl">For Uniform(0, 1) the density is 1 everywhere; for Uniform(0, 0.5) it would be 2. Only <b>areas</b> (computed by the CDF, <code>punif</code>) are probabilities.</div></div>
-<div id="gate-b1_unif" class="gated">
-<p><strong>Now run it</strong> and compare with your answer:</p>
+<p><code>dunif()</code> is a <strong>density</strong>, <code>punif()</code> the CDF.</p>
 <div class="cell" data-exercise="b1_unif">
 <div>
 <div id="webr-1" class="exercise-cell">
 
 </div>
 <script type="webr-1-contents">
-eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiZHVuaWYoMC41LCBtaW4gPSAwLCBtYXggPSAxKSAgICAgICAgICAgICAjIFBERiAoYSBkZW5zaXR5LCBub3QgYSBwcm9iYWJpbGl0eSlcbnB1bmlmKDEsIG1pbiA9IC0yLCBtYXggPSAyKSAgICAgICAgICAgICAgIyBDREY6IFAoWCA8PSAxKSBmb3IgVW5pZm9ybSgtMiwgMilcbnB1bmlmKDAuMykgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIyBQKFggPD0gMC4zKTogdGhlIGRlZmF1bHQgaXMgVSgwLCAxKSJ9
+eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiZHVuaWYoMC41LCBtaW4gPSAwLCBtYXggPSAxKSAgICAgICAgICAgICAjIFBERiAoYSBkZW5zaXR5LCBub3QgYSBwcm9iYWJpbGl0eSlcbnB1bmlmKDEsIG1pbiA9IC0yLCBtYXggPSAyKSAgICAgICAgICAgICAgIyBDREY6IFAoWCA8PSAxKSBmb3IgVW5pZm9ybSgtMiwgMilcbnB1bmlmKDAuMykgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIyBQKFggPD0gMC4zKTogdGhlIGRlZmF1bHQgaXMgVSgwLCAxKVxuZHVuaWYoMC41LCBtaW4gPSAwLCBtYXggPSAwLjEpICAgICAgICAgICAjIGEgZGVuc2l0eSBjYW4gYmUgbGFyZ2VyIHRoYW4gMSJ9
 </script>
-</div>
 </div>
 </div>
 </section>
 <section id="simulate-a-bernoulli-variable-from-a-uniform-one" class="level2">
 <h2 class="anchored" data-anchor-id="simulate-a-bernoulli-variable-from-a-uniform-one">2. Simulate a Bernoulli variable from a uniform one</h2>
 <p><code>y = 1</code> if the uniform draw <code>x &lt;= p</code>, else 0.</p>
-<p><strong>Read this code</strong> (it is not run yet):</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">2026</span>)</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>sims <span class="ot">&lt;-</span> <span class="dv">1000</span></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>p <span class="ot">&lt;-</span> <span class="fl">0.5</span>                                 <span class="co"># success probability</span></span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">runif</span>(sims, <span class="at">min =</span> <span class="dv">0</span>, <span class="at">max =</span> <span class="dv">1</span>)       <span class="co"># uniform draws</span></span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="fu">as.integer</span>(x <span class="sc">&lt;=</span> p)                  <span class="co"># Bernoulli: 1 if x &lt;= p, else 0</span></span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(x)</span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(y)</span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(y)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="quiz" data-correct="0" data-gate="gate-b1_bern"><div class="quiz-q">Predict: With p = 0.5 and 1,000 draws, what will <code>mean(y)</code> be?</div><label><input type="radio" name="q2" value="0"> Close to 0.5, but not exactly 0.5</label><label><input type="radio" name="q2" value="1"> Exactly 0.5</label><label><input type="radio" name="q2" value="2"> Close to 0</label><label><input type="radio" name="q2" value="3"> Close to 1</label><button class="quiz-check" type="button">Check</button><div class="quiz-feedback"></div><div class="quiz-expl">We get 0.494: the mean of Bernoulli draws estimates p, with sampling noise.</div></div>
-<div id="gate-b1_bern" class="gated">
-<p><strong>Now run it</strong> and compare with your answer:</p>
 <div class="cell" data-exercise="b1_bern">
 <div>
 <div id="webr-2" class="exercise-cell">
@@ -170,8 +119,7 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoic2V0LnNlZWQoMjAyNilcbnNp
 </script>
 </div>
 </div>
-</div>
-<p><strong>Change it:</strong> use <code>p &lt;- 0.2</code>, and <code>sims &lt;- 10</code>, then <code>sims &lt;- 100000</code>. How far is <code>mean(y)</code> from <code>p</code>? (More draws, smaller error.)</p>
+<div class="quiz" data-correct="0" data-gate=""><div class="quiz-q">Conclusion: With p = 0.5 and 1,000 draws, what does mean(y) show?</div><label><input type="radio" name="q1" value="0"> Close to 0.5, but not exactly 0.5</label><label><input type="radio" name="q1" value="1"> Exactly 0.5</label><label><input type="radio" name="q1" value="2"> Close to 0</label><label><input type="radio" name="q1" value="3"> Close to 1</label><button class="quiz-check" type="button">Check</button><div class="quiz-feedback"></div><div class="quiz-expl">We get 0.494: the mean of Bernoulli draws estimates p, with sampling noise. A density can exceed 1 (dunif(0.5, 0, 0.1) = 10): only the area must be 1. More draws, smaller error: the law of large numbers.</div></div>
 <div class="blocknav">
 <p><a href="index.html" class="prev-block">← Overview</a> <a href="Block2.html" class="next-block">Next: Block 2, The binomial distribution →</a></p>
 </div>

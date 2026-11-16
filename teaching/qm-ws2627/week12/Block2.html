@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.9.37">
+<meta name="generator" content="quarto-1.10.18">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -12,51 +12,19 @@
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
 */
-code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
-div.columns{display: flex; gap: min(4vw, 1.5em);}
-div.column{flex: auto; overflow-x: auto;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
 div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
-}
-/* CSS for syntax highlighting */
-html { -webkit-text-size-adjust: 100%; }
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -68,17 +36,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../libs/quarto-html/anchor.min.js"></script>
 <link href="../libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../libs/bootstrap/bootstrap.min.js"></script>
 <link href="../libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../libs/bootstrap/bootstrap-811c29991c062aa722966c064eca9e31.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../libs/bootstrap/bootstrap-17adf1e77dc4ed90433053284acfe00f.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script src="../libs/quarto-contrib/live-runtime/live-runtime.js" type="module"></script>
 <link href="../libs/quarto-contrib/live-runtime/live-runtime.css" rel="stylesheet">
 <script type="module" src="../libs/quarto-ojs/quarto-ojs-runtime.js"></script>
 <link href="../libs/quarto-ojs/quarto-ojs.css" rel="stylesheet">
 
   <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js" type="text/javascript"></script>
 
 <script type="text/javascript">
 const typesetMath = (el) => {
@@ -119,7 +87,7 @@ window.Quarto = {
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
 <h1 class="title">Block 2: One-sample tests</h1>
-<p class="subtitle lead">Week 12 · Uncertainty II · Imai §7.2.2–7.2.3 · about 8 min</p>
+<p class="subtitle lead">Week 12 · Uncertainty II · Imai §7.2.2–7.2.3 · about 4 min</p>
 </div>
 
 
@@ -149,24 +117,12 @@ window.Quarto = {
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p><strong>Read the code and predict</strong> (write it down or tell your neighbour), answer the question, then <strong>run</strong> it with <em>Run Code</em>. Every cell is editable; <em>Start Over</em> resets it. Errors are information: read them.</p>
+<p><strong>Run</strong> each cell with <em>Run Code</em>, look at the output, then answer the question at the end of the block. Every cell is editable; <em>Start Over</em> resets it. Errors are information: read them.</p>
 </div>
 </div>
 <p>A poll of n = 1,018: 550 support the candidate. <span class="math inline">\(H_0\)</span>: <span class="math inline">\(p = 0.5\)</span>.</p>
 <section id="z-statistic-and-p-values" class="level2">
 <h2 class="anchored" data-anchor-id="z-statistic-and-p-values">1. z-statistic and p-values</h2>
-<p><strong>Read this code</strong> (it is not run yet):</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>n     <span class="ot">&lt;-</span> <span class="dv">1018</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>x.bar <span class="ot">&lt;-</span> <span class="dv">550</span> <span class="sc">/</span> n</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>x.bar</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>se    <span class="ot">&lt;-</span> <span class="fu">sqrt</span>(<span class="fl">0.5</span> <span class="sc">*</span> <span class="fl">0.5</span> <span class="sc">/</span> n)               <span class="co"># sd of the sampling distribution UNDER H0</span></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>z.score <span class="ot">&lt;-</span> (x.bar <span class="sc">-</span> <span class="fl">0.5</span>) <span class="sc">/</span> se</span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>z.score</span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="fu">pnorm</span>(z.score, <span class="at">lower.tail =</span> <span class="cn">FALSE</span>)         <span class="co"># one-sided p-value</span></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="dv">2</span> <span class="sc">*</span> <span class="fu">pnorm</span>(z.score, <span class="at">lower.tail =</span> <span class="cn">FALSE</span>)     <span class="co"># two-sided p-value</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="quiz" data-correct="0" data-gate="gate-b2_z"><div class="quiz-q">Predict: Do we reject $H_0$ at the 5% level? At the 1% level (two-sided)?</div><label><input type="radio" name="q3" value="0"> Yes at 5% (p = 0.010); at 1% it is a borderline case just above the cut-off</label><label><input type="radio" name="q3" value="1"> No at 5% and no at 1%</label><label><input type="radio" name="q3" value="2"> Yes at 5% and yes at 1%</label><label><input type="radio" name="q3" value="3"> Cannot be decided</label><button class="quiz-check" type="button">Check</button><div class="quiz-feedback"></div><div class="quiz-expl">z = 2.57; the two-sided p-value is 0.0102: reject at 5% but not (quite) at 1%. The one-sided p-value is half of that: 0.0051.</div></div>
-<div id="gate-b2_z" class="gated">
-<p><strong>Now run it</strong> and compare with your answer:</p>
 <div class="cell" data-exercise="b2_z">
 <div>
 <div id="webr-1" class="exercise-cell">
@@ -177,19 +133,9 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoibiAgICAgPC0gMTAxOFxueC5i
 </script>
 </div>
 </div>
-</div>
 </section>
-<section id="duality-of-tests-and-confidence-intervals" class="level2">
-<h2 class="anchored" data-anchor-id="duality-of-tests-and-confidence-intervals">2. Duality of tests and confidence intervals</h2>
-<p><strong>Read this code</strong> (it is not run yet):</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>n     <span class="ot">&lt;-</span> <span class="dv">1018</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>x.bar <span class="ot">&lt;-</span> <span class="dv">550</span> <span class="sc">/</span> n</span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>se    <span class="ot">&lt;-</span> <span class="fu">sqrt</span>(<span class="fl">0.5</span> <span class="sc">*</span> <span class="fl">0.5</span> <span class="sc">/</span> n)</span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="fu">c</span>(x.bar <span class="sc">-</span> <span class="fu">qnorm</span>(<span class="fl">0.995</span>) <span class="sc">*</span> se, x.bar <span class="sc">+</span> <span class="fu">qnorm</span>(<span class="fl">0.995</span>) <span class="sc">*</span> se)   <span class="co"># 99% CI</span></span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="fu">c</span>(x.bar <span class="sc">-</span> <span class="fu">qnorm</span>(<span class="fl">0.975</span>) <span class="sc">*</span> se, x.bar <span class="sc">+</span> <span class="fu">qnorm</span>(<span class="fl">0.975</span>) <span class="sc">*</span> se)   <span class="co"># 95% CI</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="quiz" data-correct="0" data-gate="gate-b2_ci"><div class="quiz-q">Predict: Do the 99% and the 95% confidence intervals contain 0.5? How does it agree with the test decisions?</div><label><input type="radio" name="q4" value="0"> The 99% CI (just) contains 0.5, the 95% CI does not: same decisions as the tests</label><label><input type="radio" name="q4" value="1"> Both contain 0.5</label><label><input type="radio" name="q4" value="2"> Neither contains 0.5</label><label><input type="radio" name="q4" value="3"> The CI has nothing to do with the test</label><button class="quiz-check" type="button">Check</button><div class="quiz-feedback"></div><div class="quiz-expl">The 99% CI is [0.4999, 0.5806] (contains 0.5, barely); the 95% CI is [0.5096, 0.5710] (excludes it). We reject H0 at level alpha exactly when the (1 - alpha) CI excludes the null value.</div></div>
-<div id="gate-b2_ci" class="gated">
-<p><strong>Now run it</strong> and compare with your answer:</p>
+<section id="confidence-intervals" class="level2">
+<h2 class="anchored" data-anchor-id="confidence-intervals">2. Confidence intervals</h2>
 <div class="cell" data-exercise="b2_ci">
 <div>
 <div id="webr-2" class="exercise-cell">
@@ -198,7 +144,6 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoibiAgICAgPC0gMTAxOFxueC5i
 <script type="webr-2-contents">
 eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoibiAgICAgPC0gMTAxOFxueC5iYXIgPC0gNTUwIC8gblxuc2UgICAgPC0gc3FydCgwLjUgKiAwLjUgLyBuKVxuYyh4LmJhciAtIHFub3JtKDAuOTk1KSAqIHNlLCB4LmJhciArIHFub3JtKDAuOTk1KSAqIHNlKSAgICMgOTklIENJXG5jKHguYmFyIC0gcW5vcm0oMC45NzUpICogc2UsIHguYmFyICsgcW5vcm0oMC45NzUpICogc2UpICAgIyA5NSUgQ0kifQ==
 </script>
-</div>
 </div>
 </div>
 </section>
@@ -210,10 +155,11 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoibiAgICAgPC0gMTAxOFxueC5i
 
 </div>
 <script type="webr-3-contents">
-eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoicHJvcC50ZXN0KDU1MCwgbiA9IDEwMTgsIHAgPSAwLjUsIGNvcnJlY3QgPSBGQUxTRSlcbnByb3AudGVzdCg1NTAsIG4gPSAxMDE4LCBwID0gMC41LCBjb25mLmxldmVsID0gMC45OSkifQ==
+eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoicHJvcC50ZXN0KDU1MCwgbiA9IDEwMTgsIHAgPSAwLjUsIGNvcnJlY3QgPSBGQUxTRSkifQ==
 </script>
 </div>
 </div>
+<div class="quiz" data-correct="0" data-gate=""><div class="quiz-q">Conclusion: Do we reject H0 at the 5% level? At the 1% level (two-sided)? How do the CIs agree?</div><label><input type="radio" name="q2" value="0"> Yes at 5% (p = 0.010), not quite at 1%; the 95% CI excludes 0.5, the 99% CI just contains it</label><label><input type="radio" name="q2" value="1"> No at 5% and no at 1%; both CIs contain 0.5</label><label><input type="radio" name="q2" value="2"> Yes at 5% and yes at 1%; neither CI contains 0.5</label><label><input type="radio" name="q2" value="3"> Cannot be decided</label><button class="quiz-check" type="button">Check</button><div class="quiz-feedback"></div><div class="quiz-expl">z = 2.57; the two-sided p-value is 0.0102: reject at 5% but not (quite) at 1%. The one-sided p-value is half: 0.0051. We reject H0 at level alpha exactly when the (1 - alpha) CI excludes the null value: 95% CI [0.510, 0.571], 99% CI [0.500, 0.581].</div></div>
 <div class="blocknav">
 <p><a href="Block1.html" class="prev-block">← Block 1</a> <a href="Block3.html" class="next-block">Next: Block 3, Two-sample tests →</a></p>
 </div>

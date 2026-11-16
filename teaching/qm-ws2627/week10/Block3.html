@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.9.37">
+<meta name="generator" content="quarto-1.10.18">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -12,51 +12,19 @@
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
 */
-code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
-div.columns{display: flex; gap: min(4vw, 1.5em);}
-div.column{flex: auto; overflow-x: auto;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
 div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
-}
-/* CSS for syntax highlighting */
-html { -webkit-text-size-adjust: 100%; }
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -68,10 +36,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../libs/quarto-html/anchor.min.js"></script>
 <link href="../libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../libs/bootstrap/bootstrap.min.js"></script>
 <link href="../libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../libs/bootstrap/bootstrap-811c29991c062aa722966c064eca9e31.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../libs/bootstrap/bootstrap-17adf1e77dc4ed90433053284acfe00f.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script src="../libs/quarto-contrib/live-runtime/live-runtime.js" type="module"></script>
 <link href="../libs/quarto-contrib/live-runtime/live-runtime.css" rel="stylesheet">
 <script type="module" src="../libs/quarto-ojs/quarto-ojs-runtime.js"></script>
@@ -90,7 +58,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
 <h1 class="title">Block 3: The normal distribution</h1>
-<p class="subtitle lead">Week 10 · Probability II · Imai §6.3.4 · about 7 min</p>
+<p class="subtitle lead">Week 10 · Probability II · Imai §6.3.4 · about 4 min</p>
 </div>
 
 
@@ -120,56 +88,25 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p><strong>Read the code and predict</strong> (write it down or tell your neighbour), answer the question, then <strong>run</strong> it with <em>Run Code</em>. Every cell is editable; <em>Start Over</em> resets it. Errors are information: read them.</p>
+<p><strong>Run</strong> each cell with <em>Run Code</em>, look at the output, then answer the question at the end of the block. Every cell is editable; <em>Start Over</em> resets it. Errors are information: read them.</p>
 </div>
 </div>
 <section id="the-68-95-99.7-rule" class="level2">
 <h2 class="anchored" data-anchor-id="the-68-95-99.7-rule">1. The 68-95-99.7 rule</h2>
-<p><strong>Read this code</strong> (it is not run yet):</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">pnorm</span>(<span class="dv">1</span>) <span class="sc">-</span> <span class="fu">pnorm</span>(<span class="sc">-</span><span class="dv">1</span>)                     <span class="co"># within one sd of the mean</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">pnorm</span>(<span class="dv">2</span>) <span class="sc">-</span> <span class="fu">pnorm</span>(<span class="sc">-</span><span class="dv">2</span>)                     <span class="co"># within two sd</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">pnorm</span>(<span class="dv">3</span>) <span class="sc">-</span> <span class="fu">pnorm</span>(<span class="sc">-</span><span class="dv">3</span>)                     <span class="co"># within three sd</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>mu <span class="ot">&lt;-</span> <span class="dv">5</span></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>sigma <span class="ot">&lt;-</span> <span class="dv">2</span></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="fu">pnorm</span>(mu <span class="sc">+</span> sigma, <span class="at">mean =</span> mu, <span class="at">sd =</span> sigma) <span class="sc">-</span> <span class="fu">pnorm</span>(mu <span class="sc">-</span> sigma, <span class="at">mean =</span> mu, <span class="at">sd =</span> sigma)</span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="fu">qnorm</span>(<span class="fl">0.975</span>)                             <span class="co"># the quantile function: inverse of pnorm</span></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="fu">qnorm</span>(<span class="fu">c</span>(<span class="fl">0.005</span>, <span class="fl">0.025</span>, <span class="fl">0.05</span>, <span class="fl">0.95</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="quiz" data-correct="0" data-gate="gate-b3_norm"><div class="quiz-q">Predict: What shares of a normal distribution lie within 1, 2 and 3 standard deviations of the mean? And what is <code>qnorm(0.975)</code>?</div><label><input type="radio" name="q4" value="0"> 68%, 95%, 99.7%; qnorm(0.975) is about 1.96</label><label><input type="radio" name="q4" value="1"> 50%, 75%, 90%; about 1.0</label><label><input type="radio" name="q4" value="2"> 90%, 95%, 99%; about 2.58</label><label><input type="radio" name="q4" value="3"> 68%, 95%, 99.7%; about 0.975</label><button class="quiz-check" type="button">Check</button><div class="quiz-feedback"></div><div class="quiz-expl">These are the famous numbers. The 97.5% quantile is 1.96: the number behind the 95% interval, because 2.5% of the mass lies in each tail.</div></div>
-<div id="gate-b3_norm" class="gated">
-<p><strong>Now run it</strong> and compare with your answer:</p>
 <div class="cell" data-exercise="b3_norm">
 <div>
 <div id="webr-1" class="exercise-cell">
 
 </div>
 <script type="webr-1-contents">
-eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoicG5vcm0oMSkgLSBwbm9ybSgtMSkgICAgICAgICAgICAgICAgICAgICAjIHdpdGhpbiBvbmUgc2Qgb2YgdGhlIG1lYW5cbnBub3JtKDIpIC0gcG5vcm0oLTIpICAgICAgICAgICAgICAgICAgICAgIyB3aXRoaW4gdHdvIHNkXG5wbm9ybSgzKSAtIHBub3JtKC0zKSAgICAgICAgICAgICAgICAgICAgICMgd2l0aGluIHRocmVlIHNkXG5tdSA8LSA1XG5zaWdtYSA8LSAyXG5wbm9ybShtdSArIHNpZ21hLCBtZWFuID0gbXUsIHNkID0gc2lnbWEpIC0gcG5vcm0obXUgLSBzaWdtYSwgbWVhbiA9IG11LCBzZCA9IHNpZ21hKVxucW5vcm0oMC45NzUpICAgICAgICAgICAgICAgICAgICAgICAgICAgICAjIHRoZSBxdWFudGlsZSBmdW5jdGlvbjogaW52ZXJzZSBvZiBwbm9ybVxucW5vcm0oYygwLjAwNSwgMC4wMjUsIDAuMDUsIDAuOTUpKSJ9
+eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoicG5vcm0oMSkgLSBwbm9ybSgtMSkgICAgICAgICAgICAgICAgICAgICAjIHdpdGhpbiBvbmUgc2Qgb2YgdGhlIG1lYW5cbnBub3JtKDIpIC0gcG5vcm0oLTIpICAgICAgICAgICAgICAgICAgICAgIyB3aXRoaW4gdHdvIHNkXG5wbm9ybSgzKSAtIHBub3JtKC0zKSAgICAgICAgICAgICAgICAgICAgICMgd2l0aGluIHRocmVlIHNkXG5xbm9ybSgwLjk3NSkgICAgICAgICAgICAgICAgICAgICAgICAgICAgICMgdGhlIHF1YW50aWxlIGZ1bmN0aW9uOiBpbnZlcnNlIG9mIHBub3JtIn0=
 </script>
-</div>
 </div>
 </div>
 </section>
 <section id="are-state-vote-shares-normal" class="level2">
 <h2 class="anchored" data-anchor-id="are-state-vote-shares-normal">2. Are state vote shares normal?</h2>
 <p>Obama’s two-party vote share in each state, 2008, standardized (z-score).</p>
-<p><strong>Read this code</strong> (it is not run yet):</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>pres08 <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"pres08.csv"</span>)</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>pres08<span class="sc">$</span>share <span class="ot">&lt;-</span> pres08<span class="sc">$</span>Obama <span class="sc">/</span> (pres08<span class="sc">$</span>Obama <span class="sc">+</span> pres08<span class="sc">$</span>McCain)</span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>pres08<span class="sc">$</span>z <span class="ot">&lt;-</span> <span class="fu">scale</span>(pres08<span class="sc">$</span>share)          <span class="co"># z-score: (x - mean) / sd</span></span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>))</span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(pres08<span class="sc">$</span>z, <span class="at">freq =</span> <span class="cn">FALSE</span>, <span class="at">xlim =</span> <span class="fu">c</span>(<span class="sc">-</span><span class="dv">3</span>, <span class="dv">3</span>), <span class="at">ylim =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="fl">0.5</span>),</span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>     <span class="at">xlab =</span> <span class="st">"z-score of Obama's two-party share"</span>, <span class="at">main =</span> <span class="st">""</span>)</span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="at">from =</span> <span class="sc">-</span><span class="dv">3</span>, <span class="at">to =</span> <span class="dv">3</span>, <span class="at">by =</span> <span class="fl">0.01</span>)</span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="fu">lines</span>(x, <span class="fu">dnorm</span>(x))                       <span class="co"># overlay the standard normal PDF</span></span>
-<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="fu">qqnorm</span>(pres08<span class="sc">$</span>z, <span class="at">xlim =</span> <span class="fu">c</span>(<span class="sc">-</span><span class="dv">3</span>, <span class="dv">3</span>), <span class="at">ylim =</span> <span class="fu">c</span>(<span class="sc">-</span><span class="dv">3</span>, <span class="dv">3</span>))</span>
-<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="dv">0</span>, <span class="dv">1</span>)                             <span class="co"># 45-degree line</span></span>
-<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(pres08<span class="sc">$</span>z <span class="sc">&gt;</span> <span class="dv">1</span>)                        <span class="co"># observed</span></span>
-<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a><span class="dv">51</span> <span class="sc">*</span> (<span class="dv">1</span> <span class="sc">-</span> <span class="fu">pnorm</span>(<span class="dv">1</span>))                      <span class="co"># expected under a normal</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="quiz" data-correct="0" data-gate="gate-b3_data"><div class="quiz-q">Predict: Does the distribution of state vote shares look normal? How many of the 51 "states" have z &gt; 1, and how many would a normal distribution predict?</div><label><input type="radio" name="q5" value="0"> Roughly normal; 5 states above 1 sd vs. about 8 expected</label><label><input type="radio" name="q5" value="1"> Not at all normal; 40 states above 1 sd</label><label><input type="radio" name="q5" value="2"> Exactly normal; 8 and 8</label><label><input type="radio" name="q5" value="3"> No states above 1 sd</label><button class="quiz-check" type="button">Check</button><div class="quiz-feedback"></div><div class="quiz-expl">The histogram follows the normal curve reasonably, but 5 observed vs. 8.1 expected shows deviations in the tails. The normal is a good approximation, not a law.</div></div>
-<div id="gate-b3_data" class="gated">
-<p><strong>Now run it</strong> and compare with your answer:</p>
 <div class="cell" data-exercise="b3_data">
 <div>
 <div id="webr-2" class="exercise-cell">
@@ -180,7 +117,7 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoicHJlczA4IDwtIHJlYWQuY3N2
 </script>
 </div>
 </div>
-</div>
+<div class="quiz" data-correct="0" data-gate=""><div class="quiz-q">Conclusion: Does the distribution of state vote shares look normal? How many states have z &gt; 1, and how many would a normal predict?</div><label><input type="radio" name="q3" value="0"> Roughly normal; 5 states above 1 sd vs. about 8 expected</label><label><input type="radio" name="q3" value="1"> Not at all normal; 40 states above 1 sd</label><label><input type="radio" name="q3" value="2"> Exactly normal; 8 and 8</label><label><input type="radio" name="q3" value="3"> No states above 1 sd</label><button class="quiz-check" type="button">Check</button><div class="quiz-feedback"></div><div class="quiz-expl">The histogram follows the normal curve reasonably, but 5 observed vs. 8.1 expected shows deviations in the tails. The normal is a good approximation, not a law. And qnorm(0.975) = 1.96 is the number behind the 95% interval.</div></div>
 <div class="blocknav">
 <p><a href="Block2.html" class="prev-block">← Block 2</a> <a href="Block4.html" class="next-block">Next: Block 4, Expectation, variance and the law of large numbers →</a></p>
 </div>

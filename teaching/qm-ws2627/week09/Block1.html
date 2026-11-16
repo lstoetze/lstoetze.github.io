@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.9.37">
+<meta name="generator" content="quarto-1.10.18">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -12,51 +12,19 @@
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
 */
-code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
-div.columns{display: flex; gap: min(4vw, 1.5em);}
-div.column{flex: auto; overflow-x: auto;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
 div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
-}
-/* CSS for syntax highlighting */
-html { -webkit-text-size-adjust: 100%; }
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -68,10 +36,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../libs/quarto-html/anchor.min.js"></script>
 <link href="../libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../libs/bootstrap/bootstrap.min.js"></script>
 <link href="../libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../libs/bootstrap/bootstrap-811c29991c062aa722966c064eca9e31.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../libs/bootstrap/bootstrap-17adf1e77dc4ed90433053284acfe00f.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script src="../libs/quarto-contrib/live-runtime/live-runtime.js" type="module"></script>
 <link href="../libs/quarto-contrib/live-runtime/live-runtime.css" rel="stylesheet">
 <script type="module" src="../libs/quarto-ojs/quarto-ojs-runtime.js"></script>
@@ -90,7 +58,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
 <h1 class="title">Block 1: Counting and the birthday problem</h1>
-<p class="subtitle lead">Week 9 · Probability I · Imai §6.1 · about 8 min</p>
+<p class="subtitle lead">Week 9 · Probability I · Imai §6.1 · about 4 min</p>
 </div>
 
 
@@ -120,7 +88,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p><strong>Read the code and predict</strong> (write it down or tell your neighbour), answer the question, then <strong>run</strong> it with <em>Run Code</em>. Every cell is editable; <em>Start Over</em> resets it. Errors are information: read them.</p>
+<p><strong>Run</strong> each cell with <em>Run Code</em>, look at the output, then answer the question at the end of the block. Every cell is editable; <em>Start Over</em> resets it. Errors are information: read them.</p>
 </div>
 </div>
 <section id="counting-rules-in-r" class="level2">
@@ -140,23 +108,6 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiZmFjdG9yaWFsKDUpICAgICAg
 <section id="the-birthday-problem" class="level2">
 <h2 class="anchored" data-anchor-id="the-birthday-problem">2. The birthday problem</h2>
 <p>P(at least two of <em>k</em> people share a birthday) = 1 - 365! / ((365 - k)! 365^k). We use logs to avoid overflow of 365!.</p>
-<p><strong>Read this code</strong> (it is not run yet):</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>birthday <span class="ot">&lt;-</span> <span class="cf">function</span>(k) {</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    logdenom <span class="ot">&lt;-</span> k <span class="sc">*</span> <span class="fu">log</span>(<span class="dv">365</span>) <span class="sc">+</span> <span class="fu">lfactorial</span>(<span class="dv">365</span> <span class="sc">-</span> k)</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>    lognumer <span class="ot">&lt;-</span> <span class="fu">lfactorial</span>(<span class="dv">365</span>)</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>    pr <span class="ot">&lt;-</span> <span class="dv">1</span> <span class="sc">-</span> <span class="fu">exp</span>(lognumer <span class="sc">-</span> logdenom)</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">return</span>(pr)</span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>k <span class="ot">&lt;-</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">50</span></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>bday <span class="ot">&lt;-</span> <span class="fu">birthday</span>(k)</span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(bday) <span class="ot">&lt;-</span> k</span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(k, bday, <span class="at">xlab =</span> <span class="st">"Number of people"</span>, <span class="at">xlim =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">50</span>), <span class="at">ylim =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">1</span>),</span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>     <span class="at">ylab =</span> <span class="st">"P(at least two share a birthday)"</span>)</span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">h =</span> <span class="fl">0.5</span>)</span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>bday[<span class="dv">20</span><span class="sc">:</span><span class="dv">25</span>]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="quiz" data-correct="1" data-gate="gate-b1_bday"><div class="quiz-q">Predict: How many people do you need for a better-than-50% chance of a shared birthday? And above 99%?</div><label><input type="radio" name="q1" value="0"> About 183 for 50%; about 360 for 99%</label><label><input type="radio" name="q1" value="1"> About 23 for 50%; about 57 for 99%</label><label><input type="radio" name="q1" value="2"> About 50 for 50%; about 100 for 99%</label><label><input type="radio" name="q1" value="3"> About 10 for 50%; about 30 for 99%</label><button class="quiz-check" type="button">Check</button><div class="quiz-feedback"></div><div class="quiz-expl">With only 23 people the probability is already 50.7%; with 57 it exceeds 99%. Intuition about probabilities of <b>any</b> pair matching is poor: 23 people form 253 pairs.</div></div>
-<div id="gate-b1_bday" class="gated">
-<p><strong>Now run it</strong> and compare with your answer:</p>
 <div class="cell" data-exercise="b1_bday">
 <div>
 <div id="webr-2" class="exercise-cell">
@@ -167,25 +118,9 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiYmlydGhkYXkgPC0gZnVuY3Rp
 </script>
 </div>
 </div>
-</div>
 </section>
 <section id="monte-carlo-simulation-of-the-same-quantity" class="level2">
 <h2 class="anchored" data-anchor-id="monte-carlo-simulation-of-the-same-quantity">3. Monte Carlo simulation of the same quantity</h2>
-<p><strong>Read this code</strong> (it is not run yet):</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">2026</span>)</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>k <span class="ot">&lt;-</span> <span class="dv">23</span>                       <span class="co"># number of people</span></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>sims <span class="ot">&lt;-</span> <span class="dv">1000</span>                  <span class="co"># number of simulations</span></span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>event <span class="ot">&lt;-</span> <span class="dv">0</span>                    <span class="co"># counter</span></span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>sims) {</span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>    days <span class="ot">&lt;-</span> <span class="fu">sample</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">365</span>, k, <span class="at">replace =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> (<span class="fu">length</span>(<span class="fu">unique</span>(days)) <span class="sc">&lt;</span> k) {   <span class="co"># duplicates among the k birthdays</span></span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>        event <span class="ot">&lt;-</span> event <span class="sc">+</span> <span class="dv">1</span></span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>    }</span>
-<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>event <span class="sc">/</span> sims                  <span class="co"># close to the analytical answer?</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="quiz" data-correct="0" data-gate="gate-b1_sim"><div class="quiz-q">Predict: With k = 23 people and 1,000 simulated groups, how close will the simulated share be to the analytical answer (0.507)?</div><label><input type="radio" name="q2" value="0"> Close, within a few hundredths, but not exactly equal</label><label><input type="radio" name="q2" value="1"> Exactly 0.507</label><label><input type="radio" name="q2" value="2"> Far away, around 0.1</label><label><input type="radio" name="q2" value="3"> Always 1</label><button class="quiz-check" type="button">Check</button><div class="quiz-feedback"></div><div class="quiz-expl">Simulation gives 0.51 here: close but with sampling noise. More simulations (10,000) get closer to 0.507.</div></div>
-<div id="gate-b1_sim" class="gated">
-<p><strong>Now run it</strong> and compare with your answer:</p>
 <div class="cell" data-exercise="b1_sim">
 <div>
 <div id="webr-3" class="exercise-cell">
@@ -196,8 +131,7 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoic2V0LnNlZWQoMjAyNilcbmsg
 </script>
 </div>
 </div>
-</div>
-<p><strong>Change it:</strong> set <code>sims &lt;- 10000</code>, or <code>k &lt;- 50</code>.</p>
+<div class="quiz" data-correct="1" data-gate=""><div class="quiz-q">Conclusion: How many people do you need for a better-than-50% chance of a shared birthday?</div><label><input type="radio" name="q1" value="0"> About 183</label><label><input type="radio" name="q1" value="1"> About 23</label><label><input type="radio" name="q1" value="2"> About 50</label><label><input type="radio" name="q1" value="3"> About 10</label><button class="quiz-check" type="button">Check</button><div class="quiz-feedback"></div><div class="quiz-expl">With only 23 people the probability is already 50.7% (the simulation gives about 0.51, close but not exact); with 57 it exceeds 99%. Intuition is poor because 23 people form 253 pairs.</div></div>
 <div class="blocknav">
 <p><a href="index.html" class="prev-block">← Overview</a> <a href="Block2.html" class="next-block">Next: Block 2, Joint, marginal and conditional probability →</a></p>
 </div>

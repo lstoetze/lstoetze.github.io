@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.9.37">
+<meta name="generator" content="quarto-1.10.18">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -12,51 +12,19 @@
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
 */
-code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
-div.columns{display: flex; gap: min(4vw, 1.5em);}
-div.column{flex: auto; overflow-x: auto;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
 div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
-}
-/* CSS for syntax highlighting */
-html { -webkit-text-size-adjust: 100%; }
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -68,10 +36,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../libs/quarto-html/anchor.min.js"></script>
 <link href="../libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../libs/bootstrap/bootstrap.min.js"></script>
 <link href="../libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../libs/bootstrap/bootstrap-811c29991c062aa722966c064eca9e31.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../libs/bootstrap/bootstrap-17adf1e77dc4ed90433053284acfe00f.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script src="../libs/quarto-contrib/live-runtime/live-runtime.js" type="module"></script>
 <link href="../libs/quarto-contrib/live-runtime/live-runtime.css" rel="stylesheet">
 <script type="module" src="../libs/quarto-ojs/quarto-ojs-runtime.js"></script>
@@ -90,7 +58,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
 <h1 class="title">Block 1: Can a face predict an election?</h1>
-<p class="subtitle lead">Week 8 · Prediction II · Imai §4.2.1 · about 6 min</p>
+<p class="subtitle lead">Week 8 · Prediction II · Imai §4.2.1 · about 3 min</p>
 </div>
 
 
@@ -120,13 +88,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p><strong>Read the code and predict</strong> (write it down or tell your neighbour), answer the question, then <strong>run</strong> it with <em>Run Code</em>. Every cell is editable; <em>Start Over</em> resets it. Errors are information: read them.</p>
+<p><strong>Run</strong> each cell with <em>Run Code</em>, look at the output, then answer the question at the end of the block. Every cell is editable; <em>Start Over</em> resets it. Errors are information: read them.</p>
 </div>
 </div>
 <p><code>face.csv</code>: one row = one US Senate/Governor race (2000, 2002, 2004). <code>d.comp</code> / <code>r.comp</code> are competence scores of the Democratic / Republican candidate, based on their <strong>faces</strong>, rated by participants who did not know the candidates.</p>
-<section id="load-and-compute-vote-shares" class="level2">
-<h2 class="anchored" data-anchor-id="load-and-compute-vote-shares">1. Load and compute vote shares</h2>
-<p>How many races? We compute the two-party vote shares and the Democratic margin <code>diff.share</code>.</p>
+<section id="load-and-compute-the-margin" class="level2">
+<h2 class="anchored" data-anchor-id="load-and-compute-the-margin">1. Load and compute the margin</h2>
+<p>How many races? <code>diff.share</code> is the Democratic margin (Democratic minus Republican two-party vote share).</p>
 <div class="cell" data-exercise="b1_load">
 <div>
 <div id="webr-1" class="exercise-cell">
@@ -140,24 +108,13 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiZmFjZSA8LSByZWFkLmNzdihc
 </section>
 <section id="scatter-plot-and-correlation" class="level2">
 <h2 class="anchored" data-anchor-id="scatter-plot-and-correlation">2. Scatter plot and correlation</h2>
-<p><strong>Read this code</strong> (it is not run yet):</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(face<span class="sc">$</span>d.comp, face<span class="sc">$</span>diff.share, <span class="at">pch =</span> <span class="dv">16</span>,</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>     <span class="at">col =</span> <span class="fu">ifelse</span>(face<span class="sc">$</span>w.party <span class="sc">==</span> <span class="st">"R"</span>, <span class="st">"red"</span>, <span class="st">"blue"</span>),</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>     <span class="at">xlim =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">1</span>), <span class="at">ylim =</span> <span class="fu">c</span>(<span class="sc">-</span><span class="dv">1</span>, <span class="dv">1</span>),</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>     <span class="at">xlab =</span> <span class="st">"Competence scores for Democrats"</span>,</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>     <span class="at">ylab =</span> <span class="st">"Democratic margin in vote share"</span>,</span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>     <span class="at">main =</span> <span class="st">"Facial competence and vote share"</span>)</span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="fu">cor</span>(face<span class="sc">$</span>d.comp, face<span class="sc">$</span>diff.share)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="quiz" data-correct="0" data-gate="gate-b1_plot"><div class="quiz-q">Predict: What do you expect: sign and strength of the correlation between the Democrat's competence score and the Democratic margin?</div><label><input type="radio" name="q1" value="0"> Positive, moderate (about 0.4)</label><label><input type="radio" name="q1" value="1"> Negative, strong (about -0.8)</label><label><input type="radio" name="q1" value="2"> Zero</label><label><input type="radio" name="q1" value="3"> Positive, perfect (1)</label><button class="quiz-check" type="button">Check</button><div class="quiz-feedback"></div><div class="quiz-expl">The correlation is about 0.43: candidates whose faces look more competent do better. Not strong, but surprising for a judgement made in a second.</div></div>
-<div id="gate-b1_plot" class="gated">
-<p><strong>Now run it</strong> and compare with your answer:</p>
 <div class="cell" data-exercise="b1_plot">
 <div>
 <div id="webr-2" class="exercise-cell">
 
 </div>
 <script type="webr-2-contents">
-eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoicGxvdChmYWNlJGQuY29tcCwgZmFjZSRkaWZmLnNoYXJlLCBwY2ggPSAxNixcbiAgICAgY29sID0gaWZlbHNlKGZhY2Ukdy5wYXJ0eSA9PSBcIlJcIiwgXCJyZWRcIiwgXCJibHVlXCIpLFxuICAgICB4bGltID0gYygwLCAxKSwgeWxpbSA9IGMoLTEsIDEpLFxuICAgICB4bGFiID0gXCJDb21wZXRlbmNlIHNjb3JlcyBmb3IgRGVtb2NyYXRzXCIsXG4gICAgIHlsYWIgPSBcIkRlbW9jcmF0aWMgbWFyZ2luIGluIHZvdGUgc2hhcmVcIixcbiAgICAgbWFpbiA9IFwiRmFjaWFsIGNvbXBldGVuY2UgYW5kIHZvdGUgc2hhcmVcIilcbmNvcihmYWNlJGQuY29tcCwgZmFjZSRkaWZmLnNoYXJlKSJ9
+eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoicGxvdChmYWNlJGQuY29tcCwgZmFjZSRkaWZmLnNoYXJlLCBwY2ggPSAxNixcbiAgICAgY29sID0gaWZlbHNlKGZhY2Ukdy5wYXJ0eSA9PSBcIlJcIiwgXCJyZWRcIiwgXCJibHVlXCIpLFxuICAgICB4bGltID0gYygwLCAxKSwgeWxpbSA9IGMoLTEsIDEpLFxuICAgICB4bGFiID0gXCJDb21wZXRlbmNlIHNjb3JlcyBmb3IgRGVtb2NyYXRzXCIsXG4gICAgIHlsYWIgPSBcIkRlbW9jcmF0aWMgbWFyZ2luIGluIHZvdGUgc2hhcmVcIilcbmNvcihmYWNlJGQuY29tcCwgZmFjZSRkaWZmLnNoYXJlKSJ9
 </script>
 </div>
 </div>
@@ -171,7 +128,7 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiZmFjZSA8LSByZWFkLmNzdihc
 </script>
 </div>
 </div>
-</div>
+<div class="quiz" data-correct="0" data-gate=""><div class="quiz-q">Conclusion: What do the plot and the correlation show?</div><label><input type="radio" name="q1" value="0"> A positive, moderate relationship (r about 0.4)</label><label><input type="radio" name="q1" value="1"> A negative, strong relationship (r about -0.8)</label><label><input type="radio" name="q1" value="2"> No relationship</label><label><input type="radio" name="q1" value="3"> A perfect positive relationship</label><button class="quiz-check" type="button">Check</button><div class="quiz-feedback"></div><div class="quiz-expl">The correlation is about 0.43: candidates whose faces look more competent do better. Not strong, but surprising for a judgement made in a second. The correlation says how strong, not how large: that needs a slope.</div></div>
 <div class="blocknav">
 <p><a href="index.html" class="prev-block">← Overview</a> <a href="Block2.html" class="next-block">Next: Block 2, Linear regression by least squares →</a></p>
 </div>
